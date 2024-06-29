@@ -6,6 +6,7 @@
 
 # include <string>
 # include <cstdlib>
+# include <cctype>
 # include <iomanip>
 # include <iostream>
 # include "Contact.hpp"
@@ -18,7 +19,7 @@ class PhoneBook
 
     void addContact();
     void searchContact() const;
-    void displayContact() const;
+    void displayContact();
     void farewellMessage() const;
     void greetingsMessage() const;
   
@@ -26,7 +27,8 @@ class PhoneBook
     Contact _contacts[8];//raw array, c_like
 
     int   _num_of_contact;
-    std::string _getUserData(std::string input);
+    void  _thePrinter(int index) const;
+    std::string _getUserData(std::string input, int flag);
 };
 
 # endif

@@ -20,7 +20,10 @@ int main (void)
     else if (command == "ADD")
       phonebook.addContact();
     else if (command == "SEARCH")
+    {
       phonebook.searchContact();
+      phonebook.displayContact();
+    }
     else if (command == "EXIT") 
     {
       phonebook.farewellMessage();

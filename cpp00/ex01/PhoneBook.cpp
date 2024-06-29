@@ -9,13 +9,14 @@ PhoneBook::PhoneBook() : _num_of_contact(0) {
 }
 PhoneBook::~PhoneBook() { return ; }
 
-std::string PhoneBook::_getUserData(std::string required) {
+std::string PhoneBook::_getUserData(std::string required, int flag) {
 
   std::string entered;
 
   while (entered.empty()) {
 
-    std::cout << "Enter your" << std::endl;
+    if (flag == 1)
+      std::cout << "Enter your" << std::endl;
     std::cout << required << " : ";
     std::getline(std::cin, entered);
   }
@@ -34,51 +35,59 @@ bool isValidNum(std::string number) {
   return (true);
 }
 
-
 void PhoneBook::addContact() {
 
-  size_t length;
-   std::string field[]={"firstName", "lastName", "nickName",
-    "phoneNumber", "darkestSecret"};
+  size_t  length;
+  std::string field[5];
   std::string arr[]={"First name", "Last name", "Nick Name", 
     "Phone Number", "DarkestSecret"};
 
   length = sizeof(arr) / sizeof(arr[0]);
   for (size_t i = 0; i < length; i++) {
 
-    field[i] = PhoneBook::_getUserData(arr[i]);
+    field[i] = PhoneBook::_getUserData(arr[i], 1);
     if (i == 3 && isValidNum(field[i]) == false)
     {
       while (isValidNum(field[i]) == false) {
         std::cerr << "Invalid number !" << std::endl; 
         std::cerr << "format is 9 digits long Please" << std::endl;
-        field[i] = PhoneBook::_getUserData(arr[i]);
+        field[i] = PhoneBook::_getUserData(arr[i], 1);
       }
     }
   } 
   Contact newContact;
   newContact.setUserData(field[0], field[1], field[2], field[3], field[4]);
-  _contacts[_num_of_contact % 8] = newContact;
+  _num_of_contact = _num_of_contact % 8;
+  _contacts[_num_of_contact] = newContact;
   _contacts[_num_of_contact].added = true;
   _num_of_contact++;
 }
 
 void	PrintRightFormat(std::string attr){
-	std::cout << std::setw(10);
+
 	if (attr.length() > 10)
-		std::cout << attr.substr(0, 9) + ".";
+		std::cout << attr.substr(0, 9) + "." << "|";
 	else
-		std::cout << attr;
+  {
+	  std::cout << std::setw(10);
+		std::cout << attr << "|";
+  }
 }
 
 void PhoneBook::searchContact() const {
 
+  if (_num_of_contact == 0) {
+
+    std::cout << "NO contact have been added yet !" << std::endl;
+    std::cout << "Try the ADD command first" << std::endl;
+    return ;
+  }
   std::cout << "╔═══════════════════════════════════════════╗" << std::endl;
   std::cout << "|  Index   |First name| Last name| Nickname |" << std::endl;
 	std::cout << "|══════════|══════════|══════════|══════════|" << std::endl;
   for (int i = 0; i < 8 && _contacts[i].added == true; i++) {
 	
-    std::cout << std::setw(10) << i + 1;
+    std::cout << "|" << std::setw(10) << i + 1 << "|";
     PrintRightFormat(_contacts[i].getFirstName());
     PrintRightFormat(_contacts[i].getLastName());
     PrintRightFormat(_contacts[i].getNickName());
@@ -87,27 +96,37 @@ void PhoneBook::searchContact() const {
       std::cout << "|══════════|══════════|══════════|══════════|" << std::endl;
     else
       std::cout << "╚═══════════════════════════════════════════╝" << std::endl;
-      
   }
-
-  //displayContact();
 }
 
 
-void PhoneBook::displayContact() const {
- 
-	/*std::cout << "First name: " << _firstName << std::endl;*/
-	/*std::cout << "Last name: " << _lastName << std::endl;*/
-	/*std::cout << "Nickname: " << _nickName << std::endl;*/
-	/*std::cout << "Phone number: " << _phoneNumber << std::endl;*/
-	/*std::cout << "Darkest secret: " << _darkestSecret << std::endl;*/
+void PhoneBook::displayContact() {
   
-  std::cout << "display founded contact" << std::endl;
-  std::cout << _contacts[0].getFirstName() << std::endl;
-  std::cout << _contacts[0].getLastName() << std::endl;
-  std::cout << _contacts[0].getNickName() << std::endl;
-  std::cout << _contacts[0].getPhoneNumber () << std::endl;
-  std::cout << _contacts[0].getDarkestSecret() << std::endl;
+  std::string strIndx; 
+  std::string message[] = {"Please, Enter a VALID! Index for the desired contact"};
+  std::string field[]={"First name", "Last name", "Nick Name", 
+    "Phone Number", "DarkestSecret"};
+
+  std::cout << std::endl;
+  strIndx = "int";
+  do {
+    strIndx = PhoneBook::_getUserData(message[0], 2);
+  } while(strIndx.length() > 1 || !isdigit(strIndx[0]));
+
+  int index = std::atoi(strIndx.c_str());
+  if (index > 0 && index <= 8 && _contacts[index - 1].added == true) {
+    
+  index = index - 1;
+  std::cout << field[0] << "_:   " << _contacts[index].getFirstName() << std::endl;
+  std::cout << field[1] << "_:   " << _contacts[index].getLastName() << std::endl;
+  std::cout << field[2] << "_:   " << _contacts[index].getNickName() << std::endl;
+  std::cout << field[3] << "_:   " << _contacts[index].getPhoneNumber () << std::endl;
+  std::cout << field[4] << "_:   " << _contacts[index].getDarkestSecret() << std::endl;
+  }
+  else {
+    std::cerr << std::endl << "SORRY ! We don't have any contact that match this index" << std::endl;
+    return ;
+  }
 }
 
 void PhoneBook::greetingsMessage() const {

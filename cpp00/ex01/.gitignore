@@ -1,0 +1,9 @@
+#OBJECTS
+*.o
+
+#DEPENDENCIES
+*.d
+
+#EXEC
+*[!.*]
+
