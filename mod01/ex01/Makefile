@@ -16,18 +16,17 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = Zombie 
+NAME = Zombies
 HEADER_ZOMBIE = Zombie.hpp
-HEADER_NEWZOMBIE = PhoneBook.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
-#    COMPILATIION RULES    #
+#    COMPILATION RULES     #
 # ╚══════════════════════╝ #  
 
 F_OBJ = build/
 
-SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 

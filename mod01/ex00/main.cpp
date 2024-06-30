@@ -7,8 +7,7 @@ int main ()
 {
   
  // Zombie( "Lazaro" );
-  
-  Zombie* newZomObj = newZombie( "Archly" );
+  Zombie* newZomObj = newZombie( "avolcy" );
   delete  (newZomObj);
 
   randomChump( "randomChump" );
