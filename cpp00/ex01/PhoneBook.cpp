@@ -117,6 +117,7 @@ void PhoneBook::displayContact() {
   if (index > 0 && index <= 8 && _contacts[index - 1].added == true) {
     
   index = index - 1;
+  std::cout << std::endl;
   std::cout << field[0] << "_:   " << _contacts[index].getFirstName() << std::endl;
   std::cout << field[1] << "_:   " << _contacts[index].getLastName() << std::endl;
   std::cout << field[2] << "_:   " << _contacts[index].getNickName() << std::endl;

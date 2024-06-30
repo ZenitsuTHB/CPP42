@@ -19,7 +19,7 @@ RM = rm -rf
 NAME = PhoneBook 
 HEADER_CONT = Contact.hpp
 HEADER_PHON = PhoneBook.hpp
-FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
+FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g#-fsanitize=address 
 
 # ╔══════════════════════╗ #  
 #    COMPILATIION RULES    #
