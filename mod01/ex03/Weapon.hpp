@@ -10,10 +10,11 @@ using namespace std;
 
 class Weapon{
 public:
-  Weapon();
+
+  Weapon(string type);
   ~Weapon();
 
-  void getType() const;
+  const string& getType();
   void setType(string type);
 
 private:
@@ -21,7 +22,5 @@ private:
   string _type;
 
 };
-
-
 
 #endif

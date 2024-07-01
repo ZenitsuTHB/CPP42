@@ -1,9 +1,19 @@
 //42 HEADER
 
 
-#include "Humana.hpp"
+#include "HumanA.hpp"
 
-HumanA::HumanA (string name) : _name(name) {
+HumanA::HumanA (string name, Weapon& weapon) : _name(name), _bazuka(weapon) {
 
-  HumanA.weapon(_name);
-} 
+  return ;
+}
+
+HumanA::~HumanA () {
+
+  return ;
+}
+
+void HumanA::attack() {
+
+  cout << _name << " : attacks with their : " << _bazuka.getType() << endl;
+}

@@ -14,15 +14,16 @@ using namespace std;
 
 class HumanB {
 public:
-  HumanB();
+  HumanB(string name);
   ~HumanB();
 
-  void attack(name, weapon);
+  void attack(string name, Weapon weapon);
+  void setWeapon (Weapon* )
 
 private:
 
-  Weapon  weapon;
   string _name;
+  Weapon* _bazuka;
   
 };
 

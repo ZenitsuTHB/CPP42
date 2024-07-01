@@ -2,9 +2,9 @@
 
 
 
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
-Weapon::Weapon () {
+Weapon::Weapon (string type) : _type(type) {
 
   return ;
 }
@@ -14,13 +14,16 @@ Weapon::~Weapon () {
   return ;
 }
 
-Weapon::getType() const {
+const string& Weapon::getType() {
+  //()const vs const string;
 
-  return &_type;
+  const string& aliasType = _type; 
+
+  return (aliasType);
 }
 
 
-void setType(string type) {
-
-
+void Weapon::setType(string type) {
+ 
+  _type = type;
 }

@@ -16,8 +16,8 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = Zombies
-HEADER_ZOMBIE = Zombie.hpp
+NAME = UnnecessaryViolence
+HEADER_WAR = Weapon.hpp HumanA.hpp HumanB.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -26,11 +26,11 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
-$(F_OBJ)%.o: %.cpp $(HEADER_ZOMBIE) Makefile
+$(F_OBJ)%.o: %.cpp $(HEADER_WAR) Makefile
 	@$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 all: build_dir $(NAME)
