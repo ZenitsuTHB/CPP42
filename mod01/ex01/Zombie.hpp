@@ -10,14 +10,16 @@ using namespace std;
 
 class Zombie {
 public:
-  Zombie(std::string name);
+  Zombie();
   ~Zombie( void );
 
   void announce ( void );
+  void setName(string name);
 
 private:
 
-  std::string _name;
+  string _name;
+
 };
 
 Zombie* zombieHorde( int N, std::string name );

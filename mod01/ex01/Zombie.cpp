@@ -4,21 +4,25 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name) : _name(name) {
+Zombie::Zombie() {
 
-  std::cout << std::endl;
-  announce();
+  return ;
+}
+
+void Zombie::setName(string name) {
+
+  _name = name;
   return ;
 }
 
 Zombie::~Zombie() {
 
-  std::cout << "My name's " << _name << ", OH NOOoooo !";
-  std::cout << "I am dying again ..." << std::endl; 
+  cout << "My name's " << _name << ", OH NOOoooo !";
+  cout << "I am dying again ..." << endl; 
   return ;
 }
 
 void Zombie::announce ( void ) {
 
-  std::cout << _name << " : BraiiiiiiinnnzzzZ..." << std::endl;
+  cout << _name << " : BraiiiiiiinnnzzzZ..." << endl;
 }
