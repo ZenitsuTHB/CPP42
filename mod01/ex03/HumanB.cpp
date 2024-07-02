@@ -3,22 +3,25 @@
 
 #include "HumanB.hpp"
 
-HumanA::HumanB (string name) : _name(name) {
+HumanB::HumanB (string name) : _name(name) {
 
   return ;
 }
 
-HumanA::~HumanB () {
+HumanB::~HumanB () {
 
   return ;
 }
 
-void HumanB::setWeapon(Weapon* bazuka) {
+void HumanB::setWeapon(Weapon& bazuka) {
 
-  this->_weapon = &bazuka;
+  _weapon = &bazuka;
 }
 
 void HumanB::attack() {
 
-  cout << _name << " : attacks with their : " << _weapon.getType() << endl;
+ if (!_weapon)
+    cout << _name << " : Is not armed, his Weapon was not set !" << endl;
+ else
+    cout << _name << " : attacks with their : " << _weapon->getType() << endl;
 }

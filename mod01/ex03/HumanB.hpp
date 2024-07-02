@@ -17,13 +17,13 @@ public:
   HumanB(string name);
   ~HumanB();
 
-  void attack(string name, Weapon weapon);
-  void setWeapon (Weapon* )
+  void attack();
+  void setWeapon (Weapon& weapon);
 
 private:
 
   string _name;
-  Weapon* _bazuka;
+  Weapon* _weapon;
   
 };
 
