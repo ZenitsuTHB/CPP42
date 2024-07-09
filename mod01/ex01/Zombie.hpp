@@ -16,19 +16,17 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
-
 class Zombie {
 public:
   Zombie();
   ~Zombie( void );
 
   void announce ( void );
-  void setName(string name);
+  void setName(std::string name);
 
 private:
 
-  string _name;
+  std::string _name;
 
 };
 

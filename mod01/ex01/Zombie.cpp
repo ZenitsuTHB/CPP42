@@ -17,7 +17,7 @@ Zombie::Zombie() {
   return ;
 }
 
-void Zombie::setName(string name) {
+void Zombie::setName(std::string name) {
 
   _name = name;
   return ;
@@ -25,12 +25,12 @@ void Zombie::setName(string name) {
 
 Zombie::~Zombie() {
 
-  cout << "My name's " << _name << ", OH NOOoooo !";
-  cout << "I am dying again ..." << endl; 
+  std::cout << "My name's " << _name << ", OH NOOoooo !";
+  std::cout << "I am dying again ..." << std::endl; 
   return ;
 }
 
 void Zombie::announce ( void ) {
 
-  cout << _name << " : BraiiiiiiinnnzzzZ..." << endl;
+  std::cout << _name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 }

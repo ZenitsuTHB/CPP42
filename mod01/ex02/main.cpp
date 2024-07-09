@@ -13,9 +13,6 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
-  
-
 int main (int argc, char *argv[]) {
 
   (void)argv;
@@ -23,22 +20,19 @@ int main (int argc, char *argv[]) {
   if (argc > 1)
     return (0);
 
-  string theString = "HI THIS IS BRAIN";
-  string *stringPTR = &theString;
-  string& stringREF = theString;
+  std::string theString = "HI THIS IS BRAIN";
+  std::string *stringPTR = &theString;
+  std::string& stringREF = theString;
 
-  cout << endl;
-  cout << "The memory address of theString is : " << &theString << endl;
-  cout << "The memory address of stringPTR is : " << stringPTR << endl;
-  cout << "The memory address of stringREF is : " << &stringREF << endl;
+  std::cout << std::endl;
+  std::cout << "The memory address of theString is : " << &theString << std::endl;
+  std::cout << "The memory address of stringPTR is : " << stringPTR << std::endl;
+  std::cout << "The memory address of stringREF is : " << &stringREF << std::endl;
 
-  cout << endl;
-  cout << "The Value of theString is : " << theString << endl;
-  cout << "The Value of stringPTR is : " << *stringPTR << endl;
-  cout << "The Value of stringREF is : " << stringREF << endl;
+  std::cout << std::endl;
+  std::cout << "The Value of theString is : " << theString << std::endl;
+  std::cout << "The Value of stringPTR is : " << *stringPTR << std::endl;
+  std::cout << "The Value of stringREF is : " << stringREF << std::endl;
 
-
-
-  
   return 0;
 }

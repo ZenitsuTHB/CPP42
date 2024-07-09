@@ -17,18 +17,16 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-using namespace std;
-
 class HumanA {
 public:
-  HumanA(string name, Weapon& _bazuka);
+  HumanA(std::string name, Weapon& _bazuka);
   ~HumanA();
 
   void attack();
 
 private:
 
-  string _name;
+  std::string _name;
   Weapon& _bazuka;
   
 };

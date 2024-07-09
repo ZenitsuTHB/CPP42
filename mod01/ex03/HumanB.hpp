@@ -17,11 +17,9 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-using namespace std;
-
 class HumanB {
 public:
-  HumanB(string name);
+  HumanB(std::string name);
   ~HumanB();
 
   void attack();
@@ -29,7 +27,7 @@ public:
 
 private:
 
-  string _name;
+  std::string _name;
   Weapon* _weapon;
   
 };

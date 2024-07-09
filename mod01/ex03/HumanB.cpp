@@ -12,7 +12,7 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB (string name) : _name(name) {
+HumanB::HumanB (std::string name) : _name(name) {
 
   return ;
 }
@@ -30,7 +30,7 @@ void HumanB::setWeapon(Weapon& bazuka) {
 void HumanB::attack() {
 
  if (!_weapon)
-    cout << _name << " : Is not armed, his Weapon was not set !" << endl;
+    std::cout << _name << " : Is not armed, his Weapon was not set !" << std::endl;
  else
-    cout << _name << " : attacks with their : " << _weapon->getType() << endl;
+    std::cout << _name << " : attacks with their : " << _weapon->getType() << std::endl;
 }

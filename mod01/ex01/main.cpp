@@ -19,10 +19,10 @@ int main (int argc, char* argv[])
     return (0);
 
   int N;
-  cout << std::endl;
-  cout << "Enter the number of Zombie";
-  cout << " you'd like to create" << std::endl;
-  cin >> N;
+  std::cout << std::endl;
+  std::cout << "Enter the number of Zombie";
+  std::cout << " you'd like to create" << std::endl;
+  std::cin >> N;
   if (N < 1 || N > 10)
   {
     std::cout << "Your max number is 10 and min is 1" << std::endl;

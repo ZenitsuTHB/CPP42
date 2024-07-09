@@ -12,7 +12,7 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA (string name, Weapon& weapon) : _name(name), _bazuka(weapon) {
+HumanA::HumanA (std::string name, Weapon& weapon) : _name(name), _bazuka(weapon) {
 
   return ;
 }
@@ -24,5 +24,5 @@ HumanA::~HumanA () {
 
 void HumanA::attack() {
 
-  cout << _name << " : attacks with their : " << _bazuka.getType() << endl;
+  std::cout << _name << " : attacks with their : " << _bazuka.getType() << std::endl;
 }

@@ -7,8 +7,6 @@
 # include <iostream>
 # include <fstream>
 
-using namespace std;
-
 int main (int argc, char *argv[]) {
   
   size_t pos;
@@ -17,18 +15,18 @@ int main (int argc, char *argv[]) {
   std::string newstr;
 
   if (argc != 4)
-    return (cout << "This program only takes 3 parameters" << endl, 1);
+    return (std::cout << "This program only takes 3 parameters" << std::endl, 1);
 
   newstr = argv[1];
   newstr += ".replace";
 
   std::ifstream input(argv[1]);
   if (input.fail())
-    return (cerr << "Error reading input file !" << endl, 1);
+    return (std::cerr << "Error reading input file !" << std::endl, 1);
 
   std::ofstream output(newstr.c_str());
   if (output.fail())
-    return (cerr << "Error creating the output.replace file !" << endl, 1);
+    return (std::cerr << "Error creating the output.replace file !" << std::endl, 1);
 
   target = argv[2];
   newstr = argv[3];
@@ -36,13 +34,13 @@ int main (int argc, char *argv[]) {
   while (getline(input, line)) {
 
     pos = 0;
-    while (line.find(target, pos) != string::npos) {
+    while (line.find(target, pos) != std::string::npos) {
       pos = line.find(target, pos);
       line.erase(pos, target.length());
       line.insert(pos, newstr);
       line += newstr.length(); 
     }
-    output << line << endl;
+    output << line << std::endl;
   }
   input.close();
   output.close();
