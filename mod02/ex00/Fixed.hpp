@@ -1,23 +1,26 @@
 //42 HEADER
 
+#ifndef _FIXED_HPP
+# define _FIXED_HPP
 
 #include <iostream>
 
 class Fixed {
-public:
-  Fixed();
-  Fixed(Fixed &&) = default;
-  Fixed(const Fixed &) = default;
-  Fixed &operator=(Fixed &&) = default;
-  Fixed &operator=(const Fixed &) = default;
-  ~Fixed();
 
-private:
-  
+  private:
+
+  int _fixedPointNum;
+  static const int _fractionalBits = 8;
+
+  public:
+
+  Fixed();//default constructor
+  Fixed(const Fixed &copyConstrutor);//copy constructor
+  Fixed &operator=(const Fixed &copyAssignOperat);//copy assignment operator 
+  ~Fixed();//destructor
+
+  int getRawBits( void ) const;
+  void setRawBits( int const raw );
 };
 
-Fixed::Fixed() {
-}
-
-Fixed::~Fixed() {
-}
+#endif

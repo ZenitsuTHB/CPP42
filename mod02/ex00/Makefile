@@ -16,8 +16,8 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = Harl2.0
-HEADER_HARL = Harl.hpp
+NAME = OrthodoxCanform
+HEADER_HARL = Fixed.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -26,7 +26,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Harl.cpp
+SRC = main.cpp Fixed.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
