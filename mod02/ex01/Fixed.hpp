@@ -26,8 +26,10 @@ class Fixed {
   float toFloat( void ) const;
   int getRawBits( void ) const;
   void setRawBits( int const raw );
+  //Overloading the "<<" (insertion) operator
+  //the keyword "friend" allows the access to private and protected
+  //members of the class.
+  friend std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 };
-
-std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif
