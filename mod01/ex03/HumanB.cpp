@@ -14,6 +14,7 @@
 
 HumanB::HumanB (std::string name) : _name(name) {
 
+  _weapon = NULL; 
   return ;
 }
 
@@ -30,7 +31,7 @@ void HumanB::setWeapon(Weapon& bazuka) {
 void HumanB::attack() {
 
  if (!_weapon)
-    std::cout << _name << " : Is not armed, his Weapon was not set !" << std::endl;
+    std::cout << _name << " Is not armed, his Weapon was not set !" << std::endl;
  else
     std::cout << _name << " : attacks with their : " << _weapon->getType() << std::endl;
 }

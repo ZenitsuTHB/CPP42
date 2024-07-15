@@ -16,18 +16,19 @@
 #include <string>
 #include <iostream>
 
-class Weapon{
-public:
+class Weapon {
 
-  Weapon(std::string type);
-  ~Weapon();
+  public:
 
-  const std::string& getType();
-  void setType(std::string type);
+    Weapon(std::string type);
+    ~Weapon();
 
-private:
+    const std::string& getType();
+    void setType(std::string type);
 
-  std::string _type;
+  private:
+
+    std::string _type;
 
 };
 
