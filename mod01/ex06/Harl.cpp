@@ -1,9 +1,16 @@
-//42 HEADER
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/15 13:04:12 by avolcy            #+#    #+#             */
+/*   Updated: 2024/07/16 20:00:09 by avolcy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Harl.hpp"
-
 
 Harl::Harl() { 
 
@@ -22,14 +29,29 @@ Harl::~Harl( void ) {
 
 
 void Harl::complain( std::string level ) {
+	
+	std::string field[] = {"DEBUG","INFO","WARNING","ERROR"};
+	
+	for (int i = 0; i < 4; i++) {
 
-  std::string field[] = {"DEBUG","INFO","WARNING","ERROR"};
+		switch (field[i]) {
+			case :
+				this->_comments[i];
+			case 2:
+				this->_comments[i + 1];
+			case 3:
+				this->_comments[i];
+			case 4:
+				this->_comments[i];
+			default:
+				std::cout << [ Probably complaining about insignificant problems ];
+				std::endl;
+				
+				break;
+		}
+		
+	}
 
-  for (int i = 0; i < 4; i++) {
-
-    if (field[i] == level)
-      (this->*(_comments[i]))();
-  }
 }
 
 void Harl::_debug(void) {
