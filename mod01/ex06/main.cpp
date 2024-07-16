@@ -21,8 +21,11 @@ int main (int argc, char *argv[])
 
 		for (int i = 0; i < 5; i++) {
 
-		isRobot.complain(test[i]);
-
+      if (test[i] == argv[1])
+      {
+        isRobot.complain(test[i]);
+      }
+    }
 	}
 	return (0);
 }

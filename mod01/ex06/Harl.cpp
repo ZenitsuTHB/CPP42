@@ -19,6 +19,11 @@ Harl::Harl() {
   _comments[2] = (&Harl::_warning);
   _comments[3] = (&Harl::_error);
 
+  getDebugMap["DEBUG"] = D;
+  getDebugMap["INFO"] = I;
+  getDebugMap["WARNING"] = W;
+  getDebugMap["ERROR"] = E;
+
   return ;
 }
 
@@ -27,31 +32,35 @@ Harl::~Harl( void ) {
   return ;
 }
 
-
 void Harl::complain( std::string level ) {
-	
-	std::string field[] = {"DEBUG","INFO","WARNING","ERROR"};
-	
-	for (int i = 0; i < 4; i++) {
 
-		switch (field[i]) {
-			case :
-				this->_comments[i];
-			case 2:
-				this->_comments[i + 1];
-			case 3:
-				this->_comments[i];
-			case 4:
-				this->_comments[i];
-			default:
-				std::cout << [ Probably complaining about insignificant problems ];
-				std::endl;
-				
-				break;
-		}
-		
-	}
+  Debugging message = getDebugMap[level];
 
+  switch (message) {
+
+    //(this->*_comments[0])(); is the correct syntax to call a member function pointer.
+    case D:
+      (this->*_comments[0])();
+      (this->*_comments[1])();
+      (this->*_comments[2])();
+      (this->*_comments[3])();
+      break;
+    case I:
+      (this->*_comments[1])();
+      (this->*_comments[2])();
+      (this->*_comments[3])();
+      break;
+    case W:
+      (this->*_comments[2])();
+      (this->*_comments[3])();
+      break;
+    case E:
+      (this->*_comments[3])();
+      break;
+    default:
+      std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    break;
+  }
 }
 
 void Harl::_debug(void) {

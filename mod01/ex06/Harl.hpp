@@ -13,6 +13,7 @@
 #ifndef _HARL_HPP
 # define _HARL_HPP
 
+# include <map>
 # include <string>
 # include <iostream>
 
@@ -26,6 +27,9 @@ public:
 
 private:
 
+  enum Debugging { D, I, W, E } ;
+  std::map<std::string, Debugging> getDebugMap; 
+
   void _debug( void );
   void _info( void );
   void _warning( void );
@@ -36,5 +40,6 @@ private:
   //returnType (ClassName::*pointerName)(parameterTypes);
 
 };
+
 
 #endif
