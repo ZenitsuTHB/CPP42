@@ -15,17 +15,9 @@
 int main (int argc, char *argv[])
 {
 	if (argc == 2 && **argv != '\0')
-	{
-		Harl isRobot;
-		std::string test[] = {"DEBUG","INFO","WARNING","ERROR","TEST"};
-
-		for (int i = 0; i < 5; i++) {
-
-      if (test[i] == argv[1])
-      {
-        isRobot.complain(test[i]);
-      }
-    }
-	}
+  {
+    Harl isRobot;
+    isRobot.complain(argv[1]);
+  }
 	return (0);
 }
