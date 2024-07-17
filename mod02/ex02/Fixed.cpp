@@ -7,14 +7,12 @@
 //Default Constructor with no parameters
 Fixed::Fixed() : _fixedPointNum(0) {
 
-  std::cout << "Default constructor called" << std::endl;
 }
 
 //Default Constructor with const integer parameters
 //to be converted to fixed point
 Fixed::Fixed(const int intValue) {
 
-  std::cout << "Int constructor called" << std::endl;
   _fixedPointNum = intValue << _fractionalBits;
 }
 
@@ -22,7 +20,6 @@ Fixed::Fixed(const int intValue) {
 //to be converted to fixed point
 Fixed::Fixed(const float floatValue) {
 
-  std::cout << "Float constructor called" << std::endl;
   _fixedPointNum = roundf(floatValue * (1 << _fractionalBits));
 
 }
@@ -30,7 +27,6 @@ Fixed::Fixed(const float floatValue) {
 //copy constructor
 Fixed::Fixed(const Fixed &copyConstructor) {
 
-  std::cout << "Copy constructor called" << std::endl;
   _fixedPointNum = copyConstructor.getRawBits();
 
 }
@@ -38,7 +34,6 @@ Fixed::Fixed(const Fixed &copyConstructor) {
 //copy assignment operator 
 Fixed& Fixed::operator=(const Fixed &copyAssignOperat) {
 
-  std::cout << "Copy assignment operator called" << std::endl;
   if (this != &copyAssignOperat) {
 
     _fixedPointNum = copyAssignOperat.getRawBits();
@@ -46,6 +41,7 @@ Fixed& Fixed::operator=(const Fixed &copyAssignOperat) {
   return *this;
 }
 
+//MEMBER functions
 int Fixed::getRawBits( void ) const {
 
   return (_fixedPointNum);
@@ -66,6 +62,94 @@ float Fixed::toFloat( void ) const {
   return (static_cast<float>(_fixedPointNum) / (1 << _fractionalBits));
 }
 
+//OVERLOADINGS
+
+//Comparisons
+bool Fixed::operator>( const Fixed& fixed)  {
+
+  return (this->_fixedPointNum > fixed.getRawBits());
+}
+
+bool Fixed::operator<( const Fixed& fixed)  {
+
+  return (this->_fixedPointNum < fixed.getRawBits());
+}
+
+bool Fixed::operator>=( const Fixed& fixed) {
+
+  return (this->_fixedPointNum >= fixed.getRawBits());
+}
+
+bool Fixed::operator<=( const Fixed& fixed) {
+
+  return (this->_fixedPointNum <= fixed.getRawBits());
+}
+
+bool Fixed::operator==( const Fixed& fixed) {
+
+  return (this->_fixedPointNum == fixed.getRawBits());
+}
+
+bool Fixed::operator!=( const Fixed& fixed) {
+
+  return (this->_fixedPointNum != fixed.getRawBits());
+}
+
+//Arithmetic Operators
+Fixed Fixed::operator+( const Fixed& fixed) { return (this->_fixedPointNum + fixed.getRawBits()); }
+Fixed Fixed::operator-( const Fixed& fixed) { return (this->_fixedPointNum - fixed.getRawBits()); }
+Fixed Fixed::operator*( const Fixed& fixed) { return (toFloat() * fixed.toFloat()); }
+Fixed Fixed::operator/( const Fixed& fixed) { return (this->_fixedPointNum / fixed.getRawBits()); }
+
+// 4 increment/decrement Operators
+Fixed& Fixed::operator++()//pre-increment
+{
+  ++_fixedPointNum;
+  return (*this);
+}
+
+Fixed& Fixed::operator--()//post-decrement
+{
+  --_fixedPointNum;
+  return (*this);
+}
+
+Fixed Fixed::operator++(int)//post-increment
+{
+  Fixed result = *this;
+  _fixedPointNum++;
+  return (result);
+}
+
+Fixed Fixed::operator--(int)//post-decrement
+{
+  Fixed result = *this;
+  _fixedPointNum--;
+  return (result);
+}
+
+//Other Member functions
+Fixed& Fixed::min(Fixed& obj1, Fixed& obj2) {
+
+  return(obj1.toFloat() <  obj2.toFloat() ? obj1 : obj2);
+}
+
+const Fixed& Fixed::min(const Fixed& obj1, const Fixed& obj2) {
+
+  return (obj1.toFloat() < obj2.toFloat() ? obj1 : obj2);
+}
+
+Fixed& Fixed::max(Fixed& obj1, Fixed& obj2) {
+
+  return (obj1.toFloat() > obj2.toFloat() ? obj1 : obj2);
+}
+
+const Fixed& Fixed::max(const Fixed& obj1, const Fixed& obj2) {
+
+  return (obj1.toFloat() > obj2.toFloat() ? obj1 : obj2);
+}
+
+//Standard ouput
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
 
   out << fixed.toFloat();
@@ -73,4 +157,4 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
   return (out);
 }
 
-Fixed::~Fixed() {std::cout << "Destructor called" << std::endl;}
+Fixed::~Fixed() {}

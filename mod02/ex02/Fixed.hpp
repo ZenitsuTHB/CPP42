@@ -27,10 +27,6 @@ class Fixed {
   int getRawBits( void ) const;
   void setRawBits( int const raw );
 
-/*• The 4 increment/decrement (pre-increment and post-increment, pre-decrement and*/
-/*post-decrement) operators, that will increase or decrease the fixed-point value from*/
-/*the smallest representable ϵ such as 1 + ϵ > 1*/
-
   //Overloading comparisons Operators
   bool operator>( const Fixed& fixed);
   bool operator<( const Fixed& fixed);
@@ -39,13 +35,13 @@ class Fixed {
   bool operator==( const Fixed& fixed);
   bool operator!=( const Fixed& fixed);
 
-  //Overloading arithmetic Operators
+  // Overloading arithmetic Operators
   Fixed operator+( const Fixed& fixed);
   Fixed operator-( const Fixed& fixed);
   Fixed operator*( const Fixed& fixed);
   Fixed operator/( const Fixed& fixed);
 
-  //Overloading the 4 increment/decrement Operators
+  //4 increment/decrement Operators
   Fixed& operator++();//pre-increment
   Fixed& operator--();//post-decrement
   Fixed operator++(int);//post-increment
