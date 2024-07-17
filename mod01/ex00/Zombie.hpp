@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:46:43 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/02 13:46:49 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/07/16 16:33:00 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 # include <iostream>
 
 class Zombie {
+	
+	public:
+		Zombie(std::string name);
+		~Zombie( void );
 
-public:
-  Zombie(std::string name);
-  ~Zombie( void );
+		void announce( void );
 
-  void announce( void );
+	private:
 
-private:
-  std::string _name;
+		std::string _name;
 
 };
 

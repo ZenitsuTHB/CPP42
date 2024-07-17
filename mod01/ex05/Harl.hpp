@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:01:34 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/15 13:01:47 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/07/17 18:28:41 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,19 @@
 
 class Harl {
 
-public:
-  Harl();
-  ~Harl();
+	public:
+		Harl();
+		~Harl();
+		void complain( std::string level );
+	private:
 
-  void complain( std::string level );
-
-private:
-
-  void _debug( void );
-  void _info( void );
-  void _warning( void );
-  void _error( void );
-  void (Harl::*_comments[4])( void );//cause 4 is needed;
-
-  //Syntax for pointer to member functions :
-  //returnType (ClassName::*pointerName)(parameterTypes);
-
+		void _debug( void );
+		void _info( void );
+		void _warning( void );
+		void _error( void );
+		void (Harl::*_comments[4])( void );//cause 4 is needed;
+		//Syntax for pointer to member functions :
+		//returnType (ClassName::*pointerName)(parameterTypes);
 };
 
 #endif

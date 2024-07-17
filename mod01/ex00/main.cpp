@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:45:52 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/15 12:30:15 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/07/16 16:34:39 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main ()
 {
   
  // Zombie( "Lazaro" );
-  Zombie* newZomObj = newZombie( "avolcy" );
+  Zombie* newZomObj = newZombie( "The Evaluator" );
   delete  (newZomObj);
 
   randomChump( "randomChump" );
