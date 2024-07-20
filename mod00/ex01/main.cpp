@@ -25,7 +25,10 @@ int main (void)
     std::cout << "\n/º_º-══> ";
     std::getline(std::cin, command);
     if (command.empty())
+    {
       std::cerr << "Empty command ! try a valid one" << std::endl;
+      return(1) ;
+    }
     else if (command == "ADD")
       phonebook.addContact();
     else if (command == "SEARCH")
