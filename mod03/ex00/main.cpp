@@ -12,6 +12,8 @@ int main () {
 
   ClapTrap Player("Black Panther");
   Player.attack("Injustice");
+  ClapTrap Player1 = Player;
+  Player1.attack("Second ATTACK");
   
   std::cout << std::endl;
   return 0;
