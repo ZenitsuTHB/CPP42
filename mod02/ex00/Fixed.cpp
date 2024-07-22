@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:06:24 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/15 13:06:31 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/07/22 16:29:33 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ Fixed::Fixed() : _fixedPointNum(0) {
 Fixed::Fixed(const Fixed &copyConstructor) {
 
   std::cout << "Copy constructor is called" << std::endl;
-  _fixedPointNum = copyConstructor.getRawBits();
+  *this = copyConstructor;
+  //_fixedPointNum = copyConstructor.getRawBits();
 
 }
 
