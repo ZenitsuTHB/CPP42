@@ -5,19 +5,24 @@
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() {
+
+  std::cout << "Default Constructor for BASE class called !" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : _name(name) {
 
   _health = 10;
   _energy = 10;
   _damage = 0;
-  std::cout << "Constructor called to create [ " << name << " ] Player" << std::endl;
+  std::cout << "Constructor for the BASE class called to create [ " << name << " ] Player" << std::endl;
 }
 
 // CAN BE DONE USING GETTERS
-//  _name = getName();
-//  _health = getHealth();
-//  _energy = getEnergy();
-//  _damage = getDamage();
+// _name = oldObject.getName();
+// _health = oldObject.getHealth();
+// _energy = oldObject.getEnergy();
+// _damage = oldObject.getDamage();
 
 ClapTrap::ClapTrap(const ClapTrap &oldObject) {
 
@@ -27,13 +32,14 @@ ClapTrap::ClapTrap(const ClapTrap &oldObject) {
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &oldObject) {
 
-  _name = oldObject._name;
-  _health = oldObject._health;
-  _energy = oldObject._energy;
-  _damage = 0;
+  if (this != &oldObject) {
+    _name = oldObject._name;
+    _health = oldObject._health;
+    _energy = oldObject._energy;
+    _damage = 0;
+  }
   std::cout << "Copy Assignment operator called, Assigning datas to new object ..." << std::endl;
   std::cout << std::endl;
-
   return (*this);
 }
 
@@ -80,6 +86,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
 
 ClapTrap::~ClapTrap() {
 
-  std::cout << "Destructor called to STOP the fight and clean up the Mess !" << std::endl;
+  std::cout << "Destructor for the BASE called to STOP the fight and clean up the Mess !" << std::endl;
 }
 
