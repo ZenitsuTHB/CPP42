@@ -7,15 +7,15 @@
 
 ClapTrap::ClapTrap() {
 
-  std::cout << "Default Constructor for BASE class called !" << std::endl;
+  std::cout << "BASE class, Default Constructor called !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name) {
 
-  _health = 10;
-  _energy = 10;
-  _damage = 0;
-  std::cout << "Constructor for the BASE class called to create [ " << name << " ] Player" << std::endl;
+  _health = 100;
+  _energy = 50;
+  _damage = 20;
+  std::cout << "BASE class, Parameterized Constructor called to create [ " << name << " ] Player" << std::endl;
 }
 
 // CAN BE DONE USING GETTERS
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name) {
 
 ClapTrap::ClapTrap(const ClapTrap &oldObject) {
 
-  std::cout << "Copy Constructor called, Copies datas from oldObject to the current." << std::endl;
+  std::cout << "BASE class, Copy Constructor called, Copies datas from oldObject to the current." << std::endl;
   *this = oldObject;//Copy Assignment will be called
 }
 
@@ -36,9 +36,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &oldObject) {
     _name = oldObject._name;
     _health = oldObject._health;
     _energy = oldObject._energy;
-    _damage = 0;
+    _damage = 20;
   }
-  std::cout << "Copy Assignment operator called, Assigning datas to new object ..." << std::endl;
+  std::cout << "BASE class, Copy Assignment operator called, Assigning datas to new object (current)." << std::endl;
   std::cout << std::endl;
   return (*this);
 }
@@ -86,6 +86,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
 
 ClapTrap::~ClapTrap() {
 
-  std::cout << "Destructor for the BASE called to STOP the fight and clean up the Mess !" << std::endl;
+  std::cout << "BASE class, Destructor called to STOP the fight and clean up the Mess !" << std::endl;
 }
 
