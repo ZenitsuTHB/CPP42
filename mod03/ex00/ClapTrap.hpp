@@ -7,6 +7,7 @@
 # define _CLAPTRAP_HPP
 
 #include <string>
+#include <unistd.h>
 #include <iostream>
 
 class ClapTrap {

@@ -43,7 +43,7 @@ build_dir:
 $(NAME): $(OBJ)
 	@$(CPP) $(FLAGS) -I ./ $(OBJ) -o $@
 	clear
-	@echo "\n\n\t$(GREEN)Everything has been compilated.$(BLACK)\n\n"
+	@echo "\n\n\t$(GREEN)Everything has been compilated.$(BLACK)\n"
 
 # ╔══════════════════╗ #  
 #    CLEANING RULES    #
@@ -52,12 +52,12 @@ $(NAME): $(OBJ)
 clean:
 	@$(RM) $(OBJ) $(DEP)
 	@$(RM) build
-	clear
 	@echo "\n\n\t$(YELLOW)OBJ and DEP has been cleaned.$(BLACK)\n"
+	clear
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\t$(YELLOW)Everything has been cleaned.$(BLACK)\n\n"
+	@echo "\t$(YELLOW)Everything has been cleaned.$(BLACK)\n"
 
 re : fclean all
 
