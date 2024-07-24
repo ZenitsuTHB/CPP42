@@ -22,6 +22,9 @@ int main () {
   Player1.attack("Tomatoes");
   Player.guardGate();
   Player1.guardGate();
+  ScavTrap Popo;
+
+  Popo = Player1;
 
   std::cout << std::endl;
   return 0;

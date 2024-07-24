@@ -17,7 +17,6 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name) {
 ScavTrap::ScavTrap(const ScavTrap &oldObject):ClapTrap(oldObject) {
 
   std::cout << "DERIVED class, Copy Constructor called " << std::endl;
-  *this = oldObject;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &oldObject) {
