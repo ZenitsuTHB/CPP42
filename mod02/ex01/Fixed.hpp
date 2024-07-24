@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 13:08:04 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/15 13:08:09 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:01:02 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,26 @@ class Fixed {
 
   private:
 
-  int _fixedPointNum;
-  static const int _fractionalBits = 8;
+	  int _fixedPointNum;
+	  static const int _fractionalBits = 8;
 
   public:
-
-  Fixed();
-  Fixed(const int );
-  Fixed(const float );
-  Fixed(const Fixed &copyConstrutor);//copy constructor
-  Fixed &operator=(const Fixed &copyAssignOperat);//copy assignment operator 
-  ~Fixed();//destructor
-
-  int toInt( void ) const;
-  float toFloat( void ) const;
-  int getRawBits( void ) const;
-  void setRawBits( int const raw );
-  //Overloading the "<<" (insertion) operator
-  //the keyword "friend" allows the access to private and protected
-  //members of the class.
-  friend std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
+	
+	  Fixed();
+	  Fixed(const int );
+	  Fixed(const float );
+	  Fixed(const Fixed &copyConstrutor);//copy constructor
+	  Fixed &operator=(const Fixed &copyAssignOperat);//copy assignment operator 
+	  ~Fixed();//destructor
+	
+	  int toInt( void ) const;
+	  float toFloat( void ) const;
+	  int getRawBits( void ) const;
+	  void setRawBits( int const raw );
+	  //Overloading the "<<" (insertion) operator
+	  //the keyword "friend" allows the access to private and protected
+	  //members of the class.
+	  friend std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 };
 
 #endif

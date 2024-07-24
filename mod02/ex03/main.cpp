@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 18:31:23 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/18 19:46:05 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:35:40 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 int main( ) {
 
   int mode;
-
 
   Fixed Xa, Ya, Xb, Yb, Xc, Yc, Xp, Yp;
 
@@ -31,8 +30,8 @@ int main( ) {
       return(std::cerr << "Sorry ! command doesn't exist" << std::endl, 127);
     else if (mode == 2)
     {
-      int nbr;
-      int arr[8];
+      float nbr;
+      float arr[8];
       std::string coord[] = {"xA", "yA", "xB", "yB", "xC", "yC","xP","yP"};
 
       for (int i = 0; i < 8 ; i++) {

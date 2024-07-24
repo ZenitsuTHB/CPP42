@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:57:38 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/22 14:59:57 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:26:27 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ bool Point::operator==(const Point& point) {
 
 std::ostream& operator<<(std::ostream& out, const Point& point) {
 
-	out<< point._x.toInt() << "," << point._y.toInt();
+	out<< point._x.toFloat() << "," << point._y.toFloat();
 	return (out);
 } 
 
