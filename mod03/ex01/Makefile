@@ -1,14 +1,5 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: avolcy <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/22 14:57:23 by avolcy            #+#    #+#              #
-#    Updated: 2024/07/22 14:57:27 by avolcy           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+#42 HEADER
+
 
 # ╔═════════════════╗ #  
 #      COLORS         #
@@ -25,9 +16,9 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = BSP
-HEADER_HPP = Fixed.hpp
-HEADER_HPP += Point.hpp
+NAME = ScavTrap 
+HEADER_HPP = ScavTrap.hpp
+HEADER_HPP += ClapTrap.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -36,7 +27,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
@@ -62,8 +53,8 @@ $(NAME): $(OBJ)
 clean:
 	@$(RM) $(OBJ) $(DEP)
 	@$(RM) build
-	clear
 	@echo "\n\n\t$(YELLOW)OBJ and DEP has been cleaned.$(BLACK)\n"
+	clear
 
 fclean: clean
 	@$(RM) $(NAME)

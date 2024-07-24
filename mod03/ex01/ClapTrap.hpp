@@ -12,7 +12,7 @@
 
 class ClapTrap {
 
-  private:
+  protected:
 
     std::string   _name;
     unsigned int  _health;
@@ -21,16 +21,17 @@ class ClapTrap {
 
   public:
   
+    ClapTrap();
     ~ClapTrap();
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap &object);
     ClapTrap &operator=(const ClapTrap &object);
 
-    void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    virtual void attack(const std::string& target);
 
-  
+    //Setters and Getters
 };
 
 #endif
