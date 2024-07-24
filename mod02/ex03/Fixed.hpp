@@ -62,9 +62,9 @@ class Fixed {
 	  static Fixed& max(Fixed& obj1, Fixed& obj2);
 	  static const Fixed& max(const Fixed& obj1, const Fixed& obj2);
 		
-	  //Overloading the "<<" (insertion) operator;
-	  friend std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 };
 
+//Overloading the "<<" (insertion) operator;
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif

@@ -39,7 +39,8 @@ class Fixed {
 	  //Overloading the "<<" (insertion) operator
 	  //the keyword "friend" allows the access to private and protected
 	  //members of the class.
-	  friend std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif
