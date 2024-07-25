@@ -6,7 +6,7 @@
 #    By: avolcy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/25 13:06:40 by avolcy            #+#    #+#              #
-#    Updated: 2024/07/25 13:07:02 by avolcy           ###   ########.fr        #
+#    Updated: 2024/07/25 13:25:34 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,11 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = FragTrap 
+NAME = DiamondTrap 
 HEADER_HPP = FragTrap.hpp
 HEADER_HPP += ScavTrap.hpp
 HEADER_HPP += ClapTrap.hpp
+HEADER_HPP += DiamondTrap.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -37,7 +38,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 

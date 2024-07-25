@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 12:54:19 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/25 12:55:12 by avolcy           ###   ########.fr       */
+/*   Created: 2024/07/25 13:25:52 by avolcy            #+#    #+#             */
+/*   Updated: 2024/07/25 13:49:01 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FRAGTRAP_HPP
-# define _FRAGTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include <string>
-#include <iostream>
-#include "ClapTrap.hpp"
+DiamondTrap::DiamondTrap():ClapTrap() {
 
-class FragTrap:public ClapTrap {
+}
 
-    public:
+DiamondTrap::DiamondTrap(std::name):ClapTrap(name + "_clap_name") {
 
-      FragTrap();
-      FragTrap(std::string name);
-      FragTrap(const FragTrap &);
-      FragTrap &operator=(const FragTrap &);
-      ~FragTrap();
+}
 
-      void highFivesGuys(void);
-      void attack(const std::string& target);
-};
 
-#endif
+DiamondTrap::~DiamondTrap() 
+}
