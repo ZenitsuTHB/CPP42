@@ -1,5 +1,14 @@
-//42 HEADER
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/25 12:32:30 by avolcy            #+#    #+#             */
+/*   Updated: 2024/07/25 12:35:19 by avolcy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef _SCAVTRAP_HPP
 # define _SCAVTRAP_HPP
@@ -10,16 +19,16 @@
 
 class ScavTrap:public ClapTrap {
 
-  public:
+	public:
 
-    ScavTrap();
-    ScavTrap(std::string name);//:ClapTrap(name){};
-    ScavTrap(const ScavTrap &);
-    ScavTrap &operator=(const ScavTrap &);
-    ~ScavTrap();
+    	ScavTrap();
+    	ScavTrap(std::string name);//:ClapTrap(name){};
+    	ScavTrap(const ScavTrap &);
+    	ScavTrap &operator=(const ScavTrap &);
+    	~ScavTrap();
 
-    void guardGate();
-    void attack(const std::string& target);
+    	void guardGate();
+    	void attack(const std::string& target);
 };
 
 #endif

@@ -1,7 +1,14 @@
-// 42 HEADER
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/25 12:32:55 by avolcy            #+#    #+#             */
+/*   Updated: 2024/07/25 12:34:43 by avolcy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef _CLAPTRAP_HPP
 # define _CLAPTRAP_HPP
@@ -12,26 +19,26 @@
 
 class ClapTrap {
 
-  protected:
+	protected:
 
-    std::string   _name;
-    unsigned int  _health;
-    unsigned int  _energy;
-    unsigned int  _damage;
+    	std::string   _name;
+    	unsigned int  _health;
+    	unsigned int  _energy;
+    	unsigned int  _damage;
 
-  public:
+	public:
   
-    ClapTrap();
-    ~ClapTrap();
-    ClapTrap(std::string name);
-    ClapTrap(const ClapTrap &object);
-    ClapTrap &operator=(const ClapTrap &object);
-
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-    virtual void attack(const std::string& target);
-
-    //Setters and Getters
+		ClapTrap();
+		~ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &object);
+		ClapTrap &operator=(const ClapTrap &object);
+		
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		virtual void attack(const std::string& target);
+		
+		//Setters and Getters
 };
 
 #endif
