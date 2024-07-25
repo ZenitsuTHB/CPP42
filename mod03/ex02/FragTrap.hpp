@@ -6,7 +6,19 @@
 #include <string>
 #include <iostream>
 #include "ClapTrap.hpp"
-//#include "ScavTrap.hpp"
 
+class FragTrap:public ClapTrap {
+
+    public:
+
+      FragTrap();
+      FragTrap(std::string name);
+      FragTrap(const FragTrap &);
+      FragTrap &operator=(const FragTrap &);
+      ~FragTrap();
+
+      void highFivesGuys(void);
+      void attack(const std::string& target);
+};
 
 #endif

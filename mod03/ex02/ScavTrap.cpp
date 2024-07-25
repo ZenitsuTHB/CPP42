@@ -6,23 +6,22 @@
 
 ScavTrap::ScavTrap():ClapTrap(){
 
-  std::cout << "Default Constructor for derived class called !" << std::endl;
+  std::cout << "Default Constructor for (ScavTrap) derived class called !" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name) {
   
-  std::cout << "DERIVED class, Parametrized Constructor called !" << std::endl;
+  std::cout << "(ScavTrap), DERIVED class, Parametrized Constructor called !" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &oldObject):ClapTrap(oldObject) {
 
-  std::cout << "DERIVED class, Copy Constructor called " << std::endl;
-  *this = oldObject;
+  std::cout << "(ScavTrap), DERIVED class, Copy Constructor called " << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &oldObject) {
 
-  std::cout << "DERIVED class, Copy Assignement operator called " << std::endl;
+  std::cout << "(ScavTrap), DERIVED class, Copy Assignement operator called " << std::endl;
   if (this != &oldObject) {
 
     ClapTrap::operator=(oldObject);
@@ -44,7 +43,7 @@ void ScavTrap::attack(const std::string& target) {
   }
   else {
 
-    std::cout << "[ " << _name << " ] Can't attack -> ( " << target;
+    std::cout << "ScavTrap [ " << _name << " ] Can't attack -> ( " << target;
     std::cout << " ), no Energy points or he's dead !";
     std::cout << std::endl;
   }
@@ -58,6 +57,6 @@ void  ScavTrap::guardGate() {
 
 ScavTrap::~ScavTrap() {
 
-  std::cout << "DERIVED class, Destructor called !" << std::endl;
+  std::cout << "(ScavTrap), DERIVED class, Destructor called !" << std::endl;
 }
 

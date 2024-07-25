@@ -13,8 +13,8 @@ ClapTrap::ClapTrap() {
 ClapTrap::ClapTrap(std::string name) : _name(name) {
 
   _health = 100;
-  _energy = 50;
-  _damage = 20;
+  _energy = 100;
+  _damage = 30;
   std::cout << "BASE class, Parameterized Constructor called to create [ " << name << " ] Player" << std::endl;
 }
 
@@ -36,7 +36,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &oldObject) {
     _name = oldObject._name;
     _health = oldObject._health;
     _energy = oldObject._energy;
-    _damage = 20;
+    _damage = 30;
   }
   std::cout << "BASE class, Copy Assignment operator called, Assigning datas to new object (current)." << std::endl;
   std::cout << std::endl;

@@ -17,9 +17,9 @@ BLACK = \033[0;39m
 CPP = c++
 RM = rm -rf
 NAME = ScavTrap 
-HEADER_HPP = ScavTrap.hpp
+HEADER_HPP = FragTrap.hpp
+HEADER_HPP += ScavTrap.hpp
 HEADER_HPP += ClapTrap.hpp
-HEADER_HPP += FragTrap.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  

@@ -22,7 +22,7 @@ class ClapTrap {
   public:
   
     ClapTrap();
-    ~ClapTrap();
+    virtual ~ClapTrap();
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap &object);
     ClapTrap &operator=(const ClapTrap &object);
