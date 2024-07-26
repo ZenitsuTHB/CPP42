@@ -47,7 +47,7 @@ bool Point::operator==(const Point& point) {
 
 std::ostream& operator<<(std::ostream& out, const Point& point) {
 
-	out<< point._x.toFloat() << "," << point._y.toFloat();
+	out<< point.getX() << " , " << point.getY();
 	return (out);
 } 
 

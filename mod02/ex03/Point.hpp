@@ -38,10 +38,11 @@ class Point {
 	  float getX() const;
 	  float getY() const;
 
-	  //Overloading the "<<" (insertion) operator to print a Point an object
-	  friend std::ostream& operator<<(std::ostream& out, const Point& point);  
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
+
+//Overloading the "<<" (insertion) operator to print a Point an object
+std::ostream& operator<<(std::ostream& out, const Point& point);  
 
 #endif
