@@ -21,8 +21,8 @@
 
 
 #pragma once
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+#ifndef __ACCOUNT_HPP__
+#define __ACCOUNT_HPP__
 
 // ************************************************************************** //
 //                               Account Class                                //
@@ -30,41 +30,41 @@
 
 class Account {
 
+    public:
 
-public:
+      typedef Account t;
 
-	typedef Account		t;
+	    static int  getNbAccounts( void );
+	    static int  getNbDeposits( void );
+	    static int  getTotalAmount( void );
+	    static int  getNbWithdrawals( void );
+	    static void displayAccountsInfos( void );
 
-	static int	getNbAccounts( void );
-	static int	getTotalAmount( void );
-	static int	getNbDeposits( void );
-	static int	getNbWithdrawals( void );
-	static void	displayAccountsInfos( void );
+	    Account( int initial_deposit );
+	    ~Account( void );
 
-	Account( int initial_deposit );
-	~Account( void );
+	    int   checkAmount( void ) const;
+	    void  makeDeposit( int deposit );
+	    void  displayStatus( void ) const;
+	    bool  makeWithdrawal( int withdrawal );
 
-	void	makeDeposit( int deposit );
-	bool	makeWithdrawal( int withdrawal );
-	int		checkAmount( void ) const;
-	void	displayStatus( void ) const;
+    private:
+
+	    Account( void );
+      
+	    int       _amount;
+	    int       _nbDeposits;
+	    int       _accountIndex;
+	    int       _nbWithdrawals;
+
+      static int  _nbAccounts;
+    	static int  _totalAmount;
+	    static int  _totalNbDeposits;
+	    static int  _totalNbWithdrawals;
 
 
-private:
+      static void _displayTimestamp( void );
 
-	static int	_nbAccounts;
-	static int	_totalAmount;
-	static int	_totalNbDeposits;
-	static int	_totalNbWithdrawals;
-
-	static void	_displayTimestamp( void );
-
-	int				_accountIndex;
-	int				_amount;
-	int				_nbDeposits;
-	int				_nbWithdrawals;
-
-	Account( void );
 
 };
 
@@ -78,4 +78,4 @@ private:
 // ************************************************************************** //
 
 
-#endif /* __ACCOUNT_H__ */
+#endif /* __ACCOUNT_HPP__ */

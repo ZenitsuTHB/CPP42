@@ -16,9 +16,8 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = PhoneBook 
-HEADER_CONT = Contact.hpp
-HEADER_PHON = PhoneBook.hpp
+NAME = GlobalBanksters 
+HEADER_BANK = Account.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g#-fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -27,11 +26,11 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g#-fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp PhoneBook.cpp Contact.cpp
+SRC = main.cpp Account.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
-$(F_OBJ)%.o: %.cpp $(HEADER_CONT) $(HEADER_PHON) Makefile
+$(F_OBJ)%.o: %.cpp $(HEADER_BANK) Makefile
 	@$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 all: build_dir $(NAME)
