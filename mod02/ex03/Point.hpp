@@ -40,7 +40,9 @@ class Point {
 
 };
 
+bool isOnEdge(const Point& P, const Point& A, const Point& B);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool isVertex( const Point& a, const Point& b, const Point& c, const Point& P);
 
 //Overloading the "<<" (insertion) operator to print a Point an object
 std::ostream& operator<<(std::ostream& out, const Point& point);  

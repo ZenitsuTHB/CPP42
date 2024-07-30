@@ -58,7 +58,7 @@ int main( ) {
       Xc = Fixed(10);
       Yc = Fixed(30);
       Xp = Fixed(10);
-      Yp = Fixed(15);
+      Yp = Fixed(30);
     }
     Point A( Xa, Ya );
     Point B( Xb, Yb );
@@ -79,10 +79,18 @@ int main( ) {
     std::cout << "The point C coordonates Overloaded are : ( " << C << " )" << std::endl;
     std::cout << "The point P coordonates Overloaded are : ( " << P << " )" << std::endl;
 	  std::cout << std::endl;
-    if (bsp(A, B, C, P))
-      std::cout << "The Point P(Xp, Yp), lies inside of the triangle formed by ABC" << std::endl;
+
+    if (isVertex(A, B, C, P))
+      std::cout << "The Point P ( " << P << " ) is a Vertex !" << std::endl;
+    else if (isOnEdge(P, A, B) || isOnEdge(P, A, C) || isOnEdge(P, C, B))
+    {
+      std::cout << "The Point P ( " << P << " ) is on the edge !" << std::endl;
+      return (1);
+    }
+    else if (bsp(A, B, C, P))
+      std::cout << "The Point P( " << P << " ), lies inside of the triangle formed by ABC" << std::endl;
     else
-      std::cout << "The Point P(Xp, Yp), isn't lying inside of the triangle formed by ABC" << std::endl;
+      std::cout << "The Point P( " << P << " ), isn't lying inside of the triangle formed by ABC" << std::endl;
     break ;
   }
   std::cout << std::endl;
