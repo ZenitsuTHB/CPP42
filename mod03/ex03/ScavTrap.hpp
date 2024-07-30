@@ -17,7 +17,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap:public ClapTrap {
+class ScavTrap:virtual public ClapTrap {
 
     public:
 
@@ -25,10 +25,10 @@ class ScavTrap:public ClapTrap {
       ScavTrap(std::string name);//:ClapTrap(name){};
       ScavTrap(const ScavTrap &);
       ScavTrap &operator=(const ScavTrap &);
-      ~ScavTrap();
+      virtual ~ScavTrap();
 
       void guardGate();
-      void attack(const std::string& target);
+      virtual void attack(const std::string& target);
 };
 
 

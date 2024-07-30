@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DIAMONDTRAP
-# define _DIAMONDTRAP
+#ifndef _DIAMONDTRAP_HPP
+# define _DIAMONDTRAP_HPP
 
 #include <string>
 #include <iostream>
@@ -30,6 +30,7 @@ class DiamondTrap:public ScavTrap, public FragTrap {
 		~DiamondTrap();
 		
 		void whoAmI();
+    void attack(const std::string& target);
 
 	private:
 
