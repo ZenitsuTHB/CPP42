@@ -41,7 +41,14 @@ int main () {
 
   std::cout << std::endl;
   focus.whoAmI();
+  focus.attack("Bad Thoughts");
+  focus.attack("Bad Habits");
   focus.attack("Bad Lifestyle");
+
+  DiamondTrap success("SUCCESS");
+  success.attack("Bad condition");
+  success.attack("all type of poverty");
+  success.whoAmI();
   std::cout << std::endl;
   return 0;
 }

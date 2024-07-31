@@ -12,24 +12,29 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap():ScavTrap(), FragTrap() {
+DiamondTrap::DiamondTrap():ClapTrap(), ScavTrap(), FragTrap() {
   
+    _name = "Undefined";
+    this->FragTrap::_health = 100;
+    this->ScavTrap::_energy = 50;
+    this->FragTrap::_damage = 30;
+ 
   std::cout << "(DiamondTrap), DERIVED class, Default Constructor called !" << std ::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name):ScavTrap(name), FragTrap(name), _name(name) { 
+DiamondTrap::DiamondTrap(std::string name):ClapTrap(), ScavTrap(name), FragTrap(name), _name(name) { 
 
     ClapTrap::_name = name + "_clap_name";
-    _health = FragTrap::_health;
-    _energy = ScavTrap::_energy;
-    _damage = FragTrap::_damage;
+    this->FragTrap::_health = 100;
+    this->ScavTrap::_energy = 50;
+    this->FragTrap::_damage = 30;
  
   std::cout << "(DiamondTrap), DERIVED class, Parameterized Constructor called !" << std ::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& oldObj):ClapTrap(oldObj), ScavTrap(oldObj), FragTrap(oldObj) {
+DiamondTrap::DiamondTrap(const DiamondTrap& oldObj):ClapTrap(oldObj), ScavTrap(oldObj), FragTrap(oldObj) { 
 
-    std::cout << "(DiamondTrap), DERIVED class, Copy Constructor called !" << std ::endl;
+    std::cout << "(DiamondTrap), DERIVED class, Copy Constructor called !" << std::endl;
       *this = oldObj;
 }
 
@@ -39,10 +44,9 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& oldObj) {
     if (this != &oldObj) {
 
       _name = oldObj._name;
-      ClapTrap::_name = oldObj.ClapTrap::_name;
-      _health = FragTrap::_health;
-      _energy = ScavTrap::_energy;
-      _damage = FragTrap::_damage;
+      ClapTrap::operator=(oldObj);
+      FragTrap::operator=(oldObj);
+      ScavTrap::operator=(oldObj);
     }
     return (*this);
 }
@@ -56,7 +60,7 @@ void DiamondTrap::whoAmI() {
 
   std::cout << "(DiamondTrap) My name is : " << _name << std::endl;
   std::cout << "And My ClapTrap name is : " << ClapTrap::_name << std::endl;
-
+  std::cout << std::endl;
 }
 
 DiamondTrap::~DiamondTrap() {
