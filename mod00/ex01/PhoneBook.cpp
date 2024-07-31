@@ -27,7 +27,15 @@ std::string PhoneBook::_getUserData(std::string required, int flag) {
     if (flag == 1)
       std::cout << "Enter your" << std::endl;
     std::cout << required << " : ";
-    std::getline(std::cin, entered);
+    if (!std::getline(std::cin, entered)) {
+
+      if (std::cin.eof())
+        {
+          std::cerr << std::endl;
+          std::cerr << "End of input detected. Exiting ..." << std::endl;
+          exit(1);
+        }
+    }
   }
   return (entered);
 }
@@ -120,6 +128,11 @@ void PhoneBook::displayContact() {
   strIndx = "int";
   do {
     strIndx = PhoneBook::_getUserData(message[0], 2);
+    if (strIndx.c_str() == NULL) {
+
+      std::cout << "Better Luck next time !" << std::endl;
+      break ;
+    }
   } while(strIndx.length() > 1 || !isdigit(strIndx[0]));
 
   int index = std::atoi(strIndx.c_str());
