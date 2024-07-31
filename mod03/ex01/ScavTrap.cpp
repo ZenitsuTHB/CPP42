@@ -51,7 +51,7 @@ void ScavTrap::attack(const std::string& target) {
 	}
 	else {
 	
-		std::cout << "[ " << _name << " ] Can't attack -> ( " << target;
+		std::cout << "(ScavTrap) [ " << _name << " ] Can't attack -> ( " << target;
 		std::cout << " ), no Energy points or he's dead !";
 		std::cout << std::endl;
 	}
