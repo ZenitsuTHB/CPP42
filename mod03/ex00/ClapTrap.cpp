@@ -57,9 +57,17 @@ void ClapTrap::attack(const std::string& target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 
-  _health -= amount;
-  std::cout << "Take Damage has been called to analyze and set up";
-  std::cout << " the Player's status." << std::endl;
+  if (_health > 0 && _energy > 0) {
+    
+      _health -= amount;
+      std::cout << "Take Damage has been called to analyze and set up";
+      std::cout << " the Player's status." << std::endl;
+  }
+  else {
+
+      std::cout << "[ " << _name << " ] is DEAD, It Can't take any other Damage !";
+  std::cout << std::endl;
+  }
   std::cout << std::endl;
 
 }
@@ -69,7 +77,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
   if (_health > 0 && _energy > 0) {
     _energy -= 1;
     _health += amount;
-    std::cout << "Be Repaired has been called to repair some damage" << std::endl;
+    std::cout << "Be Repaired has been called to repair some damage, Energy is : " << _energy << std::endl;
   }
   else {
     
