@@ -41,7 +41,7 @@ void FragTrap::attack(const std::string& target) {
 
 	if (_health > 0 && _energy > 0) {
 		
-		_energy -= 1;
+		  _energy -= 1;
 	  	_damage += 1;
 	  	std::cout << "FragTrap [ " << _name << " ] attacks -> ( " << target;
 	  	std::cout << " ), causing " << _damage << " points of damage!" << std::endl;
