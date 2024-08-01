@@ -26,7 +26,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g#-fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Account.cpp
+SRC = tests.cpp Account.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
@@ -43,7 +43,7 @@ build_dir:
 $(NAME): $(OBJ)
 	@$(CPP) $(FLAGS) -I ./ $(OBJ) -o $@
 	clear
-	@echo "\n\n\t$(GREEN)Everything has been compilated.$(BLACK)\n\n"
+	@echo "\n\n\t$(GREEN)Everything has been compilated.$(BLACK)\n"
 
 # ╔══════════════════╗ #  
 #    CLEANING RULES    #
@@ -57,7 +57,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\t$(YELLOW)Everything has been cleaned.$(BLACK)\n\n"
+	@echo "\t$(YELLOW)Everything has been cleaned.$(BLACK)\n"
 
 re : fclean all
 

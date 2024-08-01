@@ -21,12 +21,15 @@
 
 
 #pragma once
-#ifndef __ACCOUNT_HPP__
-#define __ACCOUNT_HPP__
+#ifndef __ACCOUNT_H__
+#define __ACCOUNT_H__
 
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
+
+#include <ctime>
+#include <iostream>
 
 class Account {
 
@@ -34,14 +37,14 @@ class Account {
 
       typedef Account t;
 
+	    Account( int initial_deposit );
+	    ~Account( void );
+
 	    static int  getNbAccounts( void );
 	    static int  getNbDeposits( void );
 	    static int  getTotalAmount( void );
 	    static int  getNbWithdrawals( void );
 	    static void displayAccountsInfos( void );
-
-	    Account( int initial_deposit );
-	    ~Account( void );
 
 	    int   checkAmount( void ) const;
 	    void  makeDeposit( int deposit );
@@ -78,4 +81,4 @@ class Account {
 // ************************************************************************** //
 
 
-#endif /* __ACCOUNT_HPP__ */
+#endif /* __ACCOUNT_H__ */
