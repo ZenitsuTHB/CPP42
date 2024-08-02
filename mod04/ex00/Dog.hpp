@@ -4,10 +4,8 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-// #define DogSound "WOOf ! WOOf !"
+#define DogSound "   WOOf ! WOOf !"
 
-#include <iostream>
-#include <string>
 #include "Animal.hpp"
 
 class Dog :public Animal {

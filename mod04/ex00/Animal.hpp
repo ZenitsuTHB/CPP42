@@ -6,7 +6,7 @@
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
-// #define DefaultSound ";) Shhhhh... ;)"
+#define DefaultSound "....peaceful silence....."
 
 #include <string>
 #include <iostream>
@@ -25,7 +25,7 @@ class Animal {
       virtual void makeSound() const;
     protected:
 
-      std::string type;
+      std::string _type;
 
 };
 
