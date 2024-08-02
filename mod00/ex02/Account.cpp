@@ -44,7 +44,8 @@ void  Account::makeDeposit( int deposit ) {
 void  Account::displayStatus( void ) const {
 
   _displayTimestamp();
-  std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
+  std::cout << "index:" << _accountIndex << ";amount:" << _amount;
+  std::cout << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
 bool  Account::makeWithdrawal( int withdrawal ) {
@@ -88,13 +89,15 @@ void Account::displayAccountsInfos( void ) {
 void Account::_displayTimestamp( void ) {
 
   //return the current time as a time_t object
-  time_t now = std::time(0);
   //converts the time_t object to a tm struct 
   //that has tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec.
+
+  time_t now = std::time(0);
   tm *local_time = std::localtime(&now);
-  
-  char buffer[20];// Buffer to hold the formatted date/time string
+
+  // Buffer to hold the formatted date/time string
   // Format the time as YYYYMMDD_HHMMSS
+  char buffer[20];
   std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", local_time);
   std::cout << buffer;
 }
