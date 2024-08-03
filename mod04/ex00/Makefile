@@ -27,7 +27,7 @@ CPP = c++
 RM = rm -rf
 NAME = Animals 
 HEADER_HPP = Animal.hpp
-# HEADER_HPP += WrongAnimal.hpp
+HEADER_HPP += WrongAnimal.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -36,8 +36,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp 
-#Cat.cpp WrongAnimal.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
