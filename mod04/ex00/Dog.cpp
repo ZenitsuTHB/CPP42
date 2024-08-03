@@ -13,13 +13,10 @@ Dog::Dog() : Animal("Dog") {
 
 Dog::Dog(const Dog &oldDog) : Animal(oldDog) {
 
-    std::cout << "[ Dog's ] Copy Constructor called !" << std::endl;
     *this = oldDog;
 }
 
 Dog&  Dog::operator=(const Dog &oldDog) {
-
-    std::cout << "[ Dog's ] Copy Constructor called !" << std::endl;
 
     if (this != &oldDog)
         Dog::operator=(oldDog);

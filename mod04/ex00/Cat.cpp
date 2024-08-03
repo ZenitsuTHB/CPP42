@@ -6,20 +6,23 @@
 #include "Cat.hpp"
 #include "Animal.hpp"
 
+// Cat::Cat() : Animal() {
+//
+//   std::cout << "[ Cat's ] Default Constructor called !" << std::endl;
+// }
+
 Cat::Cat() : Animal("Cat") {
 
-  std::cout << "[ Cat's ] Constructor has been called !" << std::endl;
+  std::cout << "[ Cat's ] Parameterized Constructor called !" << std::endl;
 }
 
 Cat::Cat(const Cat &oldCat) : Animal(oldCat) {
 
-    std::cout << "[ Cat's ] Copy Constructor called !" << std::endl;
     *this = oldCat;
 }
 
 Cat&  Cat::operator=(const Cat &oldCat) {
 
-    std::cout << "[ Cat's ] Copy Constructor called !" << std::endl;
 
     if (this != &oldCat)
         Cat::operator=(oldCat);
@@ -33,5 +36,5 @@ void Cat::makeSound() const {
 
 Cat::~Cat() {
 
-  std::cout << "[ Cat's ] Destructor has been called !" << std::endl;
+  std::cout << "[ Cat's ] Destructor called !" << std::endl;
 }

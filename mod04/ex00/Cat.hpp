@@ -12,12 +12,12 @@ class Cat :public Animal {
 
     public:
 
-      Cat();
-      Cat(const Cat &oldCat);
-      Cat &operator=(const Cat &oldCat);
-      virtual ~Cat();
+        Cat();
+        Cat(const Cat &oldCat);
+        Cat &operator=(const Cat &oldCat);
+        virtual ~Cat();
 
-      void makeSound() const;
+        void makeSound() const;
 };
 
 #endif

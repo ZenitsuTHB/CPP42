@@ -7,7 +7,7 @@
 
 Animal::Animal() : _type("Anonimous Animal") {
 
-  std::cout << "[ Base class Animal ] Default Constructor has been called !" << std::endl;
+  std::cout << "[ Base class Animal ] Default Constructor called !" << std::endl;
 }
 
 Animal::Animal(const std::string &type) : _type(type) {
@@ -44,6 +44,6 @@ void  Animal::makeSound() const {
 
 Animal::~Animal() {
 
-  std::cout << "[ Base class Animal ] Destructor has been called !" << std::endl;
+  std::cout << "[ Base class Animal ] Destructor called !" << std::endl;
 }
 

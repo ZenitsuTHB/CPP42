@@ -2,26 +2,25 @@
 
 
 #include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
-WrongCat::WrongCat() : WrongAnimal() {
+WrongCat::WrongCat() : WrongAnimal("WrongCat") {
 
-    std::cout << "[ Base Class, WrongCat] Constructor called" << std::endl;
+    std::cout << "[ Derived Class, WrongCat] Default Constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const std::string &type) : WrongAnimal(type){
 
-    std::cout << "[ Base Class, WrongCat] Parameterized Constructor called" << std::endl;
+    std::cout << "[ Derived Class, WrongCat] Parameterized Constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &oldWrongCat) : WrongAnimal(oldWrongCat) {
 
-    std::cout << "[ Base Class, WrongCat] Copy Constructor called" << std::endl;
     *this = oldWrongCat;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &oldWrongCat) {
 
-    std::cout << "[ Base Class, WrongCat] Copy Assignment operator called" << std::endl;
     if (this != &oldWrongCat)
       WrongCat::operator=(oldWrongCat);
     return (*this);
@@ -34,10 +33,10 @@ std::string WrongCat::getType() const {
 
 void WrongCat::makeSound() const {
     
-    std::cout << "[ Base Class, WrongCat] sounds like : " << DefaultSound << std::endl;
+    std::cout << "[ Derived Class, WrongCat] sounds like : " << WrongCatSound << std::endl;
 }
 
 WrongCat::~WrongCat() {
 
-  std::cout << "[ Base Class, WrongCat] Destructor called" << std::endl;
+  std::cout << "[ Derived Class, WrongCat] Destructor called" << std::endl;
 }
