@@ -6,7 +6,7 @@
 #ifndef WRONGANIMAL_HPP
 #define WRONGANIMAL_HPP
 
-#define DefaultSound "....peaceful silence....."
+#define DefaultSound "....annoying silence....."
 
 #include <string>
 #include <iostream>
