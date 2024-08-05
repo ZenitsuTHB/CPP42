@@ -1,5 +1,14 @@
-//42 HEADER
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/05 13:10:34 by avolcy            #+#    #+#             */
+/*   Updated: 2024/08/05 13:10:39 by avolcy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
@@ -13,8 +22,8 @@ int main()
     std::cout << std::endl;
     const Animal* j = new Dog();
     std::cout << std::endl;
-    const Animal* i = new Cat();
-    //const WrongAnimal* i = new WrongCat();
+   const Animal* i = new Cat();
+    // const WrongAnimal* i = new WrongCat();
 
     std::cout << std::endl;
     std::cout << j->getType() << " " << std::endl;

@@ -1,5 +1,14 @@
-#42 HEADER
-
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: avolcy <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/08/05 10:11:06 by avolcy            #+#    #+#              #
+#    Updated: 2024/08/05 10:11:31 by avolcy           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 # ╔═════════════════╗ #  
 #      COLORS         #
@@ -18,7 +27,7 @@ CPP = c++
 RM = rm -rf
 NAME = GlobalBanksters 
 HEADER_BANK = Account.hpp
-FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g#-fsanitize=address 
+FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
 #    COMPILATIION RULES    #

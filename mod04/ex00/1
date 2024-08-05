@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 13:09:28 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:09:35 by avolcy           ###   ########.fr       */
+/*   Created: 2024/08/05 13:11:26 by avolcy            #+#    #+#             */
+/*   Updated: 2024/08/05 13:11:33 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#define DefaultSound "....peaceful silence....."
+#define WrongCatSound "....Boring silence....."
 
 #include <string>
 #include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal {
+class WrongCat :public WrongAnimal {
 
     public:
 
-      Animal();
-      Animal(const std::string &type);
-      Animal(const Animal &oldAnimal);
-      Animal &operator=(const Animal &oldAnimal);
-      virtual ~Animal();
+        WrongCat();
+        WrongCat(const std::string &type);
+        WrongCat(const WrongCat &oldWrongCat);
+        WrongCat &operator=(const WrongCat &oldWrongCat);
+        virtual ~WrongCat();
 
-      std::string getType() const;
-      virtual void makeSound() const;
+        std::string getType() const;
+        virtual void makeSound() const;
     protected:
 
       std::string _type;

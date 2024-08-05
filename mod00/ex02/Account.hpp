@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:34:03 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/02 13:34:09 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/05 10:13:17 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,12 @@ class Account {
 	    int       _accountIndex;
 	    int       _nbWithdrawals;
 
-      static int  _nbAccounts;
+		static int  _nbAccounts;
     	static int  _totalAmount;
 	    static int  _totalNbDeposits;
 	    static int  _totalNbWithdrawals;
 
-
-      static void _displayTimestamp( void );
-
-
+		static void _displayTimestamp( void );
 };
 
 
