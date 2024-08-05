@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:50:08 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/22 17:03:35 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/05 11:45:10 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ bool isOnEdge(const Point& P, const Point& A, const Point& B) {
 }
 
 //if the meeting Point of P with the base is the same coordonate
-bool isVertex( Point& a, Point& b,  Point& c, Point& P) {
-
-  return(P == a || P == b || P == c);
+bool isVertex( Point& a, Point& b, Point& c, Point& P) {
+	return(P == a || P == b || P == c);
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const P)

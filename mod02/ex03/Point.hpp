@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 15:00:05 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/22 15:04:01 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/05 11:44:46 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Point {
 
 bool isOnEdge(const Point& P, const Point& A, const Point& B);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
-bool isVertex( const Point& a, const Point& b, const Point& c, const Point& P);
+bool isVertex( Point& a, Point& b, Point& c, Point& P);
 
 //Overloading the "<<" (insertion) operator to print a Point an object
 std::ostream& operator<<(std::ostream& out, const Point& point);  
