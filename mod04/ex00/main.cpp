@@ -13,8 +13,8 @@ int main()
     std::cout << std::endl;
     const Animal* j = new Dog();
     std::cout << std::endl;
-    const Animal* i = new Cat();
-    //const WrongAnimal* i = new WrongCat();
+   const Animal* i = new Cat();
+    // const WrongAnimal* i = new WrongCat();
 
     std::cout << std::endl;
     std::cout << j->getType() << " " << std::endl;
