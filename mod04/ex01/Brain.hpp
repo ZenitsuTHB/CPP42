@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _BRAIN_HPP
+# define _BRAIN_HPP
+
+# define INDEX 99
+
 #include <string>
 #include <iostream>
 
@@ -18,16 +23,16 @@ class Brain {
 	public:
 
 		Brain();
-		Brain(const Brain &) = default;
-		Brain &operator=(const Brain &) = default;
+		Brain(const Brain &);
+		Brain &operator=(const Brain &);
 		~Brain();
+
+    std::string getIdeas(int index) const;
+    void setIdeas(int index, std::string ideas);
 
 	private:
 
+    std::string _ideas[100];
 };
 
-Brain::Brain() {
-}
-
-Brain::~Brain() {
-}
+#endif 

@@ -28,10 +28,11 @@ class Cat :public Animal {
         virtual ~Cat();
 
         void makeSound() const;
-	
-	private:
 
-		Brain* brain
+
+    private:
+
+        Brain* _catBrain;
 };
 
 #endif

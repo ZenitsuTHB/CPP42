@@ -27,6 +27,10 @@ class Dog :public Animal {
       virtual ~Dog();
 
       void makeSound() const;
+
+    private :
+
+      Brain* _dogBrain;
 };
 
 #endif

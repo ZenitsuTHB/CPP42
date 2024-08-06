@@ -15,6 +15,7 @@
 
 Dog::Dog() : Animal("Dog") {
 
+  _dogBrain = new Brain();
   std::cout << "[ Dog's ] Constructor has been called !" << std::endl;
 }
 
@@ -37,5 +38,6 @@ void Dog::makeSound() const {
 
 Dog::~Dog() {
   
+  delete (_dogBrain);
   std::cout << "[ Dog's ] Destructor has been called !" << std::endl;
 }
