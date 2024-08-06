@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:43:42 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 18:44:28 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/06 17:49:37 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,19 @@ Brain& Brain::operator(const Brain &oldBrain) {
   return (*this);
 }
 
+bool	goodIndex(int index) {
+
+	return(index >= 0 && index <= INDEX);
+}
+
 std::string getIdeas(int index, int owner) const {
 
-  if (index < 0 || index > INDEX)
-    return (std::cout << "Invalid index Detected !", 1);
+  if (!goodIndex(index))
+	  return (std::cerr << "Invalid index Detected !", 1);
   if (index % 2 == 0 && owner == 2) {
 
     std::cout << "this is cat' s ideas" << std::endl;
-    return ("OK");
+    return ("OK"); 
   }
   else if (index % 2 != 0 && owner == 1) {
     
@@ -48,7 +53,7 @@ std::string getIdeas(int index, int owner) const {
   }
   else {
     
-    std::cout << "There 's no match index for this owner " << std::endl;
+    std::cout << "There 's no match index ideas for this owner " << std::endl;
     return ("KO");
     
   }
@@ -57,8 +62,14 @@ std::string getIdeas(int index, int owner) const {
 
 void Brain::setIdeas(int index, std::string ideas) {
 
+	if (!goodIndex(index))
+		return (std::cerr << "Invalid index Detected !", 1);
+	if (ideas.empty())
+		ideas = BOSS;
+	_ideas[index] = ideas;
 }
 
 Brain::~Brain() {
 
+	std::cout << "[ Brain ] Destructor called !" << std::endl;
 }

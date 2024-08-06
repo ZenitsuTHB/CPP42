@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:41:08 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 16:41:26 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/06 17:38:33 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _BRAIN_HPP
 
 # define INDEX 99
+# define BOSS "I Must start my Own Business"
 
 #include <string>
 #include <iostream>
@@ -34,5 +35,7 @@ class Brain {
 
     std::string _ideas[100];
 };
+
+bool	goodIndex(int index); 
 
 #endif 
