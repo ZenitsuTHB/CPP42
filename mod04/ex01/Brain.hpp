@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:41:08 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/06 17:38:33 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 11:54:23 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # define INDEX 99
 # define BOSS "I Must start my Own Business"
+# define IDEAS "Probably Thinking of good ideas ..."
+# define INVIDX "Invalid index Detected ! Must be between (0 - 99)"
 
 #include <string>
 #include <iostream>

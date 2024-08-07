@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:10:21 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:10:25 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 13:46:21 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #define DogSound "   WOOf ! WOOf !"
 
+#include "Brain.hpp"
 #include "Animal.hpp"
 
 class Dog :public Animal {

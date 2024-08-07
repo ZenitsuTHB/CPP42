@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:43:42 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/06 17:49:37 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 14:25:57 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,30 @@
 
 Brain::Brain() {
 
-  std::cout << "Default brain Constructor called !" std::endl;
+	std::cout << "[ Brain ] Default Constructor called !" << std::endl;
+	for (int i = 0; i < INDEX; i++) {
+
+		_ideas[i] = IDEAS;
+	}
 }
 
 Brain::Brain(const Brain &oldBrain) {
 
-  std::cout << "[ Brain ] copy Constructor called !" std::endl;
-  *this = olBrain;
+  std::cout << "[ Brain ] copy Constructor called !" << std::endl;
+  *this = oldBrain;
 }
 
-Brain& Brain::operator(const Brain &oldBrain) {
+// Copy using the algorithm header 
+// std::copy(oldBrain._ideas, oldBrain._ideas + 100, _ideas);
+Brain& Brain::operator=(const Brain &oldBrain) {
 
-  std::cout << "[ Brain ] Copy Assignment operator called !" std::endl;
-  if (this != oldBrain) {
+  std::cout << "[ Brain ] Copy Assignment operator called !" << std::endl;
+  if (this != &oldBrain) {
 
+	  for ( int i = 0; i < INDEX; i++) {
+		  
+		  _ideas[i] = oldBrain._ideas[i];
+	  }
   }
   return (*this);
 }
@@ -37,33 +47,28 @@ bool	goodIndex(int index) {
 	return(index >= 0 && index <= INDEX);
 }
 
-std::string getIdeas(int index, int owner) const {
+std::string Brain::getIdeas(int index) const {
 
   if (!goodIndex(index))
-	  return (std::cerr << "Invalid index Detected !", 1);
-  if (index % 2 == 0 && owner == 2) {
+	  return (INVIDX);
+  if (index % 2 == 0) {
 
     std::cout << "this is cat' s ideas" << std::endl;
-    return ("OK"); 
-  }
-  else if (index % 2 != 0 && owner == 1) {
-    
-    std::cout << "this is Dog' s ideas" << std::endl;
-    return ("OK");
   }
   else {
     
-    std::cout << "There 's no match index ideas for this owner " << std::endl;
-    return ("KO");
-    
+    std::cout << "this is Dog' s ideas" << std::endl;
   }
-  return ("KO");
+  return ("OK");
 }
 
 void Brain::setIdeas(int index, std::string ideas) {
 
-	if (!goodIndex(index))
-		return (std::cerr << "Invalid index Detected !", 1);
+	if (!goodIndex(index)) {	
+		
+		std::cerr << INVIDX << std::endl;
+		return ;
+	}
 	if (ideas.empty())
 		ideas = BOSS;
 	_ideas[index] = ideas;

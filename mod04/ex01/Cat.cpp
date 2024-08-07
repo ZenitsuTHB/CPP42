@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:09:43 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:09:50 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 13:58:36 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 
 Cat::Cat() : Animal("Cat") {
 
-  std::cout << "[ Cat's ] Parameterized Constructor called !" << std::endl;
+	_catBrain = new Brain();
+	std::cout << "[ Cat's ] Parameterized Constructor called !" << std::endl;
 }
 
 Cat::Cat(const Cat &oldCat) : Animal(oldCat) {
@@ -43,5 +44,6 @@ void Cat::makeSound() const {
 
 Cat::~Cat() {
 
-  std::cout << "[ Cat's ] Destructor called !" << std::endl;
+	delete _catBrain;
+  	std::cout << "[ Cat's ] Destructor called !" << std::endl;
 }
