@@ -6,19 +6,25 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 12:55:42 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/25 13:06:22 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 13:41:11 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
  #include "FragTrap.hpp"
 
 FragTrap::FragTrap():ClapTrap(){
-
+	
+	_health = 100;
+	_energy = 100;
+	_damage = 30;
 	std::cout << "(FragTrap), DERIVED class, Default Constructor called !" << std ::endl;
 }
 
 FragTrap::FragTrap(std::string name):ClapTrap(name){
 
+	_health = 100;
+	_energy = 100;
+	_damage = 30;
   std::cout << "(FragTrap), DERIVED class, Parameterized Constructor called !" << std ::endl;
 }
 

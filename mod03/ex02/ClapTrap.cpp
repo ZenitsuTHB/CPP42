@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 12:43:08 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/25 12:49:05 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 13:41:44 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 ClapTrap::ClapTrap() {
 
+	_health = 10;
+	_energy = 10;
+	_damage = 0;
   std::cout << "BASE class, Default Constructor called !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name) {
 
-	_health = 100;
-	_energy = 100;
-	_damage = 30;
+	_health = 10;
+	_energy = 10;
+	_damage = 0;
 	std::cout << "BASE class, Parameterized Constructor called to create [ " << name << " ] Player" << std::endl;
 }
 
