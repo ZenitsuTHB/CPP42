@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 12:55:25 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/25 13:02:11 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 13:37:22 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 ScavTrap::ScavTrap():ClapTrap(){
 
+	_health = 100;
+	_energy = 50;
+	_damage = 20;
   std::cout << "Default Constructor for (ScavTrap) derived class called !" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name) {
   
+	_health = 100;
+	_energy = 50;
+	_damage = 20;
   std::cout << "(ScavTrap), DERIVED class, Parametrized Constructor called !" << std::endl;
 }
 
