@@ -6,23 +6,26 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 12:39:57 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/25 12:40:14 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/07 13:34:34 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-
-  std::cout << "BASE class, Default Constructor called !" << std::endl;
+  
+	_health = 10;
+	_energy = 10;
+	_damage = 0;
+	std::cout << "BASE class, Default Constructor called !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name) {
 
-  _health = 100;
-  _energy = 50;
-  _damage = 20;
-  std::cout << "BASE class, Parameterized Constructor called to create [ " << name << " ] Player" << std::endl;
+	_health = 10;
+  	_energy = 10;
+  	_damage = 0;
+  	std::cout << "BASE class, Parameterized Constructor called to create [ " << name << " ] Player" << std::endl;
 }
 
 // CAN BE DONE USING GETTERS
