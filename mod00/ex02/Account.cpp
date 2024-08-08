@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:33:48 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/02 13:33:57 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/08 20:31:05 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ int Account::_totalNbWithdrawals = 0;
 // std::cout << std::endl;
 Account::Account( int initial_deposit ): _amount(initial_deposit) {
 
-  _accountIndex = _nbAccounts;
-  _nbAccounts++;
-  _totalAmount += initial_deposit;
-  _displayTimestamp();
+	_nbDeposits = 0;
+	_nbWithdrawals = 0;
+  	_accountIndex = _nbAccounts;
+  	_nbAccounts++;
+  	_totalAmount += initial_deposit;
+  	_displayTimestamp();
   std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
 
  }
@@ -54,7 +56,7 @@ bool  Account::makeWithdrawal( int withdrawal ) {
   std::cout << "index:" << _accountIndex << ";p_amount:" << _amount;
   if (checkAmount() < withdrawal) {
 
-    std::cout << ";refused:" << std::endl;
+    std::cout << ";withdrawal:refused" << std::endl;
     return (false);
     
   }
