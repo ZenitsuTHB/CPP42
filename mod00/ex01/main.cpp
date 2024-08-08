@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:38:36 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/02 12:38:43 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/08 20:42:45 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int main (void)
 
     std::cout << "\n/º_º-══> ";
     std::getline(std::cin, command);
-    if (command.empty())
+    if (std::cin.eof())
     {
-      std::cerr << "Empty command ! try a valid one" << std::endl;
-      return(1) ;
+		std::cout << std::endl;
+      	std::cerr << "EOF command ! try a valid one" << std::endl;
+      	return(1) ;
     }
     else if (command == "ADD")
       phonebook.addContact();
