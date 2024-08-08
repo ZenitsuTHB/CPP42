@@ -37,6 +37,16 @@ Cat&  Cat::operator=(const Cat &oldCat) {
     return (*this);
 }
 
+void Cat::setIdeasBrain(int index, std::string idea) {
+
+  _catBrain->setIdeas(index, idea);
+}
+
+std::string Cat::getIdeasBrain (int index) const {
+
+  return(_catBrain->getIdeas(index));
+}
+
 void Cat::makeSound() const {
 
     std::cout << "[ Cat's ] sounds like : " << CatSound << std::endl;

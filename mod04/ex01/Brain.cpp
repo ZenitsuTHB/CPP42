@@ -52,14 +52,15 @@ std::string Brain::getIdeas(int index) const {
   if (!goodIndex(index))
 	  return (INVIDX);
   if (index % 2 == 0) {
-
-    std::cout << "this is cat' s ideas" << std::endl;
+	
+	std::cout << "Idea [" << index << "] : ";
+	return (_ideas[index]);
   }
   else {
-    
-    std::cout << "this is Dog' s ideas" << std::endl;
+	
+	std::cout << "Idea [" << index << "] : ";
+	return (_ideas[index]);
   }
-  return ("OK");
 }
 
 void Brain::setIdeas(int index, std::string ideas) {

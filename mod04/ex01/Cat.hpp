@@ -28,8 +28,8 @@ class Cat :public Animal {
         virtual ~Cat();
 
         void makeSound() const;
-
-
+        void setIdeasBrain(int , std::string);
+        std::string getIdeasBrain (int index) const;
     private:
 
         Brain* _catBrain;

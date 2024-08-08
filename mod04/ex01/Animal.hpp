@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:09:28 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:09:35 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/08 12:59:55 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ class Animal {
       Animal &operator=(const Animal &oldAnimal);
       virtual ~Animal();
 
-      std::string getType() const;
       virtual void makeSound() const;
+      virtual std::string getType() const;
+
     protected:
 
       std::string _type;

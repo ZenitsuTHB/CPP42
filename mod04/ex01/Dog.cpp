@@ -31,6 +31,16 @@ Dog&  Dog::operator=(const Dog &oldDog) {
     return (*this);
 }
 
+void Dog::setIdeasBrain(int index, std::string idea) {
+
+  _dogBrain->setIdeas(index, idea);
+}
+
+std::string Dog::getIdeasBrain (int index) const {
+
+  return(_dogBrain->getIdeas(index));
+}
+
 void Dog::makeSound() const {
 
     std::cout << "[ Dog's ] sounds like : " << DogSound << std::endl;
