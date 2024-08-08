@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
@@ -18,28 +19,21 @@
 
 int main() 
 {
-    const Animal* meta = new Animal();
-    std::cout << std::endl;
     const Animal* j = new Dog();
-    std::cout << std::endl;
-   const Animal* i = new Cat();
-    // const WrongAnimal* i = new WrongCat();
+    const Animal* i = new Cat();
+   
+    Animal*  animals[6];
 
-    std::cout << std::endl;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    for (int  i = 0; i < 6; i++) {
 
-    std::cout << std::endl;
-    i->makeSound(); //will output the cat sound!
-    std::cout << std::endl;
-    j->makeSound();
-    std::cout << std::endl;
-    meta->makeSound();
-    std::cout << std::endl;
+      if (1 % 2 != 0) {
 
-    //...more tests
-    delete meta;
-    delete j;
+        animals[i] = new Dog()  
+      }
+     animals[i] = new   
+    } 
+
+    delete j;//should not create a leak
     delete i;
 
     return 0;
