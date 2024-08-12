@@ -25,10 +25,8 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = Animals 
-HEADER_HPP = Animal.hpp
-HEADER_HPP += Brain.hpp
-HEADER_HPP += WrongAnimal.hpp
+NAME = AMateria
+HEADER_HPP = AMateria.hpp
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -37,7 +35,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp 
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
