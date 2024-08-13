@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:38:36 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/08 20:42:45 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/13 12:09:42 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int main (void)
       phonebook.addContact();
     else if (command == "SEARCH")
     {
-      phonebook.searchContact();
-      phonebook.displayContact();
+      if (phonebook.searchContact())
+		  phonebook.displayContact();
     }
     else if (command == "EXIT") 
     {

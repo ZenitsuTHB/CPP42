@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:32:19 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/02 13:32:30 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/13 12:11:19 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PhoneBook
     ~PhoneBook();
 
     void addContact();
-    void searchContact() const;
+    bool searchContact() const;
     void displayContact();
     void farewellMessage() const;
     void greetingsMessage() const;

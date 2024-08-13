@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:38:21 by avolcy            #+#    #+#             */
-/*   Updated: 2024/07/02 12:38:26 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/13 12:09:01 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,29 +91,30 @@ void	PrintRightFormat(std::string attr){
   }
 }
 
-void PhoneBook::searchContact() const {
+ bool PhoneBook::searchContact() const {
 
-  if (_num_of_contact == 0) {
+	 if (_num_of_contact == 0) {
 
-    std::cout << "NO contact have been added yet !" << std::endl;
-    std::cout << "Try the ADD command first" << std::endl;
-    return ;
-  }
-  std::cout << "╔═══════════════════════════════════════════╗" << std::endl;
-  std::cout << "|  Index   |First name| Last name| Nickname |" << std::endl;
-	std::cout << "|══════════|══════════|══════════|══════════|" << std::endl;
-  for (int i = 0; i < 8 && _contacts[i].added == true; i++) {
-	
-    std::cout << "|" << std::setw(10) << i + 1 << "|";
-    PrintRightFormat(_contacts[i].getFirstName());
-    PrintRightFormat(_contacts[i].getLastName());
-    PrintRightFormat(_contacts[i].getNickName());
-	  std::cout << std::endl;
-    if ((i + 1) != _num_of_contact)
-      std::cout << "|══════════|══════════|══════════|══════════|" << std::endl;
-    else
-      std::cout << "╚═══════════════════════════════════════════╝" << std::endl;
-  }
+		 std::cout << "NO contact have been added yet !" << std::endl;
+		 std::cout << "Try the ADD command first" << std::endl;
+		 return (false);
+	 }
+	 std::cout << "╔═══════════════════════════════════════════╗" << std::endl;
+	 std::cout << "|  Index   |First name| Last name| Nickname |" << std::endl;
+	 std::cout << "|══════════|══════════|══════════|══════════|" << std::endl;
+	 for (int i = 0; i < 8 && _contacts[i].added == true; i++) {
+
+		 std::cout << "|" << std::setw(10) << i + 1 << "|";
+		 PrintRightFormat(_contacts[i].getFirstName());
+		 PrintRightFormat(_contacts[i].getLastName());
+		 PrintRightFormat(_contacts[i].getNickName());
+		 std::cout << std::endl;
+		 if ((i + 1) != _num_of_contact)
+			 std::cout << "|══════════|══════════|══════════|══════════|" << std::endl;
+		 else 
+			 std::cout << "╚═══════════════════════════════════════════╝" << std::endl;
+	 }
+	 return(true);
 }
 
 
