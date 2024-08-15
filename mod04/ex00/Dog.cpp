@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:10:12 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:10:17 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:16:04 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::Dog(const Dog &oldDog) : Animal(oldDog) {
 Dog&  Dog::operator=(const Dog &oldDog) {
 
     if (this != &oldDog)
-        Dog::operator=(oldDog);
+        Animal::operator=(oldDog);
     return (*this);
 }
 

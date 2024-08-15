@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:09:28 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:09:35 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:10:43 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Animal {
     public:
 
       Animal();
-      Animal(const std::string &type);
-      Animal(const Animal &oldAnimal);
-      Animal &operator=(const Animal &oldAnimal);
+      Animal(const std::string);
+      Animal(const Animal&);
+      Animal &operator=(const Animal &);
       virtual ~Animal();
 
       std::string getType() const;

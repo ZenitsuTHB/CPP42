@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:08:54 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:08:59 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:19:39 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Animal::Animal() : _type("Anonimous Animal") {
   std::cout << "[ Base class Animal ] Default Constructor called !" << std::endl;
 }
 
-Animal::Animal(const std::string &type) : _type(type) {
+Animal::Animal(const std::string type) : _type(type) {
 
   std::cout << "[ Base class Animal ] Parametrized Constructor called !" << std::endl;
 }
@@ -33,7 +33,7 @@ Animal& Animal::operator=(const Animal &oldAnimal) {
     std::cout << "[ Base class Animal ] Copy Assignment operator called !" << std::endl;
     if (this != &oldAnimal) {
 
-      _type = oldAnimal._type;
+      _type = oldAnimal.getType();
     }
     return (*this);
 }
