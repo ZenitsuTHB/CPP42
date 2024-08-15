@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:09:43 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/07 13:58:36 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:23:57 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Cat&  Cat::operator=(const Cat &oldCat) {
 
 
     if (this != &oldCat)
-        Cat::operator=(oldCat);
+        Animal::operator=(oldCat);
     return (*this);
 }
 

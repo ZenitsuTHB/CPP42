@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:08:54 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:08:59 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:22:38 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Animal& Animal::operator=(const Animal &oldAnimal) {
     std::cout << "[ Base class Animal ] Copy Assignment operator called !" << std::endl;
     if (this != &oldAnimal) {
 
-      _type = oldAnimal._type;
+      _type = oldAnimal.getType();
     }
     return (*this);
 }

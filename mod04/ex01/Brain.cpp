@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:43:42 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/07 14:25:57 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 21:30:32 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,24 @@ Brain::Brain() {
 
 Brain::Brain(const Brain &oldBrain) {
 
-  std::cout << "[ Brain ] copy Constructor called !" << std::endl;
-  *this = oldBrain;
+	std::cout << "[ Brain ] copy Constructor called !" << std::endl;
+	*this = oldBrain;
 }
 
 // Copy using the algorithm header 
 // std::copy(oldBrain._ideas, oldBrain._ideas + 100, _ideas);
 Brain& Brain::operator=(const Brain &oldBrain) {
 
-  std::cout << "[ Brain ] Copy Assignment operator called !" << std::endl;
-  if (this != &oldBrain) {
-
-	  for ( int i = 0; i < INDEX; i++) {
-		  
-		  _ideas[i] = oldBrain._ideas[i];
-	  }
-  }
-  return (*this);
+	(void)oldBrain;
+	std::cout << "[ Brain ] Copy Assignment operator called !" << std::endl;
+	return (*this);
 }
+
+// Brain* Brain::clone() const {
+//
+// 	std::cout << "Brain clonage . .. ..." << std::endl;
+// 	return (new Brain(*this));
+// }
 
 bool	goodIndex(int index) {
 

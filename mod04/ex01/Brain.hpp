@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:41:08 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/07 11:54:23 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 21:17:06 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ class Brain {
 		Brain &operator=(const Brain &);
 		~Brain();
 
-    std::string getIdeas(int index) const;
-    void setIdeas(int index, std::string ideas);
+		//Brain* clone() const;
+		std::string getIdeas(int index) const;
+		void setIdeas(int index, std::string ideas);
 
 	private:
 

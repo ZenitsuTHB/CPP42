@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:10:12 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:10:17 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 21:18:13 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,23 @@ Dog::Dog() : Animal("Dog") {
   std::cout << "[ Dog's ] Constructor has been called !" << std::endl;
 }
 
-Dog::Dog(const Dog &oldDog) : Animal(oldDog) {
+Dog::Dog(const Dog &otherDog) : Animal(otherDog) {
 
-    *this = oldDog;
+    *this = otherDog;
+	_dogBrain = new Brain();
 }
 
-Dog&  Dog::operator=(const Dog &oldDog) {
+Dog&  Dog::operator=(const Dog &otherDog) {
 
-    if (this != &oldDog)
-        Dog::operator=(oldDog);
+	if (this != &otherDog) {
+
+		Animal::operator=(otherDog);
+		//easyway dereferencing both pointers
+		*(_dogBrain) = *(otherDog._dogBrain);
+		//_dogBrain = otherDog._dogBrain->clone();
+		//memoryleak to solve, double free cause of Brain destructor
+
+	}
     return (*this);
 }
 
