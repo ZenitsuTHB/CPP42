@@ -26,14 +26,18 @@ Cat::Cat() : Animal("Cat") {
 
 Cat::Cat(const Cat &oldCat) : Animal(oldCat) {
 
+    _catBrain = new Brain();
     *this = oldCat;
 }
 
-Cat&  Cat::operator=(const Cat &oldCat) {
+Cat&  Cat::operator=(const Cat &otherCat) {
 
+    if (this != &otherCat) {
 
-    if (this != &oldCat)
-        Animal::operator=(oldCat);
+        Animal::operator=(otherCat);
+        delete _catBrain;
+        _catBrain = new Brain(*otherCat._catBrain);
+    }
     return (*this);
 }
 

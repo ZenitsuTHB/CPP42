@@ -31,10 +31,8 @@ Animal::Animal(const Animal &oldAnimal) {
 Animal& Animal::operator=(const Animal &oldAnimal) {
 
     std::cout << "[ Base class Animal ] Copy Assignment operator called !" << std::endl;
-    if (this != &oldAnimal) {
-
+    if (this != &oldAnimal)
       _type = oldAnimal.getType();
-    }
     return (*this);
 }
 

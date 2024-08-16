@@ -21,22 +21,22 @@ Dog::Dog() : Animal("Dog") {
 
 Dog::Dog(const Dog &otherDog) : Animal(otherDog) {
 
+    _dogBrain = new Brain();
     *this = otherDog;
-	_dogBrain = new Brain();
 }
 
+//easyway dereferencing both pointers
+//_dogBrain = otherDog._dogBrain->clone();
+//memoryleak to solve, double free cause of Brain destructor
 Dog&  Dog::operator=(const Dog &otherDog) {
 
 	if (this != &otherDog) {
 
 		Animal::operator=(otherDog);
-		//easyway dereferencing both pointers
-		*(_dogBrain) = *(otherDog._dogBrain);
-		//_dogBrain = otherDog._dogBrain->clone();
-		//memoryleak to solve, double free cause of Brain destructor
-
+    delete _dogBrain;
+		_dogBrain = new Brain(*otherDog._dogBrain);
 	}
-    return (*this);
+  return (*this);
 }
 
 void Dog::setIdeasBrain(int index, std::string idea) {
