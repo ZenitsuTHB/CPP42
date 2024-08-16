@@ -5,7 +5,7 @@
 # define _ICE_HPP
 
 #include <iostream>
-#include "AMateria.hppp"
+#include "AMateria.hpp"
 
 class Ice : public AMateria {
     

@@ -5,7 +5,7 @@
 # define _CURE_HPP
 
 #include <iostream>
-#include "AMateria.hppp"
+#include "AMateria.hpp"
 
 class Cure : public AMateria {
 
