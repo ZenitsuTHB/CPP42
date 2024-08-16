@@ -18,7 +18,7 @@
 #include "Brain.hpp"
 #include "Animal.hpp"
 
-class Dog :public AAnimal {
+class Dog :public Animal {
 
     public:
 

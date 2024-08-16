@@ -25,7 +25,7 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = AAnimals 
+NAME = AbstractAnim 
 HEADER_HPP = Animal.hpp
 HEADER_HPP += Brain.hpp
 HEADER_HPP += WrongAnimal.hpp

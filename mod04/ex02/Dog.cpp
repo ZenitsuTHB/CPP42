@@ -6,29 +6,37 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:10:12 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:10:17 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 21:18:13 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Animal.hpp"
 
-Dog::Dog() : AAnimal("Dog") {
+Dog::Dog() : Animal("Dog") {
 
   _dogBrain = new Brain();
   std::cout << "[ Dog's ] Constructor has been called !" << std::endl;
 }
 
-Dog::Dog(const Dog &oldDog) : AAnimal(oldDog) {
+Dog::Dog(const Dog &otherDog) : Animal(otherDog) {
 
-    *this = oldDog;
+    _dogBrain = new Brain();
+    *this = otherDog;
 }
 
-Dog&  Dog::operator=(const Dog &oldDog) {
+//easyway dereferencing both pointers
+//_dogBrain = otherDog._dogBrain->clone();
+//memoryleak to solve, double free cause of Brain destructor
+Dog&  Dog::operator=(const Dog &otherDog) {
 
-    if (this != &oldDog)
-        Dog::operator=(oldDog);
-    return (*this);
+	if (this != &otherDog) {
+
+		Animal::operator=(otherDog);
+    delete _dogBrain;
+		_dogBrain = new Brain(*otherDog._dogBrain);
+	}
+  return (*this);
 }
 
 void Dog::setIdeasBrain(int index, std::string idea) {

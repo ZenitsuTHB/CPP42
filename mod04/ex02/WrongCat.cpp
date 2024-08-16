@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:11:17 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:11:21 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:24:20 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ WrongCat::WrongCat(const WrongCat &oldWrongCat) : WrongAnimal(oldWrongCat) {
 WrongCat& WrongCat::operator=(const WrongCat &oldWrongCat) {
 
     if (this != &oldWrongCat)
-      WrongCat::operator=(oldWrongCat);
+      WrongAnimal::operator=(oldWrongCat);
     return (*this);
 }
 

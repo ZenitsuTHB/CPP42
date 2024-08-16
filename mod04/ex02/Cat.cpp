@@ -6,34 +6,38 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:09:43 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/07 13:58:36 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:23:57 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Animal.hpp"
 
-// Cat::Cat() : AAnimal() {
+// Cat::Cat() : Animal() {
 //
 //   std::cout << "[ Cat's ] Default Constructor called !" << std::endl;
 // }
 
-Cat::Cat() : AAnimal("Cat") {
+Cat::Cat() : Animal("Cat") {
 
 	_catBrain = new Brain();
 	std::cout << "[ Cat's ] Parameterized Constructor called !" << std::endl;
 }
 
-Cat::Cat(const Cat &oldCat) : AAnimal(oldCat) {
+Cat::Cat(const Cat &oldCat) : Animal(oldCat) {
 
+    _catBrain = new Brain();
     *this = oldCat;
 }
 
-Cat&  Cat::operator=(const Cat &oldCat) {
+Cat&  Cat::operator=(const Cat &otherCat) {
 
+    if (this != &otherCat) {
 
-    if (this != &oldCat)
-        Cat::operator=(oldCat);
+        Animal::operator=(otherCat);
+        delete _catBrain;
+        _catBrain = new Brain(*otherCat._catBrain);
+    }
     return (*this);
 }
 

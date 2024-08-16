@@ -1,55 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:08:54 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:08:59 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 19:22:38 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-AAnimal::AAnimal() : _type("Anonimous AAnimal") {
+Animal::Animal() : _type("Anonimous Animal") {
 
-  std::cout << "[ Base class AAnimal ] Default Constructor called !" << std::endl;
+  std::cout << "[ Base class Animal ] Default Constructor called !" << std::endl;
 }
 
-AAnimal::AAnimal(const std::string &type) : _type(type) {
+Animal::Animal(const std::string &type) : _type(type) {
 
-  std::cout << "[ Base class AAnimal ] Parametrized Constructor called !" << std::endl;
+  std::cout << "[ Base class Animal ] Parametrized Constructor called !" << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal &oldAAnimal) {
+Animal::Animal(const Animal &oldAnimal) {
 
-    std::cout << "[ Base class AAnimal ] Copy Constructor called !" << std::endl;
-    *this = oldAAnimal;
+    std::cout << "[ Base class Animal ] Copy Constructor called !" << std::endl;
+    *this = oldAnimal;
 }
       
-AAnimal& AAnimal::operator=(const AAnimal &oldAAnimal) {
+Animal& Animal::operator=(const Animal &oldAnimal) {
 
-    std::cout << "[ Base class AAnimal ] Copy Assignment operator called !" << std::endl;
-    if (this != &oldAAnimal) {
-
-      _type = oldAAnimal._type;
-    }
+    std::cout << "[ Base class Animal ] Copy Assignment operator called !" << std::endl;
+    if (this != &oldAnimal)
+      _type = oldAnimal.getType();
     return (*this);
 }
 
-std::string AAnimal::getType() const {
+std::string Animal::getType() const {
 
   return(_type);
 }
 
-// void  AAnimal::makeSound() const {
-//
-//   std::cout << "[ AAnimal ] sounds like : " << DefaultSound << std::endl;
-// }
+void  Animal::makeSound() const {
 
-AAnimal::~AAnimal() {
+  std::cout << "[ Animal ] sounds like : " << DefaultSound << std::endl;
+}
 
-  std::cout << "[ Base class AAnimal ] Destructor called !" << std::endl;
+Animal::~Animal() {
+
+  std::cout << "[ Base class Animal ] Destructor called !" << std::endl;
 }
 

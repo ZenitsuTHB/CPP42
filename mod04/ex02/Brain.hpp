@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:41:08 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/07 11:54:23 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/15 21:17:06 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define INDEX 100
 # define BOSS "I Must start my Own Business"
-# define IDEAS "Probably Thinking of good ideas ..."
+# define IDEAS "Thinking ... .. ."
 # define INVIDX "Invalid index Detected ! Must be between (0 - 99)"
 
 #include <string>
@@ -23,21 +23,22 @@
 
 class Brain {
 
-	public:
+    public:
 
-		Brain();
-		Brain(const Brain &);
-		Brain &operator=(const Brain &);
-		~Brain();
+      Brain();
+      Brain(const Brain &);
+      Brain &operator=(const Brain &);
+      ~Brain();
 
-    std::string getIdeas(int index) const;
-    void setIdeas(int index, std::string ideas);
+      //Brain* clone() const;
+      std::string getIdeas(int index) const;
+      void setIdeas(int index, std::string ideas);
 
-	private:
+    private:
 
-    std::string _ideas[100];
+      std::string _ideas[INDEX];
 };
 
-bool	goodIndex(int index); 
+bool  goodIndex(int index); 
 
 #endif 
