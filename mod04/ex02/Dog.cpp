@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:10:12 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/15 21:18:13 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/18 13:57:23 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Dog&  Dog::operator=(const Dog &otherDog) {
 	if (this != &otherDog) {
 
 		Animal::operator=(otherDog);
-    delete _dogBrain;
+		delete _dogBrain;
 		_dogBrain = new Brain(*otherDog._dogBrain);
 	}
   return (*this);

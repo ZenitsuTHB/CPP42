@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 18:43:42 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/15 21:30:32 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/18 13:58:42 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ std::string Brain::getIdeas(int index) const {
 	  return (INVIDX);
   if (index % 2 == 0) {
 	
-	std::cout << "Idea [" << index << "] : ";
+	std::cout << "Idea index is : [" << index << "] : ";
 	return (_ideas[index]);
   }
   else {
 	
-	std::cout << "Idea [" << index << "] : ";
+	std::cout << "Idea index is : [" << index << "] : ";
 	return (_ideas[index]);
   }
 }

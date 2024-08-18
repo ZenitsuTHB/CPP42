@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:10:12 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/15 21:18:13 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/08/18 13:50:44 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 Dog::Dog() : Animal("Dog") {
 
-  _dogBrain = new Brain();
-  std::cout << "[ Dog's ] Constructor has been called !" << std::endl;
+	_dogBrain = new Brain();
+  	std::cout << "[ Dog's ] Constructor has been called !" << std::endl;
 }
 
 Dog::Dog(const Dog &otherDog) : Animal(otherDog) {
@@ -33,7 +33,7 @@ Dog&  Dog::operator=(const Dog &otherDog) {
 	if (this != &otherDog) {
 
 		Animal::operator=(otherDog);
-    delete _dogBrain;
+		delete _dogBrain;
 		_dogBrain = new Brain(*otherDog._dogBrain);
 	}
   return (*this);
@@ -41,21 +41,21 @@ Dog&  Dog::operator=(const Dog &otherDog) {
 
 void Dog::setIdeasBrain(int index, std::string idea) {
 
-  _dogBrain->setIdeas(index, idea);
+	_dogBrain->setIdeas(index, idea);
 }
 
 std::string Dog::getIdeasBrain (int index) const {
 
-  return(_dogBrain->getIdeas(index));
+	return(_dogBrain->getIdeas(index));
 }
 
 void Dog::makeSound() const {
 
-    std::cout << "[ Dog's ] sounds like : " << DogSound << std::endl;
+	std::cout << "[ Dog's ] sounds like : " << DogSound << std::endl;
 }
 
 Dog::~Dog() {
-  
-  delete (_dogBrain);
-  std::cout << "[ Dog's ] Destructor has been called !" << std::endl;
+
+	delete (_dogBrain);
+	std::cout << "[ Dog's ] Destructor has been called !" << std::endl;
 }
