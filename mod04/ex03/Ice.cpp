@@ -1,7 +1,7 @@
 //42 HEADER
 
 
-
+#include "Ice.hpp"
 
 
 Ice::Ice() : _type("ice") {

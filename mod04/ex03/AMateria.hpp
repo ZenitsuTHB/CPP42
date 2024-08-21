@@ -6,13 +6,14 @@
 
 #include <string>
 #include <iostream>
+#include "ICharacter.hpp"
 
 class AMateria
 {
     protected:
 
       std::string _type;
-      [...]
+      //[...]
 
     public:
 
