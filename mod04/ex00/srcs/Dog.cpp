@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Animal.hpp"
+#include "../headers/Dog.hpp"
+#include "../headers/Animal.hpp"
 
 Dog::Dog() : Animal("Dog") {
 

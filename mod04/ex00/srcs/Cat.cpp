@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Animal.hpp"
+#include "../headers/Cat.hpp"
+#include "../headers/Animal.hpp"
 
 // Cat::Cat() : Animal() {
 //

@@ -26,9 +26,14 @@ BLACK = \033[0;39m
 CPP = c++
 RM = rm -rf
 NAME = Animals 
-HEADER_HPP = Animal.hpp
-HEADER_HPP += Brain.hpp
-HEADER_HPP += WrongAnimal.hpp
+
+SRCS = ./srcs/
+HEADER = ./headers/
+
+HEADER_HPP = $(HEADER)Animal.hpp
+HEADER_HPP += $(HEADER)Brain.hpp
+HEADER_HPP += $(HEADER)WrongAnimal.hpp
+
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -38,10 +43,11 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 F_OBJ = build/
 
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
-$(F_OBJ)%.o: %.cpp $(HEADER_HPP) Makefile
+$(F_OBJ)%.o: $(SRCS)%.cpp $(HEADER_HPP) Makefile
 	@$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 all: build_dir $(NAME)

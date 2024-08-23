@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
-#include "WrongAnimal.hpp"
+#include "../headers/WrongCat.hpp"
+#include "../headers/WrongAnimal.hpp"
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat") {
 

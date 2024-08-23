@@ -26,8 +26,13 @@ BLACK = \033[0;39m
 CPP = c++
 RM = rm -rf
 NAME = Animals 
-HEADER_HPP = Animal.hpp
-HEADER_HPP += WrongAnimal.hpp
+
+SRCS = ./srcs/
+HEADERS = ./headers/
+
+HEADER_HPP = $(HEADERS)Animal.hpp
+HEADER_HPP += $(HEADERS)WrongAnimal.hpp
+
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -40,7 +45,7 @@ SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
-$(F_OBJ)%.o: %.cpp $(HEADER_HPP) Makefile
+$(F_OBJ)%.o: $(SRCS)%.cpp $(HEADER_HPP) Makefile
 	@$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 all: build_dir $(NAME)

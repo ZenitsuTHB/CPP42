@@ -16,6 +16,7 @@
 #include "../headers/Cat.hpp"
 #include "../headers/WrongCat.hpp"
 #include "../headers/WrongAnimal.hpp"
+
 # define LEN 5
 
 int main() 
