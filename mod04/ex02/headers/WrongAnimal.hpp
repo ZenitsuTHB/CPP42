@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 13:11:26 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/05 13:11:34 by avolcy           ###   ########.fr       */
+/*   Created: 2024/08/05 13:09:09 by avolcy            #+#    #+#             */
+/*   Updated: 2024/08/05 13:09:19 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-#define WRONGCAT_HPP
-
-#define WrongCatSound "....Boring silence....."
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <string>
 #include <iostream>
-#include "WrongAnimal.hpp"
 
-class WrongCat :public WrongAnimal {
+#define WrongAnimalSound "....Silence from WrongAnimal....."
+
+class WrongAnimal {
 
     public:
 
-        WrongCat();
-        WrongCat(const std::string &type);
-        WrongCat(const WrongCat &oldWrongCat);
-        WrongCat &operator=(const WrongCat &oldWrongCat);
-        virtual ~WrongCat();
+        WrongAnimal();
+        WrongAnimal(const std::string &type);
+        WrongAnimal(const WrongAnimal &oldWrongAnimal);
+        WrongAnimal &operator=(const WrongAnimal &oldWrongAnimal);
+        virtual ~WrongAnimal();
 
         std::string getType() const;
-        virtual void makeSound() const;
+        void makeSound() const;
+
     protected:
 
-      std::string _type;
-
+        std::string _type;
 };
 
 #endif
