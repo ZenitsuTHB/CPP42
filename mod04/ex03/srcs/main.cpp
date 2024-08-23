@@ -2,11 +2,11 @@
 
 
 
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "MateriaSource.hpp"
+#include "../headers/AMateria.hpp"
+#include "../headers/ICharacter.hpp"
+#include "../headers/Cure.hpp"
+#include "../headers/Ice.hpp"
+#include "../headers/MateriaSource.hpp"
 
 
 

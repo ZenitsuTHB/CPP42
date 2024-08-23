@@ -1,8 +1,7 @@
 //42 HEADER
 
 
-
-
+#include "../headers/Cure.hpp"
 
 Cure::Cure() : _type("cure") {
 

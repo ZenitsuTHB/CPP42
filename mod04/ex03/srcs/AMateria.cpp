@@ -1,6 +1,6 @@
 //42 HEADER
 
-
+#include "../headers/AMateria.hpp"
         
 AMateria::AMateria() : _type("Undefined type") {
 

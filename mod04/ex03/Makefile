@@ -26,7 +26,12 @@ BLACK = \033[0;39m
 CPP = c++
 RM = rm -rf
 NAME = AMateria
-HEADER_HPP = AMateria.hpp
+
+SRCS = ./srcs/
+HEADERS = ./headers/
+
+HEADER_HPP = $(HEADERS)AMateria.hpp
+
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
 # ╔══════════════════════╗ #  
@@ -39,7 +44,7 @@ SRC = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
-$(F_OBJ)%.o: %.cpp $(HEADER_HPP) Makefile
+$(F_OBJ)%.o: $(SRCS)%.cpp $(HEADER_HPP) Makefile
 	@$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 all: build_dir $(NAME)
