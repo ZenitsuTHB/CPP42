@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Buraucrat.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/08 16:02:44 by avolcy           ###   ########.fr       */
+/*   Updated: 2024/12/11 21:52:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,21 @@ class Bureaucrat
 {
     private:
         int         _grade;
-        std::string _name;
+        std::string _name;e
 
     public:
         Bureaucrat(const std::string name, int grade);
         ~Bureaucrat();
+
+        int     setGrade(int grade);
+        void    incrementGrade();
+        void    decrementGrade();
+        std::string getName();
+        int         getGrade();
+        
 };
 
+std::cout << getName() <<", bureaucrat grade " << getGrade() << std::endl;
 Bureaucrat::Bureaucrat(const std::string name, int grade)
 {
     _name = name;
@@ -35,9 +43,19 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
         throw ();
 }
 
+
+Bureaucrat::GradeTooHighException()
+{
+  throw("Exception : Grade  is Too High");
+}
+
+Bureaucrat::GradeTooLowException()
+{
+  throw("Exception : Grade is Too Low");
+}
+ 
 Bureaucrat::~Bureaucrat()
 {
 }
-
 
 #endif
