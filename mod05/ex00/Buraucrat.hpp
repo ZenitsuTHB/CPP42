@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/11 21:52:06 by marvin           ###   ########.fr       */
+/*   Updated: 2024/12/20 17:38:23 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& cog)
   out << cog.getName() <<", bureaucrat grade" << cog.getGrade();
   return (out);
 } 
-
 
 Bureaucrat::Bureaucrat(const std::string name, int grade)
 {
