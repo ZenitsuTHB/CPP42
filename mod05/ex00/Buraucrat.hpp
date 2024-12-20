@@ -55,7 +55,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
     _grade = grade;
 }
 
-void  Bureaucrat::incrementGrade()
+void Bureaucrat::incrementGrade()
 {
   if (getGrade() > highestGrade)
     _grade = _grade - 1;
