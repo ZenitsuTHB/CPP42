@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Buraucrat.hpp                                      :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/25 12:43:33 by marvin           ###   ########.fr       */
+/*   Updated: 2024/12/25 23:04:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,23 @@ class Bureaucrat
 
         void    incrementGrade();
         void    decrementGrade();
-        std::string getName();
-        int         getGrade();
+        std::string getName() const;
+        int         getGrade() const;
+
+        class GradeTooHighException : public std::exception {
+            
+            public :
+                const char* what() const throw();
+        };
+
+        class GradeTooLowException : public std::exception {
+
+            public :
+                const char* what()  const throw();
+        };
         
 };
 
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& cog);
 
 #endif

@@ -6,38 +6,45 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:39 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/25 12:43:02 by marvin           ###   ########.fr       */
+/*   Updated: 2024/12/25 23:18:26 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../header/Bureaucrat.hpp"
 
 int main ()
 {
     try
     {
-        Bureaucrat numberOne("nameOne", 0);
-        Bureaucrat numberTwo("nameTwo", 151);
-        Bureaucrat numberThree("name", 150);
+        Bureaucrat numberOne("nameOne", 1);
+        std::cout << numberOne << std::endl;
+        Bureaucrat numberTwo("nameTwo", 150);
+        std::cout << numberTwo << std::endl;
+        Bureaucrat numberThree("name", 151);
+        std::cout << numberThree << std::endl;
     }
     catch (std::exception & e)
     {
-      std::cout << Exception << e.what() << std::endl;
+      std::cout << "Exception " << e.what() << std::endl;
     }
-
-  
+    
     try {
-      Bureaucrat test("Testy", 7);
-      Bureaucrat testTooHigh("Testy", 1);
-      test.incrementGrade();
-      Bureaucrat testTooLow("Testy", 150);
-      test.decrementGrade();
-    }
-    catch (const std::exception&) {
+        Bureaucrat bob("Bob", 2);
+        std::cout << bob << std::endl;
 
-      std::cout << e.what() << endl;
+        bob.incrementGrade();
+        std::cout << bob << std::endl;
+
+        bob.incrementGrade(); // Should throw GradeTooHighException
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
     }
-    std::cout << test << endl;
+
+    try {
+        Bureaucrat jim("Jim", 151); // Should throw GradeTooLowException
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 
     return 0;
 }

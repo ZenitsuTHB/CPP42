@@ -10,17 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../header/Bureaucrat.hpp"
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& cog)
+Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
-  out << cog.getName() <<", bureaucrat grade" << cog.getGrade();
-  return (out);
-} 
-
-Bureaucrat::Bureaucrat(const std::string name, int grade)
-{
-    _name = name;
     if (grade > lowestGrade)
       throw GradeTooHighException();
     else if (grade < highestGrade)
@@ -28,40 +21,38 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
     _grade = grade;
 }
 
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& cog)
+{
+  out << cog.getName() <<", bureaucrat grade "<< cog.getGrade();
+  return (out);
+} 
+
 void Bureaucrat::incrementGrade()
 {
-  if (getGrade() > highestGrade)
-    _grade = _grade - 1;
-  throw GradeTooHighException();
+  if (_grade - 1 < highestGrade)
+    throw GradeTooHighException();
+  _grade--;
 }
 
 void  Bureaucrat::decrementGrade()
 {
-  if (getGrade() < lowestGrade)
-    _grade = _grade + 1;
-  throw GradeTooLowException();
+  if (_grade + 1 > lowestGrade)
+    throw GradeTooLowException();
+  _grade++;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const { return(_name); }
+
+int Bureaucrat::getGrade() const { return (_grade); }
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-  return(_name);
+  return ("Exception : Grade  is Too High");
 }
 
-int Bureaucrat::getGrade()
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-  return (_grade);
-}
-
-Bureaucrat::GradeTooHighException()
-{
-  std::cerr << "Exception : Grade  is Too High" << endl;
-}
-
-Bureaucrat::GradeTooLowException()
-{
-  std::cerr << "Exception : Grade is Too Low" << endl;
+  return("Exception : Grade is Too Low");
 }
  
-Bureaucrat::~Bureaucrat()
-{
-}
+Bureaucrat::~Bureaucrat() {}
