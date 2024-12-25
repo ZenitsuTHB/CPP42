@@ -7,6 +7,7 @@
 This Repo is all about Initiation to  c++ XD
 
 
+<div>
 ### CPP_05
 
 #### ex00 
@@ -51,6 +52,7 @@ An overload of the insertion («) operator to print something like :
 <div align="center" width="20">
     <p>Pseudo-code</p>
     <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0500.png" width="600" height="650" alt="cpp workflow"/>
+</div>
 </div>
 
 ###
