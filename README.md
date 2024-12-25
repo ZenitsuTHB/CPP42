@@ -48,30 +48,9 @@ An overload of the insertion («) operator to print something like :
   ``<name>, bureaucrat grade <grade>.``
 ###
 
-<div align="center">
-Pseudo-code
-  
-  Start
-      |
-Input Name & Grade
-      |
-  Is Grade Valid? ------ No ---> Throw Exception
-      |                            |
-      |                            |
-      Yes                         End
-      |
- Choose Operation:
- Increment / Decrement
-      |
- Adjust Grade
-      |
- Is Adjusted Grade Valid?
-      |        |
-      No       Yes
-      |         |
-Throw Exception Update Grade
-      |         |
-      |    Print Bureaucrat
-      |         |
-     End <-------
+<div align="center" width="20">
+    <p>Pseudo-code</p>
+    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/diag_05Ex00.png" width="800" height="850" alt="cpp workflow"/>
 </div>
+
+###
