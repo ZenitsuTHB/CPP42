@@ -53,6 +53,11 @@ An overload of the insertion («) operator to print something like :
     <p>Pseudo-code</p>
     <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0500.png" width="600" height="650" alt="cpp workflow"/>
 </div>
+
+###
+Note :
+###
+In C++98, the best practice is to define the ```Exceptions``` as classes, not ```methods```, and make them inherit from **std::exception**
 </div>
 
 ###
