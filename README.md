@@ -6,11 +6,10 @@
 
 This Repo is all about Initiation to  c++ XD
 
-
 <div>
 ### CPP_05
 
-#### ex00 
+#### ex00   Mommy, when I grow up, I want to be a bureaucrat! 
 
 This exercice is an initiation to (Exceptions), what are Exceptions ?
 
@@ -54,6 +53,30 @@ An overload of the insertion («) operator to print something like :
     <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0500.png" width="600" height="650" alt="cpp workflow"/>
 </div>
 
+#### ex01    Form up, maggots!
+
+This exercise is about filling forms by signing them, if the :  
+
+- Form has to be signed
+- Bureaucrat has the correct grade
+
+<ins>_RECIPE_</ins>
+- A _FORM_ class
+   - A const ```Name```
+   - A ```bolean``` indicating status (signed || !signed)
+   - A const ```grade``` required to be able to sign a form
+   - A const ```grade``` required to be able to execute it
+grade follows the same rules that apply to the Bureaucrat.
+
+- Incorrect grades will throw : Form::GradeTooHighException or Form::GradeTooLowException
+- Getters for all atrubutes
+- Overload insertion operator (<<) to print out the Fom's informations.
+- A beSigned(Bureaucrat parameter) member funtion, that changes the form status to _signed_ if :
+   - Bureaucrat _grade_ is high enough; >= the required grade
+- A signForm() member function to Bureaucrat, if the form got signed it prints :
+  ``<bureaucrat> signed <form>`` or
+   ``<bureaucrat> couldn’t sign <form> because <reason>``
+ 
 ###
 Note :
 ###
