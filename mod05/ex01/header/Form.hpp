@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/25 23:04:55 by marvin           ###   ########.fr       */
+/*   Updated: 2024/12/28 21:34:22 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
+#include "../header/Bureaucrat.hpp"
 
 # define lowestGrade 150
 # define highestGrade 1
@@ -25,7 +26,7 @@ class Form
 {
     private:
         const std::string   _name;
-        bool                _signed;
+        bool                _isSigned;
         int                 _gradeToSign;
         int                 _gradeToExecute;
 
@@ -36,8 +37,13 @@ class Form
         Form& operator=(const Form& other);
         ~Form();
 
+		bool		isSigned();
         std::string getName() const;
         int         getGrade() const;
+        int         getGradeTosign() const;
+        int         getGradeToExecute() const;
+
+		void		beSigned(Bureaucrat )
 
         class GradeTooHighException : public std::exception {
             
@@ -53,6 +59,8 @@ class Form
         
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& cog);
+std::ostream& operator<<(std::ostream& out, const Form& current);
+
+ 
 
 #endif
