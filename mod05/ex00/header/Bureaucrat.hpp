@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/25 23:04:55 by marvin           ###   ########.fr       */
+/*   Updated: 2024/12/27 15:53:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ class Bureaucrat
         std::string _name;
 
     public:
+        Bureaucrat();
         Bureaucrat(const std::string name, int grade);
+        Bureaucrat(const Bureaucrat &other);
+        Bureaucrat& operator=(const Bureaucrat &other);
         ~Bureaucrat();
 
         void    incrementGrade();

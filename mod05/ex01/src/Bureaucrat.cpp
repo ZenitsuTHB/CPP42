@@ -12,10 +12,6 @@
 
 #include "../header/Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(){
-
-  std::cout << "Dfault const for BUR. called" << std::endl;
-}
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
     if (grade > lowestGrade)
