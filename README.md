@@ -7,7 +7,8 @@
 This Repo is all about Initiation to  c++ XD
 
 <div>
-### CPP_05
+   
+## CPP_05
 
 #### ex00   Mommy, when I grow up, I want to be a bureaucrat! 
 
@@ -49,8 +50,8 @@ An overload of the insertion («) operator to print something like :
 ###
 
 <div align="center" width="20">
-    <p>Pseudo-code</p>
-    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0500.png" width="600" height="650" alt="cpp workflow"/>
+    <p>Flow Chart_00</p>
+    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0500.png" width="400" height="450" alt="cpp workflow"/>
 </div>
 
 #### ex01    Form up, maggots!
@@ -68,14 +69,18 @@ This exercise is about filling forms by signing them, if the :
    - A const ```grade``` required to be able to execute it
 grade follows the same rules that apply to the Bureaucrat.
 
-- Incorrect grades will throw : Form::GradeTooHighException or Form::GradeTooLowException
-- Getters for all atrubutes
-- Overload insertion operator (<<) to print out the Fom's informations.
-- A beSigned(Bureaucrat parameter) member funtion, that changes the form status to _signed_ if :
+- [x] Incorrect grades will throw : Form::GradeTooHighException or Form::GradeTooLowException
+- [x] Getters for all atrubutes
+- [x] Overload insertion operator (<<) to print out the Fom's informations.
+- [ ] A beSigned(Bureaucrat parameter) member funtion, that changes the form status to _signed_ if :
    - Bureaucrat _grade_ is high enough; >= the required grade
-- A signForm() member function to Bureaucrat, if the form got signed it prints :
+- [ ] A signForm() member function to Bureaucrat, if the form got signed it prints :
   ``<bureaucrat> signed <form>`` or
    ``<bureaucrat> couldn’t sign <form> because <reason>``
+<div align="center" width="20">
+    <p>Flow Chart_01</p>
+    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0501.png" width="400" height="450" alt="cpp workflow"/>
+</div>
  
 ###
 Note :
