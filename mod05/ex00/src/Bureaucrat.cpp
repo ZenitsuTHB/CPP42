@@ -12,7 +12,7 @@
 
 #include "../header/Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(){
+Bureaucrat::Bureaucrat() : _grade1(10) {
 
   std::cout << "Dfault const for BUR. called" << std::endl;
 }
