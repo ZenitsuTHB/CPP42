@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/28 21:34:22 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/01 22:19:53 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Form
         int         getGradeTosign() const;
         int         getGradeToExecute() const;
 
-		void		beSigned(Bureaucrat )
+		void		beSigned(Bureaucrat &bur);
 
         class GradeTooHighException : public std::exception {
             
