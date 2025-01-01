@@ -6,45 +6,16 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:39 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/25 23:18:26 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/01 21:05:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../header/Form.hpp"
 #include "../header/Bureaucrat.hpp"
 
 int main ()
 {
-    try
-    {
-        Bureaucrat numberOne("nameOne", 1);
-        std::cout << numberOne << std::endl;
-        Bureaucrat numberTwo("nameTwo", 150);
-        std::cout << numberTwo << std::endl;
-        Bureaucrat numberThree("name", 151);
-        std::cout << numberThree << std::endl;
-    }
-    catch (std::exception & e)
-    {
-      std::cout << e.what() << std::endl;
-    }
+    Form a("test", 3, 2);
     
-    try {
-        Bureaucrat bob("Bob", 2);
-        std::cout << bob << std::endl;
-
-        bob.incrementGrade();
-        std::cout << bob << std::endl;
-
-        bob.incrementGrade(); // Should throw GradeTooHighException
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
-
-    try {
-        Bureaucrat jim("Jim", 151); // Should throw GradeTooLowException
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-    }
-
     return 0;
 }
