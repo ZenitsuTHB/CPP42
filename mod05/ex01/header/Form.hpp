@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/03 00:25:13 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/03 15:02:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # define highestGrade 1
 
 class Bureaucrat; // Forward declaration
-
 class Form
 {
     private:
@@ -34,7 +33,7 @@ class Form
 
     public:
         Form();
-        Form(const std::string name, int gradeToSign, int gradeToExecute);
+        Form(const std::string name, int gToSign, int gToExec);
         Form(const Form& other);
         Form& operator=(const Form& other);
         ~Form();
@@ -45,7 +44,7 @@ class Form
         int         getGradeTosign() const;
         int         getGradeToExecute() const;
 
-		void		beSigned(const Bureaucrat &bur);
+		void		beSigned(const Bureaucrat &);
 
         class GradeTooHighException : public std::exception {
             
@@ -62,5 +61,5 @@ class Form
 };
 
 std::ostream& operator<<(std::ostream& out, const Form& current);
-
+ 
 #endif
