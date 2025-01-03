@@ -51,7 +51,7 @@ An overload of the insertion («) operator to print something like :
 
 <div align="center" width="20">
     <p>Flow Chart_00</p>
-    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0500.png" width="400" height="450" alt="cpp workflow"/>
+    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0500.png" width="300" height="100" alt="cpp workflow"/>
 </div>
 
 #### ex01    Form up, maggots!
@@ -72,14 +72,17 @@ grade follows the same rules that apply to the Bureaucrat.
 - [x] Incorrect grades will throw : Form::GradeTooHighException or Form::GradeTooLowException
 - [x] Getters for all atrubutes
 - [x] Overload insertion operator (<<) to print out the Fom's informations.
-- [ ] A beSigned(Bureaucrat parameter) member funtion, that changes the form status to _signed_ if :
-   - Bureaucrat _grade_ is high enough; >= the required grade
-- [ ] A signForm() member function to Bureaucrat, if the form got signed it prints :
+- [x] A beSigned(Bureaucrat parameter) member funtion, that changes the form status to _signed_ if :
+   - Bureaucrat _grade_ is high enough; means >= the required grade
+- [x] A signForm() member function to Bureaucrat, if the form got signed it prints :
   ``<bureaucrat> signed <form>`` or
    ``<bureaucrat> couldn’t sign <form> because <reason>``
+Note : to be able to use Form Class inside of Bureaucrat Class and vice versa we use what is called :  _```Forwarded Declaration```_
+
+Explaination here : https://www.geeksforgeeks.org/what-are-forward-declarations-in-c/
 <div align="center" width="20">
     <p>Flow Chart_01</p>
-    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0501.png" width="400" height="450" alt="cpp workflow"/>
+    <img src="https://github.com/ZenitsuTHB/CPP42/blob/main/mod05/workfl0501.png" width="300" height="100" alt="cpp workflow"/>
 </div>
  
 ###
