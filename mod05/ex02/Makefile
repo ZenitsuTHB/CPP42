@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/01/03 23:49:51 by marvin           ###   ########.fr        #
+#    Updated: 2025/01/03 23:50:16 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,12 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = Form
+NAME = AForm
 
 SRCS = ./src/
 HEADERS = ./header/
 
-HEADER_HPP = $(HEADERS)Bureaucrat.hpp $(HEADERS)Form.hpp
+HEADER_HPP = $(HEADERS)Bureaucrat.hpp $(HEADERS)AForm.hpp
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
@@ -40,7 +40,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
