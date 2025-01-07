@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/01/03 23:50:16 by marvin           ###   ########.fr        #
+#    Updated: 2025/01/07 21:52:13 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ NAME = AForm
 SRCS = ./src/
 HEADERS = ./header/
 
-HEADER_HPP = $(HEADERS)Bureaucrat.hpp $(HEADERS)AForm.hpp
+HEADER_HPP = $(HEADERS)Bureaucrat.hpp $(HEADERS)AForm.hpp $(HEADERS)ShrubberyCreationForm.hpp 
+HEADER_HPP += $(HEADERS)RobotomyRequestForm.hpp $(HEADERS)PresidentialPardonForm.hpp
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
@@ -40,7 +41,9 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp
+
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 

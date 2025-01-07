@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/07 18:58:50 by avolcy           ###   ########.fr       */
+/*   Created: 2025/01/07 21:39:19 by avolcy            #+#    #+#             */
+/*   Updated: 2025/01/07 21:49:55 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _PRESIDENTIALPARDONFORM_HPP
+# define _PRESIDENTIALPARDONFORM_HPP
 
-# ifndef _SHRUBBERYCREATIONFORM_HPP
-#define _SHRUBBERYCREATIONFORM_HPP
-
-#include <fstream>
 #include "AForm.hpp"
 
+class Bureaucrat;
 
-class Bureaucrat; // Forward declaration
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
     private:
-        std::string     _target;
-
+        std::string _target;
+        
     public:
-        ShrubberyCreationForm(const std::string &target);
-        ~ShrubberyCreationForm();
-
-        void    execute(Bureaucrat const & executor) const;
-
+        PresidentialPardonForm(const std::string &);
+        ~PresidentialPardonForm();
+        
+        void    execute(const Bureaucrat &) const;
 };
- 
+
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <avolcy@student.42barcelona.co>     +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/06 23:11:17 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/07 17:47:50 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define lowestGrade 150
 # define highestGrade 1
 
-#include "../header/AForm.hpp"
+#include "AForm.hpp"
 
 class AForm;
 class Bureaucrat

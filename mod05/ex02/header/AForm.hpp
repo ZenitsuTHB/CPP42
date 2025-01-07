@@ -17,7 +17,7 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
-#include "../header/Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 # define lowestGrade 150
 # define highestGrade 1
