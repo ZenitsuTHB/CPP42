@@ -23,10 +23,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
     _grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
-{
-	*this = other;
-}
+Bureaucrat::Bureaucrat(const Bureaucrat &other) {	*this = other; }
         
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
