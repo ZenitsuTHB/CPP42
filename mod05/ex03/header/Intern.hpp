@@ -19,7 +19,7 @@
 #include "PresidentialPardonForm.hpp"
 
 class Bureaucrat;
-class Intern : public AForm
+class Intern
 {
     public:
         Intern();
@@ -28,7 +28,6 @@ class Intern : public AForm
         ~Intern();
 
         AForm *makeForm(std::string formName, std::string target);
-        void   execute(const Bureaucrat &) const;
 
         class FormDoesNotExistException : public std::exception
         {

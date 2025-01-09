@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:39 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/09 15:51:13 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/09 23:29:00 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,22 @@ int main ()
     {
         std::cerr << e.what() << '\n';
     } */
+
+    Intern *formula1 = new Intern();
+    //Intern* formula1 = new Intern[3] ;
+    
     try {
         
-        //AForm *arrayForm = new ;
-        Intern* formula1 = new Intern[3] ;
-     
-        formula1->makeForm("test", "internForm");
-        std::cout << "Intern Creates : " << formula1 << '\n';
+        AForm *form = formula1->makeForm("robotomy request", "home");
+        std::cout << "Intern Creates : " << *form << '\n';
+        form->execute(*new Bureaucrat("John", 1));
+        delete form;
     }
     catch (const std::exception &e){
         
         std::cerr << "Couldn't create the form cause " << e.what() << '\n';
     }
+    delete formula1;
+
     return 0;
 }

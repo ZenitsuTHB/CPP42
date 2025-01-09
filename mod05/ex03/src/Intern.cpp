@@ -12,11 +12,11 @@
 
 #include "../header/Intern.hpp"
 
-Intern::Intern() : AForm() {}
+Intern::Intern() {}
 
 Intern::Intern(const Intern &copy) { *this = copy; }
 
-Intern &Intern::operator=(const Intern &copy) { (void)copy; return *this; }
+Intern &Intern::operator=(const Intern &copy) { (void)copy; return (*this); }
 
 AForm *Intern::makeForm(std::string formName, std::string target) {
 
