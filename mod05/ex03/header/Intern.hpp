@@ -18,6 +18,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+class Bureaucrat;
 class Intern : public AForm
 {
     public:
@@ -27,7 +28,7 @@ class Intern : public AForm
         ~Intern();
 
         AForm *makeForm(std::string formName, std::string target);
-        void    
+        void   execute(const Bureaucrat &) const;
 
         class FormDoesNotExistException : public std::exception
         {
@@ -35,5 +36,6 @@ class Intern : public AForm
                 const char *what() const throw();
                 //FormDoesNotExistException() const throw();
         };
-}
+};
+
 #endif

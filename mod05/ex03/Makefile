@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/01/07 21:52:13 by avolcy           ###   ########.fr        #
+#    Updated: 2025/01/09 15:45:17 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS = ./src/
 HEADERS = ./header/
 
 HEADER_HPP = $(HEADERS)Bureaucrat.hpp $(HEADERS)AForm.hpp $(HEADERS)ShrubberyCreationForm.hpp 
-HEADER_HPP += $(HEADERS)RobotomyRequestForm.hpp $(HEADERS)PresidentialPardonForm.hpp
+HEADER_HPP += $(HEADERS)RobotomyRequestForm.hpp $(HEADERS)PresidentialPardonForm.hpp $(HEADERS)Intern.hpp
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
@@ -42,7 +42,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 F_OBJ = build/
 
 SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
-	PresidentialPardonForm.cpp
+	PresidentialPardonForm.cpp Intern.cpp
 
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))

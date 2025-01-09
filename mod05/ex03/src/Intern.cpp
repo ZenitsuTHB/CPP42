@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Intern.hpp"
+#include "../header/Intern.hpp"
 
 Intern::Intern() : AForm() {}
 
