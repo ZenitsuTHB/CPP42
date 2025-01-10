@@ -30,14 +30,16 @@ AForm *Intern::makeForm(std::string formName, std::string target) {
         throw Intern::FormDoesNotExistException();
 }
 
-const char *Intern::FormDoesNotExistException::what() const throw() {
+/* Intern::FormDoesNotExistException::FormDoesNotExistException() throw() {
 
-    return ("Form does not exist");
-}
-
-/* Intern::FormDoesNotExistException::FormDoesNotExistException() const throw() {
-
-    return ("Form does not exist");
+    std::cout << "Form does not exisjjjt \n";
 }
  */
+
+const char *Intern::FormDoesNotExistException::what() const throw() {
+
+    return ("Form Name does not exist");
+}
+//Intern::FormDoesNotExistException::~FormDoesNotExistException() throw() {}
+
 Intern::~Intern() {}

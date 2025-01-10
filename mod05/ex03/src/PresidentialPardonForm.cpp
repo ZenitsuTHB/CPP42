@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:50:27 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/07 22:00:14 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/10 12:39:00 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string & target) : 
 AForm("Presidential Pardon Form", 25, 5), _target(target) {}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & copy) :
+AForm(copy), _target(copy._target) {
+    *this = copy;
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm & copy)
+{
+    if (this != &copy)
+    {
+        AForm::operator=(copy);
+        _target = copy._target;
+    }
+    return (*this);
+}
 
 void    PresidentialPardonForm::execute(const Bureaucrat & executee) const
 {

@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 20:30:14 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/07 20:30:49 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/10 12:39:55 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : 
 AForm("Robotomy Request Form", 72, 45), _target(target) {}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) :
+AForm(copy), _target(copy._target) {
+    *this = copy;
+}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &copy) {
+ 
+    if (this != &copy) {
+        AForm::operator=(copy);
+        _target = copy._target;
+    }
+    return (*this);
+}
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {

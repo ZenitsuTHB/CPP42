@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:39 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/09 23:29:00 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/10 13:38:36 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main ()
     
     try {
         
-        AForm *form = formula1->makeForm("robotomy request", "home");
+        AForm *form = formula1->makeForm("robotomy reqjuest", "home");
         std::cout << "Intern Creates : " << *form << '\n';
         form->execute(*new Bureaucrat("John", 1));
         delete form;

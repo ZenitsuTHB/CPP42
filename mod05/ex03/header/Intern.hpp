@@ -32,8 +32,10 @@ class Intern
         class FormDoesNotExistException : public std::exception
         {
             public:
-                const char *what() const throw();
-                //FormDoesNotExistException() const throw();
+                //FormDoesNotExistException() throw();
+                
+                //virtual ~FormDoesNotExistException() throw();  // Virtual destructor
+                const char* what() const throw();  // Overriding std::exception's what()
         };
 };
 

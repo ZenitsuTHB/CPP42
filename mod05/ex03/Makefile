@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/01/09 15:45:17 by avolcy           ###   ########.fr        #
+#    Updated: 2025/01/10 15:37:55 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = AForm
+NAME = Intern
 
 SRCS = ./src/
 HEADERS = ./header/
