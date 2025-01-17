@@ -92,3 +92,32 @@ In C++98, the best practice is to define the ```Exceptions``` as classes, not ``
 </div>
 
 ###
+
+## CPP_06
+
+#### ex00
+   _CASTINGS_
+   Breakdown between ```Normal types``` and ```Literal types```
+1.Normal Types
+A normal type refers to the data type of a variable or object. It's a blueprint that defines :
+   - The kind of data a variable can store (eg. int, float, char)
+   - The operations allowed on that variable
+```
+      int a = 42;      // 'int' is the normal type
+      float b = 3.14;  // 'float' is the normal type
+      char c = 'x';    // 'char' is the normal type
+```
+Here, a, b, and c are variables of types int, float, and char. These normal types determine the size, behavior, and memory layout of the variables.
+
+
+2. Literal Types
+A literal type refers to a value written directly in the source code. These literals are "raw" representations of the data used to initialize or assign values to variables.
+```
+      Integer literals: 42, -7, 0
+      Floating-point literals: 3.14, -2.71, 0.0
+      Character literals: 'a', 'z', '#'
+      String literals: "hello", "world"
+      Key Difference: Literal ≠ Variable
+      A literal is a value directly written in the code (e.g., 42 is an integer literal).
+      A variable of a normal type can store and represent that literal.
+````
