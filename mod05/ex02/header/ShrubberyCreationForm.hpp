@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/07 18:58:50 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/10 11:44:56 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class ShrubberyCreationForm : public AForm
 
     public:
         ShrubberyCreationForm(const std::string &target);
+        ShrubberyCreationForm(const ShrubberyCreationForm & src);
+        ShrubberyCreationForm & operator = (const ShrubberyCreationForm & src);
         ~ShrubberyCreationForm();
 
         void    execute(Bureaucrat const & executor) const;

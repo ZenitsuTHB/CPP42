@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:47:36 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/07 20:29:33 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/01/10 11:44:11 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class RobotomyRequestForm : public AForm
         
     public:
         RobotomyRequestForm(const std::string &target);
+        RobotomyRequestForm(const RobotomyRequestForm &);
+        RobotomyRequestForm &operator=(const RobotomyRequestForm &);
         ~RobotomyRequestForm();
 
         void    execute(Bureaucrat const &) const;
