@@ -13,12 +13,13 @@
 #ifndef PRINTCONVERSIONS_HPP
 # define PRINTCONVERSIONS_HPP
 
+# include <cstdlib>
 # include "../header/IsLiteral.hpp"
 
-void printConversionInt(int i);
 void printConversionChar(char c);
-void printConversionFloat(float f);
-void printConversionDouble(double d);
+void printConversionInt( const std::string literal);
+void printConversionFloat(const std::string literal);
+void printConversionDouble(const std::string literal);
 
 bool isPrintable(const std::string& literal);
 

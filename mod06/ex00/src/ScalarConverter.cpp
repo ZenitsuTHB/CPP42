@@ -46,9 +46,7 @@ void ScalarConverter::convert(const std::string& literal)
                 printConversionChar(literal[0]);                
                 break;
              case LIT_INT:
-                int i;
-                std::istringstream(literal) >> i;
-                printConversionInt(i);
+                printConversionInt(literal);
                 break;
           /*  case LIT_FLOAT:
                 printConversionFloat(literal);
@@ -56,7 +54,7 @@ void ScalarConverter::convert(const std::string& literal)
             case LIT_DOUBLE:
                 printConversionDouble(literal);
                 break; */
-            default: throw ("This is not a valid type");
+            default: throw std::invalid_argument("This is not a valid literal !");
                 break;
         }
     }

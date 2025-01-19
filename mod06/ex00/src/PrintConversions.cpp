@@ -32,10 +32,15 @@ void printConversionChar(char c)
     std::cout << "double: " << static_cast<double>(c) <<".0"<< std::endl;
 }
 
-void printConversionInt(int i)
+void printConversionInt(const std::string literal)
 {
     std::cout << "char: ";
-    if (std::isprint(i))
+    int i = std::atoi(literal.c_str());
+    std::cout << "to int: " << i << std::endl;
+   /*/ //int MAX_INT = 2147483647 to avoid overflow
+    //int MIN_INT = -2147483648 to avoid overflow
+    std::istringstream(literal) >> i; */
+    if (i >= 0 && i <= 127 && std::isprint(i))
         std::cout << "'" << static_cast<char>(i) << "'" << std::endl;
     else
         std::cout << "Non displayable" << std::endl;
