@@ -33,7 +33,7 @@ IsLiteral & IsLiteral::operator=(const IsLiteral &cpy)
 
 bool IsLiteral::isCharLiteral(const std::string& literal)
 {
-    if (literal.length() == 1)
+    if (literal.length() == 3 && literal[0] == '\'' && literal[2] == '\'')
         return (true);
     return (false);
 }
@@ -58,11 +58,19 @@ int IsLiteral::getLiteralType(std::string literal)
         return (LIT_CHAR);
      if (isIntLiteral(literal))
         return (LIT_INT);
-   /* if (isValidFloat(literal))
+    if (isFloatLiteral(literal))
         return (LIT_FLOAT);
-    if (isValidDouble(literal))
+   /* if (isValidDouble(literal))
         return (LIT_DOUBLE); */
     return (-1);
+}
+
+bool IsLiteral::isFloatLiteral(const std::string& literal)
+{
+    std::cout << literal.length() - 1 << std::endl;
+    if(literal.length() - 1 == 'f')
+        return (true);
+    return (false);
 }
 
 

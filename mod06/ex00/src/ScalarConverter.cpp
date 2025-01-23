@@ -43,15 +43,15 @@ void ScalarConverter::convert(const std::string& literal)
         switch (expression)
         {            
             case LIT_CHAR:
-                printConversionChar(literal[0]);                
+                printConversionChar(literal);                
                 break;
              case LIT_INT:
                 printConversionInt(literal);
                 break;
-          /*  case LIT_FLOAT:
+            case LIT_FLOAT:
                 printConversionFloat(literal);
                 break;
-            case LIT_DOUBLE:
+          /*  case LIT_DOUBLE:
                 printConversionDouble(literal);
                 break; */
             default: throw std::invalid_argument("This is not a valid literal !");

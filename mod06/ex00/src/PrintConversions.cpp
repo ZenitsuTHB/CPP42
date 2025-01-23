@@ -20,8 +20,11 @@ bool isPrintable(const std::string& literal)
     return (true);
 }
 
-void printConversionChar(char c)
+void printConversionChar(const std::string literal)
 {
+    char c;
+
+    c = literal[1];
     std::cout << "char: ";
     if (std::isprint(c))
         std::cout << "'" << c << "'" << std::endl;
@@ -34,12 +37,14 @@ void printConversionChar(char c)
 
 void printConversionInt(const std::string literal)
 {
+   
+    long long i = std::atol(literal.c_str());
+    if (i > __INT_MAX__ || i < __INT_MIN__)
+    {
+        std::cerr << "\nSorry input number has to be within INT range !\n" << std::endl;
+        return;
+    }
     std::cout << "char: ";
-    int i = std::atoi(literal.c_str());
-    std::cout << "to int: " << i << std::endl;
-   /*/ //int MAX_INT = 2147483647 to avoid overflow
-    //int MIN_INT = -2147483648 to avoid overflow
-    std::istringstream(literal) >> i; */
     if (i >= 0 && i <= 127 && std::isprint(i))
         std::cout << "'" << static_cast<char>(i) << "'" << std::endl;
     else
@@ -47,4 +52,9 @@ void printConversionInt(const std::string literal)
     std::cout << "int: " << i << std::endl;
     std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(i) <<".0"<< std::endl;
+}
+
+void printConversionFloat(const std::string literal)
+{
+    std::cout << "hola float \n";
 }

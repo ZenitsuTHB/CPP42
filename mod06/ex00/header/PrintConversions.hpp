@@ -16,7 +16,9 @@
 # include <cstdlib>
 # include "../header/IsLiteral.hpp"
 
-void printConversionChar(char c);
+# define __INT_MIN__ -2147483648
+
+void printConversionChar(const std::string literal);
 void printConversionInt( const std::string literal);
 void printConversionFloat(const std::string literal);
 void printConversionDouble(const std::string literal);
