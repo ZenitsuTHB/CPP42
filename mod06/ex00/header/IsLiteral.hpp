@@ -27,7 +27,7 @@ class IsLiteral
         bool isIntLiteral(const std::string& literal);
         bool isCharLiteral(const std::string& literal);
         bool isFloatLiteral(const std::string& literal);
-        bool isDoubleLiteral(const pstd::string& literal);
+        bool isDoubleLiteral(const std::string& literal);
 
         int getLiteralType(std::string literal);
 };

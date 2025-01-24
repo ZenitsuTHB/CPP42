@@ -56,5 +56,6 @@ void printConversionInt(const std::string literal)
 
 void printConversionFloat(const std::string literal)
 {
+    (void)literal;
     std::cout << "hola float \n";
 }

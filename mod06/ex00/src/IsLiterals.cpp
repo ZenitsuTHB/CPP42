@@ -67,11 +67,9 @@ int IsLiteral::getLiteralType(std::string literal)
 
 bool IsLiteral::isFloatLiteral(const std::string& literal)
 {
-    std::cout << literal.length() - 1 << std::endl;
-    if(literal.length() - 1 == 'f')
-        return (true);
-    return (false);
+
 }
+
 
 
 IsLiteral::~IsLiteral()
