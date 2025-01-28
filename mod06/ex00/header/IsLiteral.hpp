@@ -24,6 +24,7 @@ class IsLiteral
         IsLiteral & operator=(const IsLiteral &cpy);
         ~IsLiteral();
 
+        bool isPseudoLiteral(const std::string& str);
         bool isIntLiteral(const std::string& literal);
         bool isCharLiteral(const std::string& literal);
         bool isFloatLiteral(const std::string& literal);
@@ -34,10 +35,11 @@ class IsLiteral
 
 enum e_literal
 {
+    LIT_CHAR,
     LIT_INT,
     LIT_FLOAT,
     LIT_DOUBLE,
-    LIT_CHAR
+    LIT_PSEUDO
 };
 
 #endif

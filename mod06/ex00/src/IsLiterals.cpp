@@ -56,21 +56,65 @@ int IsLiteral::getLiteralType(std::string literal)
         return (-1);
     if (isCharLiteral(literal))
         return (LIT_CHAR);
-     if (isIntLiteral(literal))
+    if (isIntLiteral(literal))
         return (LIT_INT);
     if (isFloatLiteral(literal))
         return (LIT_FLOAT);
-   /* if (isValidDouble(literal))
-        return (LIT_DOUBLE); */
+    if (isDoubleLiteral(literal))
+        return (LIT_DOUBLE);
+    if (isPseudoLiteral(literal))
+        return (LIT_PSEUDO);
     return (-1);
 }
 
 bool IsLiteral::isFloatLiteral(const std::string& literal)
 {
+    if (literal[literal.length() - 1] != 'f')
+        return (false);
 
+    std::string numPart = literal.substr(0, literal.length() - 1);
+    
+    if (!std::isdigit(numPart[0]) && numPart[0] != '-')
+        return (false);
+    bool dotSeen = false;
+    if (numPart.empty())
+        return (false);
+    for (size_t i = 0; i < numPart.length(); i++)
+    {
+            if (numPart[i] == '.')
+            {
+                if (dotSeen)
+                    return(false);
+                dotSeen = true;
+            }
+            else if (!std::isdigit(numPart[i]))
+                return (false);
+    }
+    return (true);
 }
-
-
+bool IsLiteral::isDoubleLiteral(const std::string& literal)
+{    
+    bool dotSeen = false;
+    if (literal.empty())
+        return (false);
+    for (size_t i = 0; i < literal.length(); i++)
+    {
+            if (literal[i] == '.')
+            {
+                if (dotSeen)
+                    return(false);
+                dotSeen = true;
+            }
+            else if (!std::isdigit(literal[i]))
+                return (false);
+    }
+    return (true);
+}
+bool IsLiteral::isPseudoLiteral(const std::string& literal)
+{
+    return (literal == "-inf" || literal == "+inf" || literal == "nan" ||
+     literal == "-inff" || literal == "+inff" || literal == "nanf");
+}
 
 IsLiteral::~IsLiteral()
 {

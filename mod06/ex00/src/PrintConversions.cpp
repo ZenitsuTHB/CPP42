@@ -55,7 +55,63 @@ void printConversionInt(const std::string literal)
 }
 
 void printConversionFloat(const std::string literal)
+{   
+    std::stringstream ss(literal);
+    double  num;
+    ss >> num;
+    
+    if (num > __FLT_MAX__ || num < __FLT_MIN__)
+    {
+        std::cerr << "\nSorry input number has to be within FLOAT range !\n" << std::endl;
+        return;
+    }
+    std::cout << "char: ";
+    if (num >= 0 && num <= 127 && std::isprint(num))
+        std::cout << "'" << static_cast<char>(num) << "'" << std::endl;
+    else
+        std::cout << "Non displayable" << std::endl;
+
+    if (num >= std::numeric_limits<int>::max() && num <= std::numeric_limits<int>::min())
+        std::cout << "int: " << static_cast<int>(num) << std::endl;
+    else
+        std::cout << "int: " << "impossible" << std::endl;
+    std::cout << "float: " << num << (std::fmod(num, 1.0f) == 0 ? ".0f" : "f") << std::endl;
+    std::cout << "double: " << static_cast<double>(num) << 
+    (std::fmod(num, 1.0f) == 0 ? ".0" : "") << std::endl;
+}
+
+void printConversionDouble(const std::string literal)
+{
+   std::stringstream ss(literal);
+   long double num;
+   ss >> num;
+
+    if (num > __DBL_MAX__ || num < __DBL_MIN__)
+    {
+        std::cerr << "\nSorry input number has to be within DOUBLE range !\n" << std::endl;
+        return;
+    }
+    std::cout << "char: ";
+    if (num >= 0 && num <= 127 && std::isprint(num))
+        std::cout << "'" << static_cast<char>(num) << "'" << std::endl;
+    else
+        std::cout << "Non displayable" << std::endl;
+    
+    if (num >= std::numeric_limits<int>::max() && num <= std::numeric_limits<int>::max())
+        std::cout << "int: " << static_cast<int>(num) << std::endl;
+    else
+        std::cout << "int: " << "impossible" << std::endl;
+
+    if (num >= -std::numeric_limits<float>::max() && num <= std::numeric_limits<float>::min())
+        std::cout << "float: " << static_cast<float>(num) << 
+            (std::fmod(num, 1.0f) == 0 ? ".0f" : "f") << std::endl;
+    else
+        std::cout << "float: " << "impossible" << std::endl;
+        
+    std::cout << "double: " << num << std::endl;
+}
+void printConversionPseudo(const std::string literal)
 {
     (void)literal;
-    std::cout << "hola float \n";
+    std::cout << "hola Pseudo \n";
 }
