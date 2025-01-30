@@ -73,17 +73,14 @@ bool IsLiteral::isFloatLiteral(const std::string& literal)
         return (false);
 
     std::string numPart;
-    if (literal[0] == '-'){
+    if (literal[0] == '-')
         numPart = literal.substr(1, literal.length() - 2);
-        std::cout << "numPart --> " << numPart << std::endl;}
     else
         numPart = literal.substr(0, literal.length() - 1);
 
     if (!std::isdigit(numPart[0]) && numPart[0] != '-')
         return (false);
     bool dotSeen = false;
-    std::cout << "numPart --> " << numPart << std::endl;
-
     if (numPart.empty())
         return (false);
     for (size_t i = 0; i < numPart.length(); i++)
@@ -105,15 +102,20 @@ bool IsLiteral::isDoubleLiteral(const std::string& literal)
     bool dotSeen = false;
     if (literal.empty())
         return (false);
-    for (size_t i = 0; i < literal.length(); i++)
+
+    std::string numPart;
+    numPart = literal;
+    if (literal[0] == '-')
+        numPart = literal.substr(1, literal.length());
+    for (size_t i = 0; i < numPart.length(); i++)
     {
-            if (literal[i] == '.')
+            if (numPart[i] == '.')
             {
                 if (dotSeen)
                     return(false);
                 dotSeen = true;
             }
-            else if (!std::isdigit(literal[i]))
+            else if (!std::isdigit(numPart[i]))
                 return (false);
     }
     return (true);

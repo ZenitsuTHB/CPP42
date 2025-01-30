@@ -39,8 +39,7 @@ void ScalarConverter::convert(const std::string& literal)
         
         IsLiteral type;
         int expression = type.getLiteralType(literal);
-        
-        std::cout << "Expression --> " << expression << std::endl;
+    
         switch (expression)
         {            
             case LIT_CHAR:

@@ -60,32 +60,23 @@ void printConversionFloat(const std::string literal)
     double num;
     ss >> num;
 
-    std::cout << "num --> " << num << std::endl;
-
-    // Check if number is within FLOAT range
     if (num < -std::numeric_limits<float>::max() || num > std::numeric_limits<float>::max())
     {
         std::cerr << "\nSorry, input number is out of FLOAT range!\n" << std::endl;
         return;
     }
-
-    // Convert to char if it's within printable ASCII range
     std::cout << "char: ";
     if (num >= 0 && num <= 127 && std::isprint(static_cast<int>(num)))
         std::cout << "'" << static_cast<char>(num) << "'" << std::endl;
     else
         std::cout << "Non displayable" << std::endl;
 
-    // Check if number is within INT range
     if (num > std::numeric_limits<int>::max() || num < std::numeric_limits<int>::min())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(num) << std::endl;
 
-    // Check if number is a whole number
     bool isWhole = (std::floor(num) == num);
-
-    // Float and Double output
     std::cout << "float: " << static_cast<float>(num) 
               << (isWhole ? ".0f" : "f") << std::endl;
     std::cout << "double: " << static_cast<double>(num) 
@@ -98,7 +89,7 @@ void printConversionDouble(const std::string literal)
    long double num;
    ss >> num;
 
-    if (num > __DBL_MAX__ || num < __DBL_MIN__)
+    if (num < -std::numeric_limits<double>::max() || num > std::numeric_limits<double>::max())
     {
         std::cerr << "\nSorry input number has to be within DOUBLE range !\n" << std::endl;
         return;
@@ -115,15 +106,43 @@ void printConversionDouble(const std::string literal)
         std::cout << "int: " << "impossible" << std::endl;
 
     if (num >= -std::numeric_limits<float>::max() && num <= std::numeric_limits<float>::min())
-        std::cout << "float: " << static_cast<float>(num) << 
-            (std::fmod(num, 1.0f) == 0 ? ".0f" : "f") << std::endl;
+        std::cout << "float: " << static_cast<float>(num)
+                  << (std::fmod(num, 1.0f) == 0 ? ".0f" : "f") << std::endl;
     else
         std::cout << "float: " << "impossible" << std::endl;
-        
-    std::cout << "double: " << num << std::endl;
+    std::cout << "double: " << static_cast<double>(num) << std::endl;
 }
+
 void printConversionPseudo(const std::string literal)
 {
-    (void)literal;
-    std::cout << "hola Pseudo \n";
+    if (literal == "nanf" || literal ==  "-inff" || literal == "+inff") 
+    {
+        float pseudoF;
+        if (literal == "nanf")
+            pseudoF = std::numeric_limits<float>::quiet_NaN();
+        else if (literal == "-inff")
+            pseudoF = -std::numeric_limits<float>::infinity();
+        else
+            pseudoF = std::numeric_limits<float>::infinity();
+        
+        std::cout << "\nchar: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: " << pseudoF << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(pseudoF) << "\n" << std::endl;
+    }
+    else
+    {
+        double pseudoD;
+        if (literal == "nan")
+            pseudoD = std::numeric_limits<double>::quiet_NaN();
+        else if (literal == "-inf")
+            pseudoD = -std::numeric_limits<double>::infinity();
+        else
+            pseudoD =  std::numeric_limits<double>::infinity();
+
+        std::cout << "\nchar: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: " << static_cast<float>(pseudoD) << "f" << std::endl;
+        std::cout << "double: " << pseudoD << "\n" << std::endl;
+    }
 }
