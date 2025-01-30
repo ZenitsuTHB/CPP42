@@ -57,6 +57,7 @@ void ScalarConverter::convert(const std::string& literal)
                 break;
             case LIT_PSEUDO:
                 printConversionPseudo(literal);
+                break;
             default: throw std::invalid_argument("This is not a valid literal !");
                 break;
         }

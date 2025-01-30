@@ -57,27 +57,39 @@ void printConversionInt(const std::string literal)
 void printConversionFloat(const std::string literal)
 {   
     std::stringstream ss(literal);
-    double  num;
+    double num;
     ss >> num;
-    
-    if (num > __FLT_MAX__ || num < __FLT_MIN__)
+
+    std::cout << "num --> " << num << std::endl;
+
+    // Check if number is within FLOAT range
+    if (num < -std::numeric_limits<float>::max() || num > std::numeric_limits<float>::max())
     {
-        std::cerr << "\nSorry input number has to be within FLOAT range !\n" << std::endl;
+        std::cerr << "\nSorry, input number is out of FLOAT range!\n" << std::endl;
         return;
     }
+
+    // Convert to char if it's within printable ASCII range
     std::cout << "char: ";
-    if (num >= 0 && num <= 127 && std::isprint(num))
+    if (num >= 0 && num <= 127 && std::isprint(static_cast<int>(num)))
         std::cout << "'" << static_cast<char>(num) << "'" << std::endl;
     else
         std::cout << "Non displayable" << std::endl;
 
-    if (num >= std::numeric_limits<int>::max() && num <= std::numeric_limits<int>::min())
-        std::cout << "int: " << static_cast<int>(num) << std::endl;
+    // Check if number is within INT range
+    if (num > std::numeric_limits<int>::max() || num < std::numeric_limits<int>::min())
+        std::cout << "int: impossible" << std::endl;
     else
-        std::cout << "int: " << "impossible" << std::endl;
-    std::cout << "float: " << num << (std::fmod(num, 1.0f) == 0 ? ".0f" : "f") << std::endl;
-    std::cout << "double: " << static_cast<double>(num) << 
-    (std::fmod(num, 1.0f) == 0 ? ".0" : "") << std::endl;
+        std::cout << "int: " << static_cast<int>(num) << std::endl;
+
+    // Check if number is a whole number
+    bool isWhole = (std::floor(num) == num);
+
+    // Float and Double output
+    std::cout << "float: " << static_cast<float>(num) 
+              << (isWhole ? ".0f" : "f") << std::endl;
+    std::cout << "double: " << static_cast<double>(num) 
+              << (isWhole ? ".0" : "") << std::endl;
 }
 
 void printConversionDouble(const std::string literal)
