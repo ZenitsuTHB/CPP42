@@ -124,7 +124,7 @@ bool IsLiteral::isDoubleLiteral(const std::string& literal)
 bool IsLiteral::isPseudoLiteral(const std::string& literal)
 {
     return (literal == "-inf" || literal == "+inf" || literal == "nan" ||
-     literal == "-inff" || literal == "+inff" || literal == "nanf");
+            literal == "-inff" || literal == "+inff" || literal == "nanf");
 }
 
 IsLiteral::~IsLiteral()

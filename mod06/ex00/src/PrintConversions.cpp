@@ -100,17 +100,17 @@ void printConversionDouble(const std::string literal)
     else
         std::cout << "Non displayable" << std::endl;
     
-    if (num >= std::numeric_limits<int>::max() && num <= std::numeric_limits<int>::max())
+    if (num >= -std::numeric_limits<int>::max() && num <= std::numeric_limits<int>::max())
         std::cout << "int: " << static_cast<int>(num) << std::endl;
     else
         std::cout << "int: " << "impossible" << std::endl;
-
-    if (num >= -std::numeric_limits<float>::max() && num <= std::numeric_limits<float>::min())
-        std::cout << "float: " << static_cast<float>(num)
-                  << (std::fmod(num, 1.0f) == 0 ? ".0f" : "f") << std::endl;
+    
+    bool isWhole = (std::floor(num) == num);
+    if (num >= -std::numeric_limits<float>::max() && num <= std::numeric_limits<float>::max())
+        std::cout << "float: " << static_cast<float>(num) << ( isWhole ? ".0f" : "f") << std::endl;
     else
         std::cout << "float: " << "impossible" << std::endl;
-    std::cout << "double: " << static_cast<double>(num) << std::endl;
+    std::cout << "double: " << static_cast<double>(num) <<  ( isWhole ? ".0" : "") << std::endl;
 }
 
 void printConversionPseudo(const std::string literal)
