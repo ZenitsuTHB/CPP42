@@ -110,7 +110,7 @@ void printConversionDouble(const std::string literal)
         std::cout << "float: " << static_cast<float>(num) << ( isWhole ? ".0f" : "f") << std::endl;
     else
         std::cout << "float: " << "impossible" << std::endl;
-    std::cout << "double: " << static_cast<double>(num) <<  ( isWhole ? ".0" : "") << std::endl;
+    std::cout << "double: " << static_cast<double>(num) << ( isWhole ? ".0" : "") << std::endl;
 }
 
 void printConversionPseudo(const std::string literal)
@@ -125,10 +125,10 @@ void printConversionPseudo(const std::string literal)
         else
             pseudoF = std::numeric_limits<float>::infinity();
         
-        std::cout << "\nchar: impossible" << std::endl;
+        std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
         std::cout << "float: " << pseudoF << "f" << std::endl;
-        std::cout << "double: " << static_cast<double>(pseudoF) << "\n" << std::endl;
+        std::cout << "double: " << static_cast<double>(pseudoF) << std::endl;
     }
     else
     {
@@ -140,9 +140,9 @@ void printConversionPseudo(const std::string literal)
         else
             pseudoD =  std::numeric_limits<double>::infinity();
 
-        std::cout << "\nchar: impossible" << std::endl;
+        std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
         std::cout << "float: " << static_cast<float>(pseudoD) << "f" << std::endl;
-        std::cout << "double: " << pseudoD << "\n" << std::endl;
+        std::cout << "double: " << pseudoD << std::endl;
     }
 }
