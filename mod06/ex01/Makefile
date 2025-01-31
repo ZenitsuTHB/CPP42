@@ -25,12 +25,12 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = convert
+NAME = Serializer
 
 SRCS = ./src/
 HEADERS = ./header/
 
-HEADER_HPP = $(HEADERS)ScalarConverter.hpp $(HEADERS)IsLiteral.hpp $(HEADERS)PrintConversions.hpp
+HEADER_HPP = $(HEADERS)Serializer.hpp
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
@@ -40,7 +40,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp ScalarConverter.cpp IsLiterals.cpp PrintConversions.cpp
+SRC = main.cpp Serializer.cpp
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
