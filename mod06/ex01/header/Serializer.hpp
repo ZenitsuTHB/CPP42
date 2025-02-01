@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:05:34 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/01 12:22:34 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/02 00:08:21 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 # define _SERIALIZER_HPP_
 
 # include <iostream>
+# include <string>
+//# include <cstdint>
 
-typedef struct Data
+typedef unsigned long uintptr_t;
+
+struct Data
 {
     int         age;
     std::string Name;   
@@ -33,7 +37,7 @@ class Serializer
     public:
     
         static uintptr_t serialize(Data* ptr);
-        static Data* deserialize(uintptr_t raw);
+        static  Data* deserialize(uintptr_t raw);
             
 };
 

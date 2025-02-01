@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:58:33 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/01 17:03:59 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/02 00:06:04 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/Serialize.hpp"
+#include "../header/Serializer.hpp"
 
-Serialize::Serialize(){}
+Serializer::Serializer(){}
 
-Serialize::Serialize(const Serialize &cpy)
+Serializer::Serializer(const Serializer &cpy)
 {
 	*this = cpy;
 }
 
-Serialize & Serialize::operator=(const Serialize &cpy)
+Serializer & Serializer::operator=(const Serializer &cpy)
 {
 	(void)cpy;
 	return(*this);
 }
 
-uintptr_t serialize(Data *ptr)
+uintptr_t Serializer::serialize(Data *ptr)
 {
 	uintptr_t intptr = reinterpret_cast<uintptr_t>(ptr);
  	return (intptr);
 }
 
-Data *deserialize(uintptr_t raw)
+Data *Serializer::deserialize(uintptr_t raw)
 {
 	Data *ptr = reinterpret_cast<Data*>(raw);
  	return (ptr);
 }
 
-Serialize::~Serialize(){}
+Serializer::~Serializer(){}
