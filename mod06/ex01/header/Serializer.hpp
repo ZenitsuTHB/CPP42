@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:05:34 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/31 17:14:58 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/01 12:22:34 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Serializer
         
     public:
     
-        uintptr_t serialize(Data* ptr);
-        Data* deserialize(uintptr_t raw);
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);
             
 };
 
