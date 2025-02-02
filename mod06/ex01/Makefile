@@ -70,7 +70,7 @@ clean:
 	clear
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) data.bin
 	@echo "\t$(YELLOW)Everything has been cleaned.$(BLACK)\n"
 
 re : fclean all
