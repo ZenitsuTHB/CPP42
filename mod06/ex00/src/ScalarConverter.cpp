@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 00:19:34 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/14 00:19:34 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/04 15:31:01 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void ScalarConverter::convert(const std::string& literal)
         IsLiteral type;
         int expression = type.getLiteralType(literal);
     
+	std::cout << "Expression : " << expression << std::endl;
         switch (expression)
         {            
             case LIT_CHAR:

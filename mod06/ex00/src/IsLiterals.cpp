@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 01:22:48 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/17 01:22:48 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/04 16:17:23 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool IsLiteral::isIntLiteral(const std::string& literal)
 {
     if (literal.length() == 1 && !std::isdigit(literal[0]))
         return (false);
-    if (literal.length() > 1 && !std::isdigit(literal[0]) && literal[0] != '-')
+    if (literal.length() > 1 && !std::isdigit(literal[0]) && literal[0] != '-' && literal[0] != '+')
         return (false);
     for (size_t i = 1; i < literal.length(); i++)
         if (!std::isdigit(literal[i]))
@@ -73,12 +73,12 @@ bool IsLiteral::isFloatLiteral(const std::string& literal)
         return (false);
 
     std::string numPart;
-    if (literal[0] == '-')
+    if (literal[0] == '-' || literal[0] == '+')
         numPart = literal.substr(1, literal.length() - 2);
     else
         numPart = literal.substr(0, literal.length() - 1);
 
-    if (!std::isdigit(numPart[0]) && numPart[0] != '-')
+    if (!std::isdigit(numPart[0]) && numPart[0] != '-' && numPart[0] != '+')
         return (false);
     bool dotSeen = false;
     if (numPart.empty())
@@ -100,12 +100,12 @@ bool IsLiteral::isFloatLiteral(const std::string& literal)
 bool IsLiteral::isDoubleLiteral(const std::string& literal)
 {    
     bool dotSeen = false;
-    if (literal.empty())
+    if (literal.empty() || literal.length() < 3)
         return (false);
 
     std::string numPart;
     numPart = literal;
-    if (literal[0] == '-')
+    if (literal[0] == '-' || literal[0] == '+')
         numPart = literal.substr(1, literal.length());
     for (size_t i = 0; i < numPart.length(); i++)
     {
