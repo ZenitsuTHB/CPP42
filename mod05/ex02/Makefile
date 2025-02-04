@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/01/07 21:52:13 by avolcy           ###   ########.fr        #
+#    Updated: 2025/02/04 22:52:53 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ clean:
 	clear
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) Test1_shrubbery
 	@echo "\t$(YELLOW)Everything has been cleaned.$(BLACK)\n"
 
 re : fclean all

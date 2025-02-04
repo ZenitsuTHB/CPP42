@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:39 by avolcy            #+#    #+#             */
-/*   Updated: 2025/01/09 15:33:40 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/01 18:02:20 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main ()
 {        
 
-    /* try {
+     try {
         Bureaucrat john("John", 136);
         ShrubberyCreationForm form("Test1");
 
@@ -27,20 +27,20 @@ int main ()
 
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
-    } */
+    } 
     
-    /* try {
+     try {
         Bureaucrat john("John", 48);
         RobotomyRequestForm form("Robot");
 
         std::cout << form << std::endl;
         john.signAForm(form);
-        //form.execute(john);
+        form.execute(john);
         john.executeForm(form);
 
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
-    } */
+    } 
 
     try
     {

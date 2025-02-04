@@ -6,13 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 18:32:39 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/24 18:32:39 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/01 16:22:29 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _grade1(10) {
+Bureaucrat::Bureaucrat() : _grade(10) {
 
   std::cout << "Dfault const for BUR. called" << std::endl;
 }
