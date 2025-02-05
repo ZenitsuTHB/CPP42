@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 21:17:21 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/05 09:08:11 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/05 15:22:59 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main() {
 
-	/*char a = 'a', b = 'b';
+	char a = 'a', b = 'b';
 	std::cout << "\nTHIS IS THE TEMPLATE TEST FOR CHAR\n";
 	std::cout << "Before swap 	a-----" << a << "	" << "b-----"<< b << std::endl;
 	swap(a, b);
@@ -54,9 +54,8 @@ int main() {
 	swap(m, n);
 	std::cout << "After swap 	m-----" << m << "	" << "n-----"<< n << std::endl;
 	std::cout << "max of :	m-----" << m << "	n-----" << n << " is --> " << max(m, n) << std::endl;
-	std::cout << "min of :	m-----" << m << "	n-----" << n << " is --> " << min(m, n) << std::endl;*/
-	
-	std::cout << "\nTHIS IS THE SUBJECT TEST" << std::endl;
+	std::cout << "min of :	m-----" << m << "	n-----" << n << " is --> " << min(m, n) << std::endl;	
+	/*std::cout << "\nTHIS IS THE SUBJECT TEST" << std::endl;
 	int a = 2;
 	int b = 3;
 	::swap( a, b );
@@ -68,7 +67,8 @@ int main() {
 	::swap(c, d);
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;*/
+
 	
     return 0;
 }
