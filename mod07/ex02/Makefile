@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/02/05 16:12:41 by avolcy           ###   ########.fr        #
+#    Updated: 2025/02/07 13:36:00 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = Iter 
+NAME = ArrayTemplate 
 SRCS = ./src/
 HEADERS = ./header/
 
-HEADER_HPP = $(HEADERS)iter.hpp
+HEADER_HPP = $(HEADERS)Array.hpp 
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 

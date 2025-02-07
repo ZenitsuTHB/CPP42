@@ -6,12 +6,12 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 19:18:34 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/06 01:02:17 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/07 13:35:50 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include "../header/.Array1stWay.hpp"
 #include "../header/Array.hpp"
-#include "../header/Array.tpp"
 #include <iostream>
 
 
@@ -50,7 +50,7 @@ int main()
     }
     catch (std::exception &e)
     {
-        std::cout << "Out of bounds" << std::endl;
+        std::cout << e.what() << std::endl;
     }
 
     return 0;    
