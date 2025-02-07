@@ -6,13 +6,14 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 11:06:37 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/07 11:06:37 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/07 23:42:15 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _ARRAY_HPP_
 # define _ARRAY_HPP_
 
+# include <sstream>
 # include <iostream>
 # define nullptr NULL
 
@@ -35,7 +36,9 @@ class Array {
         
         class outOfBounds : public std::exception {
             public:
-                const char* what() const throw() { return "Index is out of bounds !"; }
+                const char* what() const throw() { 
+			return "Index is out of bounds !"; 
+		}
         };
 };
 
