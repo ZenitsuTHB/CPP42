@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 19:20:07 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/07 13:34:35 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/08 00:18:15 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ template < typename T>
 class Array {
 
     private:
-	    T*              _array;
+	    T*			_array;
 	    unsigned int	_arrlen;
 
     public:
