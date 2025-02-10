@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 18:32:39 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/28 21:34:28 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/10 14:39:10 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat() {}
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
     if (grade > lowestGrade)
-      throw GradeTooHighException();
+      throw GradeTooLowException();
     else if (grade < highestGrade)
       throw GradeTooHighException();
     _grade = grade;

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 15:38:27 by avolcy            #+#    #+#             */
-/*   Updated: 2024/12/27 15:53:30 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/10 14:29:22 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 class Bureaucrat
 {
     private:
-        int         _grade;
-        std::string _name;
+        int			_grade;
+        const std::string	_name;
 
     public:
         Bureaucrat();
