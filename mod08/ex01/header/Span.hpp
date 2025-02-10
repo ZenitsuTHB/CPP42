@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 06:03:25 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/10 19:29:17 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/11 00:42:25 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <vector>
 #include <algorithm>
 #include <limits>
+#include <list>
+#include <set>
 
 class Span {
 
@@ -30,7 +32,9 @@ class Span {
 		Span & operator=(const Span & src);
 		~Span();
 
-		void	addNumber(int num) ;
+		void	addNumber(int num);
+
+		template <typename It>void	addNumber(It begin, It end);
 
 		int shortestSpan() const;
 		int longestSpan() const;
