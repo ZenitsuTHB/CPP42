@@ -43,7 +43,10 @@ void identify(Base &p)
         (void)a;
         std::cout << "A" << std::endl;
     }
-    catch(const std::exception &e) {}
+    catch(const std::exception &e) {
+
+      std::cerr << e.what() << "\n";
+    }
 
     try
     {
@@ -51,7 +54,10 @@ void identify(Base &p)
         (void)b;
         std::cout << "B" << std::endl;
     }
-    catch(const std::exception &e) {}
+    catch(const std::exception &e) {
+    
+      std::cerr << e.what() << "\n";
+    }
 
     try
     {
@@ -59,5 +65,8 @@ void identify(Base &p)
         (void)c;
         std::cout << "C" << std::endl;
     }
-    catch(const std::exception &e) {}
+    catch(const std::exception &e) {
+
+      std::cerr << e.what() << "\n";
+    }
 }

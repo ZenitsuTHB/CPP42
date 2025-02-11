@@ -109,7 +109,7 @@ bool IsLiteral::isDoubleLiteral(const std::string& literal)
         numPart = literal.substr(1, literal.length());
     for (size_t i = 0; i < numPart.length(); i++)
     {
-            if (numPart[i] == '.')
+            if (numPart[i] == '.' && numPart[i + 1])
             {
                 if (dotSeen)
                     return(false);
