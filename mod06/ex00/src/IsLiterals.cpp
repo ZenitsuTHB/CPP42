@@ -85,7 +85,7 @@ bool IsLiteral::isFloatLiteral(const std::string& literal)
         return (false);
     for (size_t i = 0; i < numPart.length(); i++)
     {
-            if (numPart[i] == '.')
+            if (numPart[i] == '.' && numPart[i + 1])
             {
                 if (dotSeen)
                     return(false);
