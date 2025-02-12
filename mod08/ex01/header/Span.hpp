@@ -34,7 +34,15 @@ class Span {
 
 		void	addNumber(int num);
 
-		template <typename It>void	addNumber(It begin, It end);
+	template <typename It>
+  void	addNumber(It begin, It end) {
+
+	size_t len(std::distance(begin, end));
+	if(_arr.size() + len > _maxNum)
+		throw std::out_of_range("Not enough space in Span to add all numbers !");
+	_arr.insert(_arr.end(), begin, end);
+}
+void	addNumber(It begin, It end);
 
 		int shortestSpan() const;
 		int longestSpan() const;
