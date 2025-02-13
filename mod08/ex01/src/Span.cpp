@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 06:02:37 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/11 00:42:45 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/12 15:09:20 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/Span.hpp"
 
-Span::Span(unsigned int N) : _maxNum(N) {
-	
-}
+Span::Span(unsigned int N) : _maxNum(N) {}
 
 Span::Span(const Span & src) { *this = src; }
 
@@ -30,18 +28,10 @@ Span & Span::operator=(const Span & src) {
 
 void	Span::addNumber(int num) {
 
+	std::cout << "Adding number: " << num << std::endl;
 	if(_arr.size() >= _maxNum)
 		throw std::out_of_range("Span is full, can't add more numbers !");
 	_arr.push_back(num);
-
-}
-
-template <typename It>void	Span::addNumber(It begin, It end) {
-
-	size_t len(std::distance(begin, end));
-	if(_arr.size() + len > _maxNum)
-		throw std::out_of_range("Not enough space in Span to add all numbers !");
-	_arr.insert(_arr.end(), begin, end);
 }
 
 int Span::shortestSpan() const {

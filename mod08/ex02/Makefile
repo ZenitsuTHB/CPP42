@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/02/05 16:12:41 by avolcy           ###   ########.fr        #
+#    Updated: 2025/02/12 17:08:45 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,12 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = Iter 
+NAME = MutantStack
+
 SRCS = ./src/
 HEADERS = ./header/
 
-HEADER_HPP = $(HEADERS)iter.hpp
+HEADER_HPP = $(HEADERS)MutantStack.hpp
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
@@ -39,7 +40,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp 
+SRC = main.cpp
 
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
@@ -58,6 +59,7 @@ $(NAME): $(OBJ)
 	@$(CPP) $(FLAGS) -I ./ $(OBJ) -o $@
 	clear
 	@echo "\n\n\t$(GREEN)Everything has been compilated.$(BLACK)\n"
+	@echo "\t$(GREEN)COMPILATION Flags are : $(BLUE)\n\t\t$(FLAGS).$(BLACK)\n"
 
 # ╔══════════════════╗ #  
 #    CLEANING RULES    #

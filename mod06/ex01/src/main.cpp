@@ -26,7 +26,7 @@ int main ()
     std::cout << "Data Name : " << data->Name << std::endl;
 
     uintptr_t raw = Serializer::serialize(data);
-    
+
     Data *data2 = Serializer::deserialize(raw);
 
     std::cout << "\nDatas from data struct after deserialisation : " << std::endl;

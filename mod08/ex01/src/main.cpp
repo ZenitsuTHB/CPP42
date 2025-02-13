@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 06:01:25 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/11 00:40:05 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/12 15:12:10 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,31 @@
 //    }
 //    return 0;
 //}
+
 int main() {
-    Span sp(10);
+
+    
+    Span sp(12);
 
     std::vector<int> vec;
-    int arr[] = {1, 2, 3, 4, 5};
+    int arr[] = {11, 2, 9, 168, 5};
     vec.assign(arr, arr + 5);
     std::list<int> lst;
     lst.push_back(6);
-    lst.push_back(7);
+    lst.push_back(10);
     lst.push_back(8);
     std::set<int> st;
-    st.insert(9);
-    st.insert(10);
-    st.insert(11);
+    st.insert(3);
+    st.insert(25);
+    st.insert(7);
 
     sp.addNumber(vec.begin(), vec.end()); // Works with vector
     sp.addNumber(lst.begin(), lst.end()); // Works with list
     sp.addNumber(st.begin(), st.end());   // Works with set
+    sp.addNumber(777);
 
     std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
     std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
-
+    
     return 0;
-} 
+}

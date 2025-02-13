@@ -46,7 +46,7 @@ OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
 
 $(F_OBJ)%.o: $(SRCS)%.cpp $(HEADER_HPP) Makefile
-	@$(CC) $(FLAGS) -I ./ -c $< -o $@
+	@$(CPP) $(FLAGS) -I ./ -c $< -o $@
 
 all: build_dir $(NAME)
 
