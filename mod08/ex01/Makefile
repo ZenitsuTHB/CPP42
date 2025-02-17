@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/02/10 19:35:52 by avolcy           ###   ########.fr        #
+#    Updated: 2025/02/16 16:11:49 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,7 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@echo "\t$(YELLOW)Everything has been cleaned.$(BLACK)\n"
+	@echo "\t$(GREEN)COMPILATION Flags are : $(BLUE)\n\t\t$(CPP)\n\t\t$(FLAGS)$(BLACK)\n"
 
 re : fclean all
 
