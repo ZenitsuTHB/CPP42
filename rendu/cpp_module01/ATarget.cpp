@@ -1,37 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ATarget.cpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 12:13:15 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/08 18:48:54 by avolcy           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "ATarget.hpp"
+#include "ASpell.hpp"
 
-# include "ATarget.hpp"
-		
-ATarget::ATarget(const std::string &type) : _type(type) {}
-
-ATarget::ATarget(const ATarget &src ){ *this = src;}
-
-ATarget & ATarget::operator=(const ATarget &src ) {
-
-	if(this != &src)
-		_type = src._type;
-	return *this;
-
+ATarget::ATarget(const std::string& type )
+{
+  setType(type);
 }
 
-ATarget::~ATarget() {
-
+const std::string& ATarget::getType(void) const
+{
+  return _type;
 }
 
-std::string const & ATarget::getType() const { return _type; }
 
-void ATarget::getHitBySpell(const ASpell & obj) const {
-
-	std::cout << this->_type << " has been " << obj.getEffects() << "!\n";
-
+void ATarget::setType(const std::string& type )
+{
+  _type = type;
 }
+
+void  ATarget::getHitBySpell(const ASpell& target ) const
+{
+  std::cout << this->getType() << " has been " << target.getEffects() << "!\n";
+}
+
+ATarget::~ATarget(){}

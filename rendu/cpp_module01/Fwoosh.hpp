@@ -1,27 +1,18 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 12:13:15 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/08 18:55:00 by avolcy           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#pragma once 
 
-#ifndef ASPELL_HPP
-# define ASPELL_HPP
+#include <string>
+#include <iostream>
+#include "ASpell.hpp"
 
-# include <iostream>
+class Fwoosh : public ASpell
+{
+    public:
 
-class Fwoosh : public ASpell {
-	
-	public:
-		Fwoosh();
-		~Fwoosh();
+      Fwoosh() : ASpell("Fwoosh","Fwooshed"){}
+      virtual ~Fwoosh() {}
 
-		ASpell *clone() const;
+      ASpell* clone() const  {
+
+        return new Fwoosh();
+      }
 };
-
-#endif
