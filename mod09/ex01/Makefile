@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/02/16 16:11:39 by avolcy           ###   ########.fr        #
+#    Updated: 2025/02/18 12:07:31 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,12 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = easyfind
+NAME = RPN
 
 SRCS = ./src/
 HEADERS = ./header/
 
-HEADER_HPP = $(HEADERS)easyfind.hpp
+HEADER_HPP = $(HEADERS)RPN.hpp
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 

@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 13:41:56 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/05 19:24:26 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/15 18:52:03 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int main()
 	for (unsigned int i = 0; i < len; i++ )
 		std::cout << arrStr[i] << std::endl;
 	
-	std::string rot13[] = { "Hello World !", "This is a test" };
+	//std::string rot13[] = { "Hello World !", "This is a test" };
+	std::string rot13[] = { "Uryyb Jbeyq !", "Guvf vf n grfg" };
 	unsigned int rotLen = sizeof( rot13 ) / sizeof( rot13[0] );
 	iter(rot13, rotLen, rot13Cpp);
 	for (unsigned int i = 0; i < rotLen; i++)

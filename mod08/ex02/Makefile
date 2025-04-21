@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/02/12 17:08:45 by avolcy           ###   ########.fr        #
+#    Updated: 2025/02/16 16:11:24 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ $(NAME): $(OBJ)
 	@$(CPP) $(FLAGS) -I ./ $(OBJ) -o $@
 	clear
 	@echo "\n\n\t$(GREEN)Everything has been compilated.$(BLACK)\n"
-	@echo "\t$(GREEN)COMPILATION Flags are : $(BLUE)\n\t\t$(FLAGS).$(BLACK)\n"
+	@echo "\t$(GREEN)COMPILATION Flags are : $(BLUE)\n\t\t$(CPP)\n\t\t$(FLAGS)$(BLACK)\n"
 
 # ╔══════════════════╗ #  
 #    CLEANING RULES    #

@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 06:03:25 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/12 15:06:58 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/16 15:56:19 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <limits>
 #include <list>
 #include <set>
+
+#define notEnoughNum "Not enough numbers to find a span."
 
 class Span {
 
@@ -33,15 +35,15 @@ class Span {
 		~Span();
 
 		void	addNumber(int num);
-		template <typename It>
-		void addNumber(It begin, It end);
+		template < typename It >
+		void	addNumber(It begin, It end);
 		
 		int shortestSpan() const;
 		int longestSpan() const;
 };
 
-template <typename It>
-void Span::addNumber(It begin, It end) {
+template < typename It >
+void	Span::addNumber(It begin, It end) {
 
 	size_t len(std::distance(begin, end));
 	if(_arr.size() + len > _maxNum)
