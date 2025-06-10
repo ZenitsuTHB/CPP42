@@ -3,23 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   Bitcoin.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:33:47 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/17 20:34:53 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/10 18:36:53 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _BITCOIN_HPP_
-# define _BITCOIN_HPP_
+// BitcoinExchange.hpp
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
 
-#include <iostream>
+#include <string>
+#include <map>
 
-class Bitcoin {
-
-	private:
-
-	public:
+class BitcoinExchange {
+private:
+    std::map<std::string, float> _data;
+    
+public:
+    
+    BitcoinExchange();
+    BitcoinExchange(const std::string& database);
+    BitcoinExchange(const BitcoinExchange &other);
+    BitcoinExchange &operator=(const BitcoinExchange &other);
+    
+    ~BitcoinExchange();
+    
+    void loadDatabase(const std::string& filename);
+    void processInput(const std::string& filename);
 };
 
 #endif

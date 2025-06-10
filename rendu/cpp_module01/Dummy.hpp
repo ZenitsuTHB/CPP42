@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:13:15 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/08 18:54:21 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/04/22 00:30:25 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ class Dummy : public ATarget {
 	public:
 		Dummy();
 		~Dummy();
-
-		ATarget *clone() const;
+		Dummy *clone();
 };
 
 #endif

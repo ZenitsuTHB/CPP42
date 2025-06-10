@@ -6,7 +6,7 @@
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 17:24:29 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/08 17:31:49 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/04/22 00:30:37 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 Dummy::Dummy() : ATarget("Target Practice Dummy") {}
 
-ATarget *Dummy::clone() const { return new Dummy; }
+Dummy *Dummy::clone() { return new Dummy(); }
 
 Dummy::~Dummy() {}
