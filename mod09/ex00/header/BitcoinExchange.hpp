@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:33:47 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/13 19:31:26 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/14 00:55:59 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,29 @@
 #include <iostream>
 # include <fstream>
 # include <stdio.h>
+# include <cstdlib>
 
 enum ErrCode {
     
     BAD_INPUT = 1,
-    DATABASE_EMPTY = 2,
-    FILE_OPEN_ERROR = 3,
-    INVALID_DATE = 4,
-    INVALID_VALUE = 5,
-    NEGATIVE_NUMBER = 6,
-    NUMBER_TOO_LARGE = 7,
-    UNKNOWN_ERROR = 8    
+    BAD_HEADER,
+    DATABASE_EMPTY,
+    FILE_OPEN_ERROR,
+    INVALID_DATE,
+    INVALID_VALUE,
+    NEGATIVE_NUMBER,
+    NUMBER_TOO_LARGE,
+    UNKNOWN_ERROR    
 };
+
+#define HEADERINPUT "date | value"
+#define HEADERCSV "date,exchange_rate"
+
+typedef std::map<std::string, float> DataBaseMap;
 
 class BitcoinExchange {
 private:
-    std::map<std::string, float> _database;
+    DataBaseMap     _database;
     
 public:
     
