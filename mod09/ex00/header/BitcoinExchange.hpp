@@ -6,20 +6,21 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:33:47 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/14 00:55:59 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/15 19:01:33 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // BitcoinExchange.hpp
 #ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+# define BITCOINEXCHANGE_HPP
 
-#include <string>
-#include <map>
-#include <iostream>
+# include <string>
+# include <map>
+# include <iostream>
 # include <fstream>
 # include <stdio.h>
 # include <cstdlib>
+# include <sstream>
 
 enum ErrCode {
     

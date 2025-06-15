@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 19:54:14 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/14 04:10:38 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/15 19:04:43 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,16 @@ BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange &other)
     return *this;
 }
 
-bool parseDate(std::string date)
-{
-    std::string Year;    
-    std::string Month;    
-    std::string Day;    
-}
+// bool parseDate(std::string date)
+// {
+    
+//     std::string Year;    
+//     std::string Month;    
+//     std::string Day;    
+// }
 
 void  BitcoinExchange::loadDatabase(const std::string& filename)
 {
-    //std::cout << filename << std::endl;
-   
     std::string line, date;   
     std::ifstream   database(filename.c_str());
     if(!database.is_open())
@@ -63,8 +62,8 @@ void  BitcoinExchange::loadDatabase(const std::string& filename)
         {
             date = line.substr(0, commaPos);
             float rate = std::atof(line.substr(commaPos + 1).c_str());
-            if(!parseDate(date))
-                throw CustomException(INVALID_DATE);
+            // if(!parseDate(date))
+            //     throw CustomException(INVALID_DATE);
             _database.insert(std::make_pair(date, rate));
         }
     }
@@ -107,7 +106,50 @@ const char* BitcoinExchange::CustomException::what() const throw() {
 
 void BitcoinExchange::processInput(const std::string& filename)
 {
-    (void)filename;
+    std::string     line, date, pipe, valueStr;
+    std::ifstream   input(filename.c_str());
+
+    if (!input.is_open())
+        throw CustomException(FILE_OPEN_ERROR);
+
+    std::getline(input, line);
+    if (line != HEADERINPUT)
+        throw CustomException(BAD_HEADER);
+        
+    while (std::getline(input, line))
+    {
+        std::istringstream iss(line);
+        if (!(iss >> date >> pipe >> valueStr) || pipe != "|") {
+            std::cerr << "Error: bad input => " << line << std::endl;
+            continue;
+        }
+        
+        float value = std::atof(valueStr.c_str());
+
+        if (value < 0) {
+            std::cerr << "Error: not a positive number." << std::endl;
+            continue;
+        }
+
+        if (value > 1000) {
+            std::cerr << "Error: too large a number." << std::endl;
+            continue;
+        }
+
+        std::map<std::string, float>::const_iterator it = _database.find(date);
+        if (it == _database.end()) {
+            it = _database.lower_bound(date);
+            if (it == _database.begin() && it->first != date)
+                continue;
+            else if (it != _database.begin())
+                --it;
+        }
+
+        if (it != _database.end())
+            std::cout << date << " => " << value << " = " << value * it->second << std::endl;
+    }
+      
+    //std::cout << "This is the filename : " << filename << std::endl;
 }
 
 BitcoinExchange::~BitcoinExchange()
