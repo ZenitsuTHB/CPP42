@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 19:54:14 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/15 19:04:43 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/21 14:40:12 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,6 @@ BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange &other)
     return *this;
 }
 
-// bool parseDate(std::string date)
-// {
-    
-//     std::string Year;    
-//     std::string Month;    
-//     std::string Day;    
-// }
-
 void  BitcoinExchange::loadDatabase(const std::string& filename)
 {
     std::string line, date;   
@@ -71,37 +63,92 @@ void  BitcoinExchange::loadDatabase(const std::string& filename)
         throw CustomException(DATABASE_EMPTY);
 }
 
-// DataBaseMap::iterator it  = _database.begin();
-// while (it != _database.end())
-// {
-//     std::cout << it->first << " --- "<< it->second << std::endl;
-//     it++;
-// }
-
 BitcoinExchange::CustomException::CustomException(int errorCode) : 
 _errorCode(errorCode) {}
 
 const char* BitcoinExchange::CustomException::what() const throw() {
     switch (_errorCode) {
         case 1:
-            return "Error: bad input.";
+            return HEADER_MSG;
         case 2:
-            return "Error: bad header !";
+            return EMPTY_MSG;
         case 3:
-            return "Error: database is empty or invalid.";
+            return CANT_OPEN_MSG;
         case 4:
-            return "Error: could not open file.";
-        case 5:
-            return "Error: invalid date format.";
-        case 6:
-            return "Error: value is not a valid number.";
-        case 7:
-            return "Error: not a positive number.";
-        case 8:
-            return "Error: too large a number.";
+            return VALID_NUM_MSG;
         default:
-            return "Error: unknown error occurred.";
+            return UNKNOWN_MSG;
     }
+}
+
+inline bool isAllDigit(const std::string& toCheck){
+    
+    for(std::string::const_iterator it = toCheck.begin(); it != toCheck.end(); ++it)
+        if (!std::isdigit((*it)))
+            return false;
+    return true;               
+}
+
+inline bool isLeapYear(int year) {
+    return (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0);
+}
+
+bool isValidDate(int year, int month, int day)
+{
+    if (day < 1 || day > 31)
+        return false;
+    if (month < 1 || month > 12)
+        return false;
+    if (year < 2009 || (year == 2009 && month == 1 && day < 3))
+        return false;
+    if (month == 2)
+    {
+        if (isLeapYear(year))
+            return (day <= 29);
+        else
+            return (day <= 28);    
+    }
+
+    if (month == 1 || month == 3 || month == 5 || month == 7 ||
+         month == 8 || month == 10 || month == 12)
+         return (day <= 31);
+    
+    if (month == 4 || month == 6 || month == 9 || month == 11)
+            return (day <= 30);
+    return false;
+}
+
+bool  BitcoinExchange::parseDate(const std::string& date)
+{
+    std::string yearStr, monthStr, dayStr;
+    std::istringstream split(date);
+
+    if (!std::getline(split, yearStr, '-') || 
+    !std::getline(split, monthStr, '-') || !std::getline(split, dayStr))
+        return false;
+
+    if (!isAllDigit(yearStr) || !isAllDigit(monthStr) || !isAllDigit(dayStr))
+        return false;
+    
+    int year = std::atoi(yearStr.c_str());   
+    int month = std::atoi(monthStr.c_str());   
+    int day = std::atoi(dayStr.c_str());
+    
+    if (!isValidDate(year, month, day))
+        return false;
+    return true;
+}
+inline bool checkValue(float value)
+{
+        if (value < 0) {
+            std::cerr << NEG_NUM << std::endl;
+            return false;
+        }
+        else if (value > 1000) {
+            std::cerr << NUMBER_TOO_LARGE << std::endl;
+            return false;
+        }
+        return true;
 }
 
 void BitcoinExchange::processInput(const std::string& filename)
@@ -114,29 +161,26 @@ void BitcoinExchange::processInput(const std::string& filename)
 
     std::getline(input, line);
     if (line != HEADERINPUT)
-        throw CustomException(BAD_HEADER);
-        
+        throw CustomException(BAD_HEADER);       
+       
     while (std::getline(input, line))
     {
         std::istringstream iss(line);
         if (!(iss >> date >> pipe >> valueStr) || pipe != "|") {
-            std::cerr << "Error: bad input => " << line << std::endl;
+            std::cerr << BAD_INPUT << line << std::endl;
+            continue;
+        }
+        
+        if(!parseDate(date)){
+            std::cerr << INVALID_DATE << line << std::endl;
             continue;
         }
         
         float value = std::atof(valueStr.c_str());
-
-        if (value < 0) {
-            std::cerr << "Error: not a positive number." << std::endl;
+        if (!checkValue(value))
             continue;
-        }
 
-        if (value > 1000) {
-            std::cerr << "Error: too large a number." << std::endl;
-            continue;
-        }
-
-        std::map<std::string, float>::const_iterator it = _database.find(date);
+        DataBaseMap::const_iterator it = _database.find(date);
         if (it == _database.end()) {
             it = _database.lower_bound(date);
             if (it == _database.begin() && it->first != date)
@@ -144,13 +188,13 @@ void BitcoinExchange::processInput(const std::string& filename)
             else if (it != _database.begin())
                 --it;
         }
-
         if (it != _database.end())
             std::cout << date << " => " << value << " = " << value * it->second << std::endl;
-    }
-      
-    //std::cout << "This is the filename : " << filename << std::endl;
+    }   
 }
 
-BitcoinExchange::~BitcoinExchange()
-{}
+//lower_bound(date) ? 
+//Returns an iterator to the first key ≥ date 
+//In other words, the first date that is equal to or after  the requested date.
+
+BitcoinExchange::~BitcoinExchange() {}
