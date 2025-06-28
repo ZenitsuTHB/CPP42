@@ -6,11 +6,10 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:33:47 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/21 13:47:41 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/23 16:13:37 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// BitcoinExchange.hpp
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
@@ -32,17 +31,17 @@ enum ErrCode {
     UNKNOWN_ERROR    
 };
 
-#define HEADERINPUT "date | value"
-#define HEADERCSV "date,exchange_rate"
-#define HEADER_MSG "Error: bad header !"
-#define BAD_INPUT "Error: bad input => "
-#define NEG_NUM "Error: not a positive number."
-#define CANT_OPEN_MSG "Error: could not open file."
-#define UNKNOWN_MSG "Error: unknown error occurred."
-#define NUMBER_TOO_LARGE "Error: too large a number."
-#define INVALID_DATE "Error: invalid date format => "
-#define EMPTY_MSG "Error: database is empty or invalid."
-#define VALID_NUM_MSG "Error: value is not a valid number."
+# define HEADERINPUT "date | value"
+# define HEADERCSV "date,exchange_rate"
+# define HEADER_MSG "Error: bad header !"
+# define BAD_INPUT "Error: bad input => "
+# define NEG_NUM "Error: not a positive number."
+# define CANT_OPEN_MSG "Error: could not open file."
+# define UNKNOWN_MSG "Error: unknown error occurred."
+# define NUMBER_TOO_LARGE "Error: too large a number."
+# define INVALID_DATE "Error: invalid date format => "
+# define EMPTY_MSG "Error: database is empty or invalid."
+# define VALID_NUM_MSG "Error: value is not a valid number."
 
 typedef std::map<std::string, float> DataBaseMap;
 
