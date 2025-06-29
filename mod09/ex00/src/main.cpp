@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:32:27 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/21 13:29:45 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/29 15:09:28 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int inputErr(void)
 {
-	std::cout << CANT_OPEN_FILE;
+	std::cout << CANT_OPEN_MSG << std::endl;
 	return (-1);
 }
 
