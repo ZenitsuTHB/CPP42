@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 12:00:01 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/28 15:54:28 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/29 14:59:02 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ int main(int argc, char *argv[])
 	if (argc != 2)
         return argError();
 	
-	std::string input = argv[1];
-	if (input.empty()) {
-		std::cerr << "Error: Empty expression\n";
-		return 1;
-	}
-
     try {
         RPN rpn;
         int result = rpn.evaluate(argv[1]);

@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:54:19 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/28 15:51:18 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/29 14:55:10 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <list>
 #include <stack>
 #include <stdexcept>
 
@@ -31,6 +32,7 @@ class RPN {
     
         static bool isOperator(const std::string& token);
         static int calculate(int a, int b, const std::string& op);
+        void printStack(std::stack<int> stack);
     
     public:
         int evaluate(const std::string& expr);

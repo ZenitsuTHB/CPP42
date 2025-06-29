@@ -6,17 +6,18 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:27:50 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/28 16:00:26 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/29 14:58:48 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/RPN.hpp"
 
 inline bool RPN::isOperator(const std::string& token) {
-    return token == "+" || token == "-" || token == "*" || token == "/";
+    return (token == "+" || token == "-" || token == "*" || token == "/");
 }
 
 inline int RPN::calculate(int a, int b, const std::string& op) {
+    
     if (op == "+") return a + b;
     if (op == "-") return a - b;
     if (op == "*") return a * b;
@@ -28,10 +29,29 @@ inline int RPN::calculate(int a, int b, const std::string& op) {
     throw std::runtime_error("Invalid operator");
 }
 
-int RPN::evaluate(const std::string& expr) {
+void RPN::printStack(std::stack<int> stack)
+{
+	std::stack<int> tmp = stack;
+	std::list<int> list;
+	while (!tmp.empty())
+	{
+		list.push_front(tmp.top());
+		tmp.pop();
+	}
+	std::list<int>::iterator it = list.begin();
+	std::cout << "Stack: ";
+	while (it != list.end())
+	{
+		std::cout << *it << " ";
+		it++;
+	}
+	std::cout << std::endl;
+}
+
+int RPN::evaluate(const std::string& input) {
 
     std::string token;
-    std::stringstream ss(expr);
+    std::stringstream ss(input);
 
     while (ss >> token) 
     {
@@ -49,12 +69,9 @@ int RPN::evaluate(const std::string& expr) {
         else
             throw std::runtime_error("Invalid token: " + token);
     }
-
     if (_stack.empty())
         throw std::runtime_error("Empty stack after evaluation");
-
     if (_stack.size() > 1)
-        throw std::runtime_error("Malformed expression: leftover values in stack");
-
-    return _stack.top();
+         throw std::runtime_error("Malformed expression: leftover values in stack");
+    return (_stack.top());
 }
