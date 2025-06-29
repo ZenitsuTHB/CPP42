@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:27:50 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/29 14:58:48 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/29 15:03:30 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ int RPN::evaluate(const std::string& input) {
         else
             throw std::runtime_error("Invalid token: " + token);
     }
-    if (_stack.empty())
-        throw std::runtime_error("Empty stack after evaluation");
+    // if (_stack.empty())
+    //     throw std::runtime_error("Empty stack after evaluation");
     if (_stack.size() > 1)
          throw std::runtime_error("Malformed expression: leftover values in stack");
     return (_stack.top());
