@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 18:54:11 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/24 18:54:31 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/30 16:25:42 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Cure : public AMateria {
       Cure();
       Cure(const Cure &);
       Cure &operator=(const Cure &);
-      ~Cure();
+      virtual ~Cure();
 
-      AMateria* clone() const;
+      Cure * clone() const;
       void use(ICharacter&) const;
 
   

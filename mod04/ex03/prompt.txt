@@ -1,0 +1,256 @@
+
+#ifndef _AMATERIA_HPP
+#define _AMATERIA_HPP
+
+#include <string>
+#include <iostream>
+#include "ICharacter.hpp"
+
+class ICharacter;
+
+class AMateria
+{
+    protected:
+
+      std::string _type;
+
+    public:
+
+        AMateria();
+        AMateria(std::string const  &type);
+        AMateria(const AMateria &);
+        AMateria& operator=(const AMateria&);
+        virtual ~AMateria();
+
+        virtual AMateria* clone() const = 0;
+        virtual void use(ICharacter& target);
+
+        const std::string& getType() const; //Returns the materia type
+};
+
+#endif
+
+
+#ifndef _CURE_HPP
+# define _CURE_HPP
+
+#include <iostream>
+#include "AMateria.hpp"
+
+class Cure : public AMateria {
+
+    public:
+
+      Cure();
+      Cure(const Cure &);
+      Cure &operator=(const Cure &);
+      virtual ~Cure();
+
+      Cure * clone() const;
+      void use(ICharacter&) const;
+
+};
+
+#endif
+
+
+#ifndef _ICE_HPP
+# define _ICE_HPP
+
+#include <iostream>
+#include "AMateria.hpp"
+
+class Ice : public AMateria {
+    
+    public:
+
+      Ice();
+      Ice(const Ice &);
+      Ice &operator=(const Ice &);
+      ~Ice();
+
+      Ice * clone() const;
+      void use(ICharacter&) const;
+};
+
+#endif
+
+#ifndef _ICHARACTER_HPP
+#define _ICHARACTER_HPP
+
+#include <string>
+#include <iostream>
+#include "AMateria.hpp"
+
+class AMateria;
+class ICharacter {
+
+    public:
+
+        virtual ~ICharacter() {}
+        virtual std::string const & getName() const = 0;
+        virtual void equip(AMateria* m) = 0;
+        virtual void unequip(int idx) = 0;
+        virtual void use(int idx, ICharacter& target) = 0;
+};
+
+#endif
+
+
+#ifndef _IMATERIASOURCE_HPP
+# define _IMATERIASOURCE_HPP
+
+#include "AMateria.hpp"
+
+class IMateriaSource {
+
+    public:
+
+      virtual ~IMateriaSource() {}
+      virtual void learnMateria(AMateria*) = 0;
+      virtual AMateria* createMateria(std::string const & type) = 0;
+};
+
+#endif
+
+#include "../headers/AMateria.hpp"
+        
+AMateria::AMateria() : _type("Undefined type") {
+
+  std::cout << "Materia Constructor called [ Default mode ] !" std::endl;
+
+}
+
+AMateria::AMateria(std::string const  &type) : _type(type) {
+
+  std::cout << "Materia Constructor called !" << std::endl;
+}
+
+AMateria::AMateria(const AMateria &oldMateria) {
+
+    *this = oldMateria;
+}
+
+AMateria& AMateria::operator=(const AMateria& oldMateria) {
+
+    if (this != &oldMateria) {
+
+      std::cout << "Vamos a copiar !" << std::endl;
+      _type = oldMateria.getType();
+      
+    }
+    return (*this);
+}
+
+const std::string & AMateria::getType() const {
+
+    return ( _type );
+}
+
+void AMateria::use(ICharacter& target) {
+
+    std::cout << "We are inside of the use method" << std::endl;
+
+}
+
+AMateria::~AMateria() {
+      
+  std::cout << "Materia Destructor called !" << std::endl;
+
+}
+
+#include "../headers/Cure.hpp"
+
+Cure::Cure() : AMateria("cure") {}
+
+Cure::Cure(const Cure &oldCure) {
+    *this = oldCure;
+}
+
+Cure& Cure::operator=(const Cure &oldCure) {
+
+  if (this != &oldCure) {
+
+    _type = oldCure._type;
+  }
+  return (*this);
+}
+
+Cure * Cure::clone() const {
+  return (new Cure(*this));
+}
+
+void Cure::use(ICharacter& object) const {
+
+  std::cout << "* heals " << object.getName() << "'s wounds *" << std::endl;
+}
+
+Cure::~Cure(){}
+
+
+#include "../headers/Ice.hpp"
+
+Ice::Ice() : AMateria("ice") {}
+
+Ice::Ice(const Ice &oldIce) {
+
+    *this = oldIce;
+}
+
+Ice& Ice::operator=(const Ice &oldIce) {
+
+  if (this != &oldIce) {
+
+    _type = oldIce._type;
+  }
+  return (*this);
+}
+
+Ice * Ice::clone() const {
+  return (new Ice(*this));
+}
+
+void Ice::use(ICharacter& object) const {
+
+  std::cout << "* shoots an ice bolt at" << object.getName() << "*\n";
+}
+
+Ice::~Ice(){}
+//42 HEADER
+
+
+
+#include "../headers/AMateria.hpp"
+#include "../headers/ICharacter.hpp"
+#include "../headers/Cure.hpp"
+#include "../headers/Ice.hpp"
+#include "../headers/MateriaSource.hpp"
+
+
+
+int main() {
+
+    IMateriaSource* src = new MateriaSource();
+
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+
+    ICharacter* me = new Character("me");
+
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+
+    ICharacter* bob = new Character("bob");
+    me->use(0, *bob);
+    me->use(1, *bob);
+
+    delete bob;
+    delete me;
+    delete src;
+    return 0;
+}
+
+

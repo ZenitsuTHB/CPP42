@@ -1,14 +1,20 @@
-//42 HEADER
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/30 16:38:24 by avolcy            #+#    #+#             */
+/*   Updated: 2025/06/30 16:38:32 by avolcy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../headers/Cure.hpp"
 
-Cure::Cure() : _type("cure") {
+Cure::Cure() : AMateria("cure") {}
 
-}
-
-Cure(const Cure &oldCure) {
-
+Cure::Cure(const Cure &oldCure) {
     *this = oldCure;
 }
 
@@ -21,14 +27,13 @@ Cure& Cure::operator=(const Cure &oldCure) {
   return (*this);
 }
 
-AMateria* clone() const {
-
+Cure * Cure::clone() const {
   return (new Cure(*this));
 }
 
 void Cure::use(ICharacter& object) const {
 
-  std::cout << "* heals " << object.getName() << "wounds *" << std::endl;
+  std::cout << "* heals " << object.getName() << "'s wounds *" << std::endl;
 }
 
 Cure::~Cure(){}

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 16:18:01 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/30 16:21:09 by avolcy           ###   ########.fr       */
+/*   Created: 2025/07/03 14:44:06 by avolcy            #+#    #+#             */
+/*   Updated: 2025/07/03 15:26:18 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ICE_HPP
-# define _ICE_HPP
-
 #include <iostream>
-#include "AMateria.hpp"
 
-class Ice : public AMateria {
+int main (int argc, char *argv[])
+{
+    try
+    {
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     
-    public:
-
-      Ice();
-      Ice(const Ice &);
-      Ice &operator=(const Ice &);
-      ~Ice();
-
-      Ice * clone() const;
-      void use(ICharacter&) const;
-};
-
-#endif
+}
