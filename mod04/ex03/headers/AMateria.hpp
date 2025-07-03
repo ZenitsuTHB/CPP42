@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 18:57:10 by avolcy            #+#    #+#             */
-/*   Updated: 2024/08/24 19:55:38 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/30 16:17:20 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
-class 
+class ICharacter;
 
 class AMateria
 {
@@ -34,8 +34,9 @@ class AMateria
         virtual ~AMateria();
 
         virtual AMateria* clone() const = 0;
-        std::string const & getType() const; //Returns the materia type
         virtual void use(ICharacter& target);
+
+        const std::string& getType() const; //Returns the materia type
 };
 
 #endif

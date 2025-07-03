@@ -1,4 +1,14 @@
-//42 HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/30 16:47:00 by avolcy            #+#    #+#             */
+/*   Updated: 2025/06/30 16:47:02 by avolcy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../headers/AMateria.hpp"
         
@@ -10,7 +20,7 @@ AMateria::AMateria() : _type("Undefined type") {
 
 AMateria::AMateria(std::string const  &type) : _type(type) {
 
-  std::cout << "Materia Constructor called !" std::endl;
+  std::cout << "Materia Constructor called !" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &oldMateria) {
@@ -29,19 +39,19 @@ AMateria& AMateria::operator=(const AMateria& oldMateria) {
     return (*this);
 }
 
-std::string const& AMateria::getType() const {
+const std::string & AMateria::getType() const {
 
-    return (&_type);
-} //Returns the materia type (or a reference the materia ?)
+    return ( _type );
+}
 
 void AMateria::use(ICharacter& target) {
 
-    std::cout << "We are inside of the use method" std::endl;
+    std::cout << "We are inside of the use method" << std::endl;
 
 }
 
 AMateria::~AMateria() {
       
-  std::cout << "Materia Destructor called !" std::endl;
+  std::cout << "Materia Destructor called !" << std::endl;
 
 }

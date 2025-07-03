@@ -3,39 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:32:27 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/17 20:33:58 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/29 15:09:28 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include <iostream>
-# include <fstream>
-//#include "../Bitcoin.hpp"
+# include "../header/BitcoinExchange.hpp"
 
 int inputErr(void)
 {
-	std::cout << "Error: could not open file.\n";
+	std::cout << CANT_OPEN_MSG << std::endl;
 	return (-1);
 }
 
-
 int main(int argc, char *arg[])
 {
-	std::string line;
 	if(argc != 2)
-		return(inputErr());
-	//input split by / char 
-	std::ifstream file("input.txt");
-	while(std::getline( file ,line ))
-		std::cout << line << "\n";
-	//check file extension
-	//check file permission
-	//CHECK EACH LINES
-		//split date and value 
-		//check if date is correct 	
-
+		return(inputErr(), 1);
+		
+	try {
+		BitcoinExchange exchange("files/data.csv");
+		exchange.processInput(arg[1]);
+	}
+	catch(std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
 	return (0);
 }

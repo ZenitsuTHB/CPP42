@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy.hpp                                          :+:      :+:    :+:   */
+/*   ATarget.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:13:15 by avolcy            #+#    #+#             */
-/*   Updated: 2025/04/22 00:30:25 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/02/08 18:48:54 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DUMMY_HPP
-# define DUMMY_HPP
+# include "ATarget.hpp"
+		
+ATarget::ATarget(const std::string &type) : _type(type) {}
 
-#include  "ATarget.hpp"
+ATarget::ATarget(const ATarget &src ){ *this = src;}
 
-#include <string>
-#include <iostream>
-#include "ATarget.hpp"
-class Dummy : public ATarget {
+ATarget & ATarget::operator=(const ATarget &src ) {
 
-  public:
-  
-    Dummy() : ATarget("Target Practice Dummy"){}
-    virtual ~Dummy(){}
+	if(this != &src)
+		_type = src._type;
+	return *this;
 
-    ATarget* clone() const {
+}
 
-      return new Dummy();
-    }
-};
+ATarget::~ATarget() {
+
+}
+
+std::string const & ATarget::getType() const { return _type; }
+
+void ATarget::getHitBySpell(const ASpell & obj) const {
+
+	std::cout << this->_type << " has been " << obj.getEffects() << "!\n";
+
+}

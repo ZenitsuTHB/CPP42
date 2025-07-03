@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bitcoin.hpp                                        :+:      :+:    :+:   */
+/*   BrickWall.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 13:33:47 by avolcy            #+#    #+#             */
-/*   Updated: 2025/02/17 20:34:53 by avolcy           ###   ########.fr       */
+/*   Created: 2025/02/08 12:13:15 by avolcy            #+#    #+#             */
+/*   Updated: 2025/06/23 11:57:28 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _BITCOIN_HPP_
-# define _BITCOIN_HPP_
+#ifndef BRICKWALL_HPP
+#define BRICKWALL_HPP
+#include "ATarget.hpp"
 
-#include <iostream>
-
-class Bitcoin {
-
-	private:
-
-	public:
+class BrickWall : public ATarget {
+public:
+    BrickWall() : ATarget("Inconspicuous Red-brick Wall") {}
+    ~BrickWall() {}
+    BrickWall *clone() const { return new BrickWall; }
 };
 
 #endif
+

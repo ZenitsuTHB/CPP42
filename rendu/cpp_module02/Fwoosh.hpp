@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy.hpp                                          :+:      :+:    :+:   */
+/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:13:15 by avolcy            #+#    #+#             */
-/*   Updated: 2025/04/22 00:30:25 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/18 13:59:13 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DUMMY_HPP
-# define DUMMY_HPP
+#ifndef FWOOSH_HPP
+# define FWOOSH_HPP
 
-#include  "ATarget.hpp"
+#include "ASpell.hpp"
 
-#include <string>
-#include <iostream>
-#include "ATarget.hpp"
-class Dummy : public ATarget {
+# include <iostream>
 
-  public:
-  
-    Dummy() : ATarget("Target Practice Dummy"){}
-    virtual ~Dummy(){}
+class Fwoosh : public ASpell {
+	
+	public:
+		Fwoosh();
+		~Fwoosh();
 
-    ATarget* clone() const {
-
-      return new Dummy();
-    }
+		ASpell *clone() const;
 };
+
+#endif

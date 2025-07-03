@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy.hpp                                          :+:      :+:    :+:   */
+/*   ASpell.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:13:15 by avolcy            #+#    #+#             */
-/*   Updated: 2025/04/22 00:30:25 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/06/18 14:00:59 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DUMMY_HPP
-# define DUMMY_HPP
+#ifndef ASPELL_HPP
+# define ASPELL_HPP
 
-#include  "ATarget.hpp"
+# include <iostream>
+# include "ATarget.hpp"
 
-#include <string>
-#include <iostream>
-#include "ATarget.hpp"
-class Dummy : public ATarget {
+class ATarget;
 
-  public:
-  
-    Dummy() : ATarget("Target Practice Dummy"){}
-    virtual ~Dummy(){}
+class ASpell {
+	
+	protected:
+		std::string _name;
+		std::string _effects;
+		
+		ASpell();
+		ASpell(const ASpell &src );
+		ASpell & operator=(const ASpell &src );
+	public:
+		ASpell(std::string, std::string);
+		virtual ~ASpell();
 
-    ATarget* clone() const {
+		std::string const &getName() const;
+		std::string const &getEffects() const;
+	
+		virtual ASpell * clone() const = 0;
 
-      return new Dummy();
-    }
+		void launch(const ATarget &) const;
+
 };
+
+#endif

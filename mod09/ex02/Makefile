@@ -6,7 +6,7 @@
 #    By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 15:39:37 by avolcy            #+#    #+#              #
-#    Updated: 2025/06/28 15:57:40 by avolcy           ###   ########.fr        #
+#    Updated: 2025/07/03 15:40:11 by avolcy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,12 @@ BLACK = \033[0;39m
 
 CPP = c++
 RM = rm -rf
-NAME = RPN
+NAME = PmergeMe
 
 SRCS = ./src/
 HEADERS = ./header/
 
-HEADER_HPP = $(HEADERS)RPN.hpp
+HEADER_HPP = $(HEADERS)PmergeMe.hpp
 
 FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=address 
 
@@ -40,7 +40,7 @@ FLAGS = -Wall -Wextra -Werror -MMD -MF $(@:.o=.d) -std=c++98 -g -fsanitize=addre
 
 F_OBJ = build/
 
-SRC = main.cpp RPN.cpp
+SRC = main.cpp 
 
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))

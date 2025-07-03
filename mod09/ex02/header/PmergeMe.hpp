@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 16:18:01 by avolcy            #+#    #+#             */
-/*   Updated: 2025/06/30 16:21:09 by avolcy           ###   ########.fr       */
+/*   Created: 2025/07/03 15:28:26 by avolcy            #+#    #+#             */
+/*   Updated: 2025/07/03 15:36:39 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ICE_HPP
-# define _ICE_HPP
+#ifndef _PMERGEME_HPP
+# define _PMERGEME_HPP
 
 #include <iostream>
-#include "AMateria.hpp"
+#include <vector>
+#include <deque>
 
-class Ice : public AMateria {
-    
+typedef std::deque<int> Deque;
+typedef std::vector<int> Vector;
+
+class PmergeMe
+{
+    private:
+        Vector _vec;
+        Deque  _deq;
+
+        void mergeInsertDeque(Deque& array);
+        void mergeInsertVector(Vector& array);
+        
     public:
-
-      Ice();
-      Ice(const Ice &);
-      Ice &operator=(const Ice &);
-      ~Ice();
-
-      Ice * clone() const;
-      void use(ICharacter&) const;
+        PmergeMe(const std::string& input);
+        ~PmergeMe();
 };
 
 #endif
