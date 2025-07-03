@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:28:26 by avolcy            #+#    #+#             */
-/*   Updated: 2025/07/03 15:36:39 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/07/04 00:22:35 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,18 @@ class PmergeMe
         Vector _vec;
         Deque  _deq;
 
+        void parseInput(int ac, char **av);
+
         void mergeInsertDeque(Deque& array);
         void mergeInsertVector(Vector& array);
         
     public:
         PmergeMe(const std::string& input);
         ~PmergeMe();
+
+        const Vector& getVector() const { return _vec; }
+        void printData(const Vector& array, int mode) const;
+
 };
 
 #endif
