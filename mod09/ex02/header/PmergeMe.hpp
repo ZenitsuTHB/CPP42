@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:28:26 by avolcy            #+#    #+#             */
-/*   Updated: 2025/07/06 21:21:05 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/07/07 21:57:56 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ class PmergeMe
             size_t limit = arr.size() - (arr.size() % 2);
             for (size_t i = 0; i < limit; i += 2)
             {
-                unsigned int a = arr[i];
-                unsigned int b = arr[i + 1];
+               int a = arr[i];
+               int b = arr[i + 1];
 
                 if (a > b)
                     pairs.push_back(std::make_pair(a, b));

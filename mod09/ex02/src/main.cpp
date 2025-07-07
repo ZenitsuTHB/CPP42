@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:44:06 by avolcy            #+#    #+#             */
-/*   Updated: 2025/07/06 21:09:13 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/07/07 20:11:04 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int main(int argc, char *argv[]) {
         PmergeMe sorter;
         sorter.loadInput(argc, argv);
         sorter.sortAndDisplay();
-        //sorter.isSortedArray(sorter.getVector());
+        sorter.isSortedArray(sorter.getVector());
+        // sorter.isSortedArray(sorter.getDeque());
     } catch (const std::exception& e) {
         std::cerr << e.what() << '\n';
         return 1;

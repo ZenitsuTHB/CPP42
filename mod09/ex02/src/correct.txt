@@ -1,17 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/04 23:31:35 by avolcy            #+#    #+#             */
-/*   Updated: 2025/07/07 22:20:09 by avolcy           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../header/PmergeMe.hpp"
-
 PmergeMe::PmergeMe() {}
 
 void PmergeMe::_printContainer(Vector& container, const std::string& msg) const
@@ -35,13 +21,8 @@ void PmergeMe::loadInput(int argc, char *argv[])
     if (_vec.empty())
         throw std::invalid_argument("No valid numbers provided.");
     _printContainer(_vec, "Before : ");
-    std::cout << "Time to process a range of " << _vec.size() << std::endl;
 }
 
-void PmergeMe::_mergeInsertDeque(Deque& arr)
-{
-    (void)arr;
-}
 void PmergeMe::_generateJacobsthalSequence(Vector& jacob, unsigned int size)
 {
     
@@ -50,7 +31,8 @@ void PmergeMe::_generateJacobsthalSequence(Vector& jacob, unsigned int size)
     
     jacob.clear();
     jacob.push_back(0);
-    for (unsigned int j0 = 0, j1 = 1; j1 < size;) {
+    for (unsigned int j0 = 0, j1 = 1; j1 < size;)
+    {
         jacob.push_back(j1);
         unsigned int next = j1 + 2 * j0;
         j0 = j1;
@@ -88,10 +70,12 @@ void PmergeMe::_generateJacobsthalSequence(Vector& jacob, unsigned int size)
             jacob.push_back(merged[i]);
         }
     }
-    _printContainer(jacob, "jacob sequence : ");
 }
 
-
+void PmergeMe::_mergeInsertDeque(Deque& arr)
+{
+    (void)arr;
+}
 
 void PmergeMe::_mergeInsertVector(Vector& arr)
 {
@@ -100,6 +84,12 @@ void PmergeMe::_mergeInsertVector(Vector& arr)
     
     std::vector<std::pair<int, int> > pairs = makePair(arr);
 
+    bool has_stray = (arr.size() % 2 != 0);
+    int stray = -1;
+    if (has_stray)
+        stray = arr[arr.size() - 1];
+    
+    //std::sort(pairs.begin(), pairs.end());
     biggest.clear();
     smallest.clear();
     for (size_t i = 0; i < pairs.size(); ++i) {
@@ -107,13 +97,10 @@ void PmergeMe::_mergeInsertVector(Vector& arr)
         smallest.push_back(pairs[i].second);
     }
     
-    if (arr.size() % 2 != 0)
-        smallest.push_back(arr.back());
+    if (has_stray)
+        biggest.push_back(stray);
     
-    _printContainer(biggest, "=== B1 ===\n");
-    _printContainer(smallest, "==== S ====\n");
     _mergeInsertVector(biggest);
-    
     _generateJacobsthalSequence(jacob, smallest.size());
     for (unsigned int i = 0; i < jacob.size(); ++i)
     {
@@ -126,8 +113,9 @@ void PmergeMe::_mergeInsertVector(Vector& arr)
         biggest.insert(pos, value);
         
     }
-    _printContainer(biggest, "=== BF ===\n");
     arr = biggest;
+    _printContainer(arr, "After : ");
+
 }
 
 void PmergeMe::sortAndDisplay()
@@ -144,14 +132,3 @@ void PmergeMe::sortAndDisplay()
     // std::cout << "Time to process a range of " << _deq.size()
     //           << " elements with std::deque: " << _deqTime << " us" << std::endl;
 }
-
-
-		
-// Step 1: Split into pairs
-// Step 2: Sort pairs by .first and rebuild biggest and smallest vectors
-// Step 3: Sort bigs using std::sort() or recursion
-// std::sort(biggest.begin(), biggest.end());
-// Step 4: Generate Jacobsthal insertion order
-// Final step: insert all smalls into biggest using jacob order
-
-PmergeMe::~PmergeMe() {}
