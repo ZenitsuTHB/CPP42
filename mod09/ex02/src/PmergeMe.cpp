@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 23:31:35 by avolcy            #+#    #+#             */
-/*   Updated: 2025/07/07 22:20:09 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/07/08 19:38:42 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void PmergeMe::loadInput(int argc, char *argv[])
     if (_vec.empty())
         throw std::invalid_argument("No valid numbers provided.");
     _printContainer(_vec, "Before : ");
-    std::cout << "Time to process a range of " << _vec.size() << std::endl;
+    std::cout << "Processing a range of " << _vec.size() << std::endl;
 }
 
 void PmergeMe::_mergeInsertDeque(Deque& arr)
@@ -88,18 +88,23 @@ void PmergeMe::_generateJacobsthalSequence(Vector& jacob, unsigned int size)
             jacob.push_back(merged[i]);
         }
     }
-    _printContainer(jacob, "jacob sequence : ");
 }
-
-
 
 void PmergeMe::_mergeInsertVector(Vector& arr)
 {
-    if (arr.size() <= 1) return;
+    if (arr.size() <= 1)
+        return;
+    else if (arr.size() == 2)
+    {
+        if (arr[0] > arr[1])
+            std::swap(arr[0], arr[1]);
+        return;
+    }
+    
     Vector  biggest, smallest, jacob;
     
     std::vector<std::pair<int, int> > pairs = makePair(arr);
-
+    
     biggest.clear();
     smallest.clear();
     for (size_t i = 0; i < pairs.size(); ++i) {
@@ -112,6 +117,7 @@ void PmergeMe::_mergeInsertVector(Vector& arr)
     
     _printContainer(biggest, "=== B1 ===\n");
     _printContainer(smallest, "==== S ====\n");
+    // std::sort(biggest.begin(), biggest.end());
     _mergeInsertVector(biggest);
     
     _generateJacobsthalSequence(jacob, smallest.size());
