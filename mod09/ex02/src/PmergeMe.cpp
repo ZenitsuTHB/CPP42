@@ -6,7 +6,7 @@
 /*   By: avolcy <avolcy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 23:31:35 by avolcy            #+#    #+#             */
-/*   Updated: 2025/07/08 21:14:27 by avolcy           ###   ########.fr       */
+/*   Updated: 2025/07/09 14:09:17 by avolcy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void PmergeMe::loadInput(int argc, char *argv[])
     _printContainer(_vec, "Before : ");
 }
 
-inline std::deque<std::pair<int, int > > PmergeMe::makePair(Deque & arr)
+inline std::deque<std::pair<int, int > > PmergeMe::_makePair(Deque & arr)
 {
     std::deque<std::pair<int, int> > pairs;
     size_t limit = arr.size() - (arr.size() % 2);
@@ -64,7 +64,7 @@ void PmergeMe::_mergeInsertDeque(Deque& arr)
         return;
     }
     Deque  biggest, smallest, jacob;
-    std::deque<std::pair<int, int > > pairsDeq = makePair(arr);
+    std::deque<std::pair<int, int > > pairsDeq = _makePair(arr);
     
     biggest.clear();
     smallest.clear();
@@ -91,7 +91,7 @@ void PmergeMe::_mergeInsertDeque(Deque& arr)
     arr = biggest;
 }
 
-inline std::vector<std::pair<int, int > > PmergeMe::makePair(Vector & arr)
+inline std::vector<std::pair<int, int > > PmergeMe::_makePair(Vector & arr)
 {
     std::vector<std::pair<int, int> > pairs;
     size_t limit = arr.size() - (arr.size() % 2);
@@ -119,7 +119,7 @@ void PmergeMe::_mergeInsertVector(Vector& arr)
     }
     
     Vector  biggest, smallest, jacob;
-    std::vector<std::pair<int, int> > pairs = makePair(arr);
+    std::vector<std::pair<int, int> > pairs =_makePair(arr);
     
     biggest.clear();
     smallest.clear();
